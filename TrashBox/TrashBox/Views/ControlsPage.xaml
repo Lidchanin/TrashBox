@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<abstractions:BaseContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:abstractions="clr-namespace:TrashBox.Abstractions;assembly=TrashBox"
+    xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
+    xmlns:viewModels="clr-namespace:TrashBox.ViewModels;assembly=TrashBox"
+    x:Class="TrashBox.Views.ControlsPage"
+    x:DataType="viewModels:ControlsViewModel"
+    Title="{x:Static helpers:Constants+Texts.Controls}">
+
+    <abstractions:BaseContentPage.Content>
+
+        <StackLayout>
+
+            <Button
+                Text="{x:Static helpers:Constants+Texts.DonutChartPages}"
+                Command="{Binding GoToPageCommand}"
+                CommandParameter="{x:Static viewModels:ControlsViewModel+ControlsPages.DonutChart}" />
+
+            <Button
+                Text="{x:Static helpers:Constants+Texts.ProgressBarPages}"
+                Command="{Binding GoToPageCommand}"
+                CommandParameter="{x:Static viewModels:ControlsViewModel+ControlsPages.ProgressBar}" />
+
+            <Button
+                Text="{x:Static helpers:Constants+Texts.RadialProgressBarPages}"
+                Command="{Binding GoToPageCommand}"
+                CommandParameter="{x:Static viewModels:ControlsViewModel+ControlsPages.RadialProgressBar}" />
+        </StackLayout>
+    </abstractions:BaseContentPage.Content>
+</abstractions:BaseContentPage>

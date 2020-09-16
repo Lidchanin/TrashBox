@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<abstractions:BaseContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:abstractions="clr-namespace:TrashBox.Abstractions;assembly=TrashBox"
+    xmlns:viewModels="clr-namespace:TrashBox.ViewModels;assembly=TrashBox"
+    xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
+    xmlns:gradientProgressBar="clr-namespace:TrashBox.Controls.GradientProgressBar;assembly=TrashBox"
+    x:Class="TrashBox.Views.GradientProgressBarPages.GradientProgressBarVariant1Page"
+    x:DataType="viewModels:GradientProgressBarViewModel"
+    Title="{x:Static helpers:Constants+Texts.Variant1}">
+
+    <abstractions:BaseContentPage.Content>
+
+        <ScrollView>
+
+            <StackLayout
+                Padding="10"
+                Spacing="10">
+
+                <Label Text="HorizontalDetailedProgressBar" />
+
+                <gradientProgressBar:HorizontalDetailedProgressBar
+                    PercentageValue="{Binding PercentageValue}"
+                    OuterCornerRadius="{Binding OuterCornerRadius}"
+                    InnerCornerRadius="{Binding InnerCornerRadius}"
+                    FontSize="{Binding FontSize}"
+                    PrimaryTextColor="Black"
+                    SecondaryTextColor="White"
+                    LeftColor="#E7FD8C"
+                    RightColor="#91C035"
+                    LeftBackgroundColor="#1D00FB"
+                    RightBackgroundColor="#FB0003"
+                    HeightRequest="75" />
+
+                <Label Text="HorizontalProgressBar" />
+
+                <gradientProgressBar:HorizontalProgressBar
+                    PercentageValue="{Binding PercentageValue}"
+                    OuterCornerRadius="{Binding OuterCornerRadius}"
+                    InnerCornerRadius="{Binding InnerCornerRadius}"
+                    LeftColor="#E7FD8C"
+                    RightColor="#91C035"
+                    LeftBackgroundColor="#1D00FB"
+                    RightBackgroundColor="#FB0003"
+                    HeightRequest="75" />
+            </StackLayout>
+        </ScrollView>
+    </abstractions:BaseContentPage.Content>
+</abstractions:BaseContentPage>

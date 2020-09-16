@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<abstractions:BaseContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:abstractions="clr-namespace:TrashBox.Abstractions;assembly=TrashBox"
+    xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
+    xmlns:viewModels="clr-namespace:TrashBox.ViewModels;assembly=TrashBox"
+    xmlns:local="clr-namespace:TrashBox;assembly=TrashBox"
+    xmlns:gradientRadialProgressBar="clr-namespace:TrashBox.Controls.GradientRadialProgressBar;assembly=TrashBox"
+    x:Class="TrashBox.Views.GradientRadialProgressBarPages.GradientRadialProgressBarVariant1Page"
+    x:DataType="viewModels:GradientRadialProgressBarViewModel"
+    Title="{x:Static helpers:Constants+Texts.Variant1}">
+
+    <abstractions:BaseContentPage.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="{x:Static local:App.ScreenWidth}" />
+            </Grid.RowDefinitions>
+
+            <gradientRadialProgressBar:RadialProgressBar
+                SweepAngle="360"
+                StartAngle="0"
+                PercentageValue="0.33"
+                BarWidth="{Binding BarWidth}"
+                StartColor="#E7FD8C"
+                EndColor="#91C035"
+                StartBackgroundColor="#FB0003"
+                EndBackgroundColor="#1D00FB"
+                Margin="10"
+                Grid.Row="0" />
+        </Grid>
+    </abstractions:BaseContentPage.Content>
+</abstractions:BaseContentPage>

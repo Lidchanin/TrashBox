@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<abstractions:BaseContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:abstractions="clr-namespace:TrashBox.Abstractions;assembly=TrashBox"
+    xmlns:gradientRadialProgressBar="clr-namespace:TrashBox.Controls.GradientRadialProgressBar;assembly=TrashBox"
+    xmlns:viewModels="clr-namespace:TrashBox.ViewModels;assembly=TrashBox"
+    xmlns:local="clr-namespace:TrashBox;assembly=TrashBox"
+    xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
+    x:Class="TrashBox.Views.GradientRadialProgressBarPages.GradientRadialProgressBarExperimentPage"
+    x:DataType="viewModels:GradientRadialProgressBarViewModel"
+    Title="{x:Static helpers:Constants+Texts.Experiment}">
+
+    <abstractions:BaseContentPage.Content>
+
+        <ScrollView>
+
+            <Grid>
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="{x:Static local:App.ScreenWidth}" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <gradientRadialProgressBar:RadialProgressBar
+                    SweepAngle="{Binding SweepAngle}"
+                    StartAngle="{Binding StartAngle}"
+                    PercentageValue="{Binding PercentageValue}"
+                    BarWidth="{Binding BarWidth}"
+                    StartColor="#E7FD8C"
+                    EndColor="#91C035"
+                    StartBackgroundColor="#FB0003"
+                    EndBackgroundColor="#1D00FB"
+                    Margin="20"
+                    Grid.Row="0" />
+
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Frame
+                        Grid.Row="0"
+                        Grid.Column="0">
+
+                        <StackLayout>
+
+                            <Label Text="PercentageValue" />
+
+                            <Slider
+                                Value="{Binding PercentageValue}"
+                                Maximum="1"
+                                Minimum="0" />
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame
+                        Grid.Row="0"
+                        Grid.Column="1">
+
+                        <StackLayout>
+
+                            <Label Text="BarWidth" />
+
+                            <Slider
+                                Value="{Binding BarWidth}"
+                                Maximum="{x:Static local:App.ScreenWidth}"
+                                Minimum="0" />
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame
+                        Grid.Row="1"
+                        Grid.Column="0">
+
+                        <StackLayout>
+
+                            <Label Text="StartAngle" />
+
+                            <Slider
+                                Value="{Binding StartAngle}"
+                                Maximum="360"
+                                Minimum="0" />
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame
+                        Grid.Row="1"
+                        Grid.Column="1">
+
+                        <StackLayout>
+
+                            <Label Text="SweepAngle" />
+
+                            <Slider
+                                Value="{Binding SweepAngle}"
+                                Maximum="360"
+                                Minimum="0" />
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </abstractions:BaseContentPage.Content>
+</abstractions:BaseContentPage>

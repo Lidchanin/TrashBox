@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<abstractions:BaseContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:abstractions="clr-namespace:TrashBox.Abstractions;assembly=TrashBox"
+    xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
+    xmlns:viewModels="clr-namespace:TrashBox.ViewModels;assembly=TrashBox"
+    xmlns:gradientProgressBar="clr-namespace:TrashBox.Controls.GradientProgressBar;assembly=TrashBox"
+    x:Class="TrashBox.Views.GradientProgressBarPages.GradientProgressBarVariant2Page"
+    x:DataType="viewModels:GradientProgressBarViewModel"
+    Title="{x:Static helpers:Constants+Texts.Variant2}">
+
+    <abstractions:BaseContentPage.Content>
+
+        <Grid
+            RowSpacing="10"
+            ColumnSpacing="10"
+            Padding="10">
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label
+                Text="VerticalDetailedProgressBar"
+                HorizontalOptions="Center"
+                Grid.Row="0"
+                Grid.Column="0" />
+
+            <gradientProgressBar:VerticalDetailedProgressBar
+                PercentageValue="{Binding PercentageValue}"
+                OuterCornerRadius="{Binding OuterCornerRadius}"
+                InnerCornerRadius="{Binding InnerCornerRadius}"
+                FontSize="{Binding FontSize}"
+                PrimaryTextColor="Black"
+                SecondaryTextColor="White"
+                TopColor="#E7FD8C"
+                BottomColor="#91C035"
+                TopBackgroundColor="#1D00FB"
+                BottomBackgroundColor="#FB0003"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HeightRequest="300"
+                WidthRequest="75"
+                Grid.Row="1"
+                Grid.Column="0" />
+
+            <Label
+                Text="VerticalProgressBar"
+                HorizontalOptions="Center"
+                Grid.Row="0"
+                Grid.Column="1" />
+
+            <gradientProgressBar:VerticalProgressBar
+                PercentageValue="{Binding PercentageValue}"
+                OuterCornerRadius="{Binding OuterCornerRadius}"
+                InnerCornerRadius="{Binding InnerCornerRadius}"
+                TopColor="#E7FD8C"
+                BottomColor="#91C035"
+                TopBackgroundColor="#1D00FB"
+                BottomBackgroundColor="#FB0003"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HeightRequest="300"
+                WidthRequest="75"
+                Grid.Row="1"
+                Grid.Column="1" />
+        </Grid>
+    </abstractions:BaseContentPage.Content>
+</abstractions:BaseContentPage>

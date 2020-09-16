@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Shell
+<abstractions:BaseShell
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="TrashBox"
-    x:Class="TrashBox.AppShell">
+    xmlns:abstractions="clr-namespace:TrashBox.Abstractions;assembly=TrashBox"
+    xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
+    xmlns:views="clr-namespace:TrashBox.Views;assembly=TrashBox"
+    x:Class="TrashBox.AppShell"
+    Title="{x:Static helpers:Constants+Texts.TrashBox}">
 
-</Shell>
+    <TabBar>
+
+        <ShellContent
+            Route="ControlsPage"
+            Title="{x:Static helpers:Constants+Texts.Controls}"
+            Icon="{x:Static helpers:Constants+Filenames.DonutChart}"
+            ContentTemplate="{DataTemplate TypeName=views:ControlsPage}" />
+
+        <ShellContent
+            Route="AboutPage"
+            Title="{x:Static helpers:Constants+Texts.About}"
+            Icon="{x:Static helpers:Constants+Filenames.AboutUs}"
+            ContentTemplate="{DataTemplate TypeName=views:AboutPage}" />
+    </TabBar>
+</abstractions:BaseShell>
