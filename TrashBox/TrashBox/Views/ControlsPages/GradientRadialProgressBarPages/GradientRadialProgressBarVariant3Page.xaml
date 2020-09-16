@@ -8,7 +8,7 @@
     xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
     xmlns:viewModels="clr-namespace:TrashBox.ViewModels;assembly=TrashBox"
     xmlns:local="clr-namespace:TrashBox;assembly=TrashBox"
-    x:Class="TrashBox.Views.GradientRadialProgressBarPages.GradientRadialProgressBarVariant3Page"
+    x:Class="TrashBox.Views.ControlsPages.GradientRadialProgressBarPages.GradientRadialProgressBarVariant3Page"
     x:DataType="viewModels:GradientRadialProgressBarViewModel"
     Title="{x:Static helpers:Constants+Texts.Variant3}">
 

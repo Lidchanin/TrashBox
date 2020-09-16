@@ -4,38 +4,49 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:abstractions="clr-namespace:TrashBox.Abstractions;assembly=TrashBox"
-    xmlns:gradientRadialProgressBar="clr-namespace:TrashBox.Controls.GradientRadialProgressBar;assembly=TrashBox"
-    xmlns:viewModels="clr-namespace:TrashBox.ViewModels;assembly=TrashBox"
-    xmlns:local="clr-namespace:TrashBox;assembly=TrashBox"
+    xmlns:gradientProgressBar="clr-namespace:TrashBox.Controls.GradientProgressBar;assembly=TrashBox"
     xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
-    x:Class="TrashBox.Views.GradientRadialProgressBarPages.GradientRadialProgressBarExperimentPage"
-    x:DataType="viewModels:GradientRadialProgressBarViewModel"
-    Title="{x:Static helpers:Constants+Texts.Experiment}">
+    xmlns:viewModels="clr-namespace:TrashBox.ViewModels;assembly=TrashBox"
+    x:Class="TrashBox.Views.ControlsPages.GradientProgressBarPages.GradientProgressBarExperiment1Page"
+    x:DataType="viewModels:GradientProgressBarViewModel"
+    Title="{x:Static helpers:Constants+Texts.Experiment1Short}">
 
     <abstractions:BaseContentPage.Content>
 
         <ScrollView>
 
-            <Grid>
-                <Grid.RowDefinitions>
+            <StackLayout
+                Padding="10"
+                Spacing="10">
 
-                    <RowDefinition Height="{x:Static local:App.ScreenWidth}" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
+                <Label Text="HorizontalDetailedProgressBar" />
 
-                <gradientRadialProgressBar:RadialProgressBar
-                    SweepAngle="{Binding SweepAngle}"
-                    StartAngle="{Binding StartAngle}"
+                <gradientProgressBar:HorizontalDetailedProgressBar
                     PercentageValue="{Binding PercentageValue}"
-                    BarWidth="{Binding BarWidth}"
-                    StartColor="#E7FD8C"
-                    EndColor="#91C035"
-                    StartBackgroundColor="#FB0003"
-                    EndBackgroundColor="#1D00FB"
-                    Margin="20"
-                    Grid.Row="0" />
+                    OuterCornerRadius="{Binding OuterCornerRadius}"
+                    InnerCornerRadius="{Binding InnerCornerRadius}"
+                    FontSize="{Binding FontSize}"
+                    PrimaryTextColor="Black"
+                    SecondaryTextColor="White"
+                    LeftColor="#E7FD8C"
+                    RightColor="#91C035"
+                    LeftBackgroundColor="#1D00FB"
+                    RightBackgroundColor="#FB0003"
+                    HeightRequest="75" />
 
-                <Grid Grid.Row="1">
+                <Label Text="HorizontalProgressBar" />
+
+                <gradientProgressBar:HorizontalProgressBar
+                    PercentageValue="{Binding PercentageValue}"
+                    OuterCornerRadius="{Binding OuterCornerRadius}"
+                    InnerCornerRadius="{Binding InnerCornerRadius}"
+                    LeftColor="#E7FD8C"
+                    RightColor="#91C035"
+                    LeftBackgroundColor="#1D00FB"
+                    RightBackgroundColor="#FB0003"
+                    HeightRequest="75" />
+
+                <Grid>
                     <Grid.RowDefinitions>
 
                         <RowDefinition Height="Auto" />
@@ -68,11 +79,11 @@
 
                         <StackLayout>
 
-                            <Label Text="BarWidth" />
+                            <Label Text="FontSize" />
 
                             <Slider
-                                Value="{Binding BarWidth}"
-                                Maximum="{x:Static local:App.ScreenWidth}"
+                                Value="{Binding FontSize}"
+                                Maximum="100"
                                 Minimum="0" />
                         </StackLayout>
                     </Frame>
@@ -83,11 +94,11 @@
 
                         <StackLayout>
 
-                            <Label Text="StartAngle" />
+                            <Label Text="OuterCornerRadius" />
 
                             <Slider
-                                Value="{Binding StartAngle}"
-                                Maximum="360"
+                                Value="{Binding OuterCornerRadius}"
+                                Maximum="100"
                                 Minimum="0" />
                         </StackLayout>
                     </Frame>
@@ -98,16 +109,16 @@
 
                         <StackLayout>
 
-                            <Label Text="SweepAngle" />
+                            <Label Text="InnerCornerRadius" />
 
                             <Slider
-                                Value="{Binding SweepAngle}"
-                                Maximum="360"
+                                Value="{Binding InnerCornerRadius}"
+                                Maximum="100"
                                 Minimum="0" />
                         </StackLayout>
                     </Frame>
                 </Grid>
-            </Grid>
+            </StackLayout>
         </ScrollView>
     </abstractions:BaseContentPage.Content>
 </abstractions:BaseContentPage>

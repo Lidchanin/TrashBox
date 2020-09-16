@@ -4,13 +4,13 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:abstractions="clr-namespace:TrashBox.Abstractions;assembly=TrashBox"
+    xmlns:gradientRadialProgressBar="clr-namespace:TrashBox.Controls.GradientRadialProgressBar;assembly=TrashBox"
     xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
     xmlns:viewModels="clr-namespace:TrashBox.ViewModels;assembly=TrashBox"
     xmlns:local="clr-namespace:TrashBox;assembly=TrashBox"
-    xmlns:gradientRadialProgressBar="clr-namespace:TrashBox.Controls.GradientRadialProgressBar;assembly=TrashBox"
-    x:Class="TrashBox.Views.GradientRadialProgressBarPages.GradientRadialProgressBarVariant1Page"
+    x:Class="TrashBox.Views.ControlsPages.GradientRadialProgressBarPages.GradientRadialProgressBarVariant2Page"
     x:DataType="viewModels:GradientRadialProgressBarViewModel"
-    Title="{x:Static helpers:Constants+Texts.Variant1}">
+    Title="{x:Static helpers:Constants+Texts.Variant2}">
 
     <abstractions:BaseContentPage.Content>
 
@@ -21,9 +21,21 @@
             </Grid.RowDefinitions>
 
             <gradientRadialProgressBar:RadialProgressBar
-                SweepAngle="360"
-                StartAngle="0"
+                SweepAngle="140"
+                StartAngle="20"
                 PercentageValue="0.33"
+                BarWidth="{Binding BarWidth}"
+                StartColor="#E7FD8C"
+                EndColor="#91C035"
+                StartBackgroundColor="#FB0003"
+                EndBackgroundColor="#1D00FB"
+                Margin="10"
+                Grid.Row="0" />
+
+            <gradientRadialProgressBar:RadialProgressBar
+                SweepAngle="140"
+                StartAngle="200"
+                PercentageValue="0.66"
                 BarWidth="{Binding BarWidth}"
                 StartColor="#E7FD8C"
                 EndColor="#91C035"

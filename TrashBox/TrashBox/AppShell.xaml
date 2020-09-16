@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:abstractions="clr-namespace:TrashBox.Abstractions;assembly=TrashBox"
     xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
+    xmlns:controlsPages="clr-namespace:TrashBox.Views.ControlsPages;assembly=TrashBox"
     xmlns:views="clr-namespace:TrashBox.Views;assembly=TrashBox"
     x:Class="TrashBox.AppShell"
     Title="{x:Static helpers:Constants+Texts.TrashBox}">
@@ -15,7 +16,7 @@
             Route="ControlsPage"
             Title="{x:Static helpers:Constants+Texts.Controls}"
             Icon="{x:Static helpers:Constants+Filenames.DonutChart}"
-            ContentTemplate="{DataTemplate TypeName=views:ControlsPage}" />
+            ContentTemplate="{DataTemplate TypeName=controlsPages:ControlsPage}" />
 
         <ShellContent
             Route="AboutPage"

@@ -7,7 +7,7 @@
     xmlns:viewModels="clr-namespace:TrashBox.ViewModels;assembly=TrashBox"
     xmlns:donutChart="clr-namespace:TrashBox.Controls.DonutChart;assembly=TrashBox"
     xmlns:local="clr-namespace:TrashBox;assembly=TrashBox"
-    x:Class="TrashBox.Views.DonutChartPages.DonutChartExperimentPage"
+    x:Class="TrashBox.Views.ControlsPages.DonutChartPages.DonutChartExperimentPage"
     x:DataType="viewModels:DonutChartViewModel"
     Title="Experiment">
 

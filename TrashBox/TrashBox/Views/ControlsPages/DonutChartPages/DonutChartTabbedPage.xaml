@@ -5,8 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:abstractions="clr-namespace:TrashBox.Abstractions;assembly=TrashBox"
     xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
-    xmlns:donutChartPages="clr-namespace:TrashBox.Views.DonutChartPages;assembly=TrashBox"
-    x:Class="TrashBox.Views.DonutChartPages.DonutChartTabbedPage"
+    xmlns:donutChartPages="clr-namespace:TrashBox.Views.ControlsPages.DonutChartPages;assembly=TrashBox"
+    x:Class="TrashBox.Views.ControlsPages.DonutChartPages.DonutChartTabbedPage"
     Title="{x:Static helpers:Constants+Texts.DonutCharts}">
 
     <donutChartPages:DonutChartExperimentPage />

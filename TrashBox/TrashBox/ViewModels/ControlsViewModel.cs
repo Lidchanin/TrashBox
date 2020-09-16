@@ -3,9 +3,9 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using TrashBox.Abstractions;
 using TrashBox.Helpers;
-using TrashBox.Views.DonutChartPages;
-using TrashBox.Views.GradientProgressBarPages;
-using TrashBox.Views.GradientRadialProgressBarPages;
+using TrashBox.Views.ControlsPages.DonutChartPages;
+using TrashBox.Views.ControlsPages.GradientProgressBarPages;
+using TrashBox.Views.ControlsPages.GradientRadialProgressBarPages;
 using Xamarin.Forms;
 
 namespace TrashBox.ViewModels

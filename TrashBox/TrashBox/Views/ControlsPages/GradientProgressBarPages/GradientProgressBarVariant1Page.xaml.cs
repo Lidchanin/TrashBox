@@ -1,6 +1,6 @@
 ﻿using TrashBox.ViewModels;
 
-namespace TrashBox.Views.GradientProgressBarPages
+namespace TrashBox.Views.ControlsPages.GradientProgressBarPages
 {
     public partial class GradientProgressBarVariant1Page
     {

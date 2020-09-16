@@ -4,9 +4,9 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:abstractions="clr-namespace:TrashBox.Abstractions;assembly=TrashBox"
-    xmlns:gradientProgressBarPages="clr-namespace:TrashBox.Views.GradientProgressBarPages;assembly=TrashBox"
     xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
-    x:Class="TrashBox.Views.GradientProgressBarPages.GradientProgressBarTabbedPage"
+    xmlns:gradientProgressBarPages="clr-namespace:TrashBox.Views.ControlsPages.GradientProgressBarPages;assembly=TrashBox"
+    x:Class="TrashBox.Views.ControlsPages.GradientProgressBarPages.GradientProgressBarTabbedPage"
     Title="{x:Static helpers:Constants+Texts.ProgressBars}">
 
     <gradientProgressBarPages:GradientProgressBarVariant1Page />

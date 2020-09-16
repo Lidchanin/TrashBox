@@ -6,7 +6,7 @@
     xmlns:abstractions="clr-namespace:TrashBox.Abstractions;assembly=TrashBox"
     xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
     xmlns:viewModels="clr-namespace:TrashBox.ViewModels;assembly=TrashBox"
-    x:Class="TrashBox.Views.ControlsPage"
+    x:Class="TrashBox.Views.ControlsPages.ControlsPage"
     x:DataType="viewModels:ControlsViewModel"
     Title="{x:Static helpers:Constants+Texts.Controls}">
 

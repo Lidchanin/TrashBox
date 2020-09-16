@@ -1,4 +1,4 @@
-﻿namespace TrashBox.Views.DonutChartPages
+﻿namespace TrashBox.Views.ControlsPages.DonutChartPages
 {
     public partial class DonutChartTabbedPage
     {

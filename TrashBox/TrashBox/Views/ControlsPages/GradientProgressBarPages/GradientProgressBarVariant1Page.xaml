@@ -7,7 +7,7 @@
     xmlns:viewModels="clr-namespace:TrashBox.ViewModels;assembly=TrashBox"
     xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
     xmlns:gradientProgressBar="clr-namespace:TrashBox.Controls.GradientProgressBar;assembly=TrashBox"
-    x:Class="TrashBox.Views.GradientProgressBarPages.GradientProgressBarVariant1Page"
+    x:Class="TrashBox.Views.ControlsPages.GradientProgressBarPages.GradientProgressBarVariant1Page"
     x:DataType="viewModels:GradientProgressBarViewModel"
     Title="{x:Static helpers:Constants+Texts.Variant1}">
 
