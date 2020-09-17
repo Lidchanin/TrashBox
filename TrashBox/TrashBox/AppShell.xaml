@@ -7,6 +7,7 @@
     xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
     xmlns:controlsPages="clr-namespace:TrashBox.Views.ControlsPages;assembly=TrashBox"
     xmlns:views="clr-namespace:TrashBox.Views;assembly=TrashBox"
+    xmlns:designsPages="clr-namespace:TrashBox.Views.DesignsPages;assembly=TrashBox"
     x:Class="TrashBox.AppShell"
     Title="{x:Static helpers:Constants+Texts.TrashBox}">
 
@@ -17,6 +18,12 @@
             Title="{x:Static helpers:Constants+Texts.Controls}"
             Icon="{x:Static helpers:Constants+Filenames.DonutChart}"
             ContentTemplate="{DataTemplate TypeName=controlsPages:ControlsPage}" />
+
+        <ShellContent
+            Route="DesignsPage"
+            Title="{x:Static helpers:Constants+Texts.Designs}"
+            Icon="{x:Static helpers:Constants+Filenames.BrokenFile}"
+            ContentTemplate="{DataTemplate TypeName=designsPages:DesignsPage}" />
 
         <ShellContent
             Route="AboutPage"

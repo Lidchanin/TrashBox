@@ -1,6 +1,6 @@
 ﻿using TrashBox.Abstractions;
 
-namespace TrashBox.ViewModels
+namespace TrashBox.ViewModels.ControlsViewModels
 {
     public class GradientProgressBarViewModel : BaseViewModel
     {

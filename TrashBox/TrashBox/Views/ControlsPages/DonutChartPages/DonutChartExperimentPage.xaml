@@ -4,11 +4,11 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:abstractions="clr-namespace:TrashBox.Abstractions;assembly=TrashBox"
-    xmlns:viewModels="clr-namespace:TrashBox.ViewModels;assembly=TrashBox"
     xmlns:donutChart="clr-namespace:TrashBox.Controls.DonutChart;assembly=TrashBox"
+    xmlns:controlsViewModels="clr-namespace:TrashBox.ViewModels.ControlsViewModels;assembly=TrashBox"
     xmlns:local="clr-namespace:TrashBox;assembly=TrashBox"
     x:Class="TrashBox.Views.ControlsPages.DonutChartPages.DonutChartExperimentPage"
-    x:DataType="viewModels:DonutChartViewModel"
+    x:DataType="controlsViewModels:DonutChartViewModel"
     Title="Experiment">
 
     <abstractions:BaseContentPage.Content>

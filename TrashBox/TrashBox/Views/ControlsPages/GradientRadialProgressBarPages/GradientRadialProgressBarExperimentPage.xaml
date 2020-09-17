@@ -5,11 +5,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:abstractions="clr-namespace:TrashBox.Abstractions;assembly=TrashBox"
     xmlns:gradientRadialProgressBar="clr-namespace:TrashBox.Controls.GradientRadialProgressBar;assembly=TrashBox"
-    xmlns:viewModels="clr-namespace:TrashBox.ViewModels;assembly=TrashBox"
-    xmlns:local="clr-namespace:TrashBox;assembly=TrashBox"
     xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
+    xmlns:controlsViewModels="clr-namespace:TrashBox.ViewModels.ControlsViewModels;assembly=TrashBox"
+    xmlns:local="clr-namespace:TrashBox;assembly=TrashBox"
     x:Class="TrashBox.Views.ControlsPages.GradientRadialProgressBarPages.GradientRadialProgressBarExperimentPage"
-    x:DataType="viewModels:GradientRadialProgressBarViewModel"
+    x:DataType="controlsViewModels:GradientRadialProgressBarViewModel"
     Title="{x:Static helpers:Constants+Texts.Experiment}">
 
     <abstractions:BaseContentPage.Content>

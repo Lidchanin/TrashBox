@@ -5,7 +5,14 @@
         public static class Texts
         {
             public const string TrashBox = "TrashBox";
+            public const string Variant1 = "Variant 1";
+            public const string Variant2 = "Variant 2";
+            public const string Variant3 = "Variant 3";
+            public const string Experiment = "Experiment";
+            public const string Experiment1Short = "Exp 1";
+            public const string Experiment2Short = "Exp 2";
             public const string Controls = "Controls";
+            public const string Designs = "Designs";
             public const string About = "About";
             public const string DonutChartPages = "Donut Chart Pages";
             public const string DonutCharts = "Donut Charts";
@@ -13,12 +20,7 @@
             public const string ProgressBars = "Progress Bars";
             public const string RadialProgressBarPages = "Radial Progress Bar Pages";
             public const string RadialProgressBars = "Radial Progress Bars";
-            public const string Variant1 = "Variant 1";
-            public const string Variant2 = "Variant 2";
-            public const string Variant3 = "Variant 3";
-            public const string Experiment = "Experiment";
-            public const string Experiment1Short = "Exp 1";
-            public const string Experiment2Short = "Exp 2";
+            public const string HorizontalParallax = "Horizontal Parallax";
         }
 
         public static class Filenames

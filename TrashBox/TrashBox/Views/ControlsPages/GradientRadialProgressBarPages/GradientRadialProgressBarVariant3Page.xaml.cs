@@ -1,4 +1,4 @@
-﻿using TrashBox.ViewModels;
+﻿using TrashBox.ViewModels.ControlsViewModels;
 
 namespace TrashBox.Views.ControlsPages.GradientRadialProgressBarPages
 {

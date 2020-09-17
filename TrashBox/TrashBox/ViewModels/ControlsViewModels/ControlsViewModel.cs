@@ -8,7 +8,7 @@ using TrashBox.Views.ControlsPages.GradientProgressBarPages;
 using TrashBox.Views.ControlsPages.GradientRadialProgressBarPages;
 using Xamarin.Forms;
 
-namespace TrashBox.ViewModels
+namespace TrashBox.ViewModels.ControlsViewModels
 {
     public class ControlsViewModel : BaseViewModel
     {

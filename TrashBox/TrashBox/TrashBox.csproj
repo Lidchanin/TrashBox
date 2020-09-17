@@ -29,6 +29,9 @@
     <Compile Update="Views\ControlsPages\GradientProgressBarPages\GradientProgressBarExperiment1Page.xaml.cs">
       <DependentUpon>GradientProgressBarExperiment1Page.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\DesignsPages\HorizontalParallaxPage.xaml.cs">
+      <DependentUpon>HorizontalParallaxPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -81,6 +84,12 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ControlsPages\GradientRadialProgressBarPages\GradientRadialProgressBarVariant3Page.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DesignsPages\DesignsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DesignsPages\HorizontalParallaxPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

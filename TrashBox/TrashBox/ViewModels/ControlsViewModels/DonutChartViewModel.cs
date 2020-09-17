@@ -8,7 +8,7 @@ using TrashBox.Controls.DonutChart;
 using TrashBox.Helpers;
 using Xamarin.Forms;
 
-namespace TrashBox.ViewModels
+namespace TrashBox.ViewModels.ControlsViewModels
 {
     public class DonutChartViewModel : BaseViewModel
     {
