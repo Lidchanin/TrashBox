@@ -1,5 +1,6 @@
 ﻿using TrashBox.Helpers;
 using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace TrashBox
 {
@@ -10,6 +11,8 @@ namespace TrashBox
 
         public App()
         {
+            Device.SetFlags(new[] {"CollectionView_Experimental", "IndicatorView_Experimental", "Shapes_Experimental"});
+
             InitializeComponent();
 
             ScreenWidth = DeviceDisplay.MainDisplayInfo.Width / DeviceDisplay.MainDisplayInfo.Density;

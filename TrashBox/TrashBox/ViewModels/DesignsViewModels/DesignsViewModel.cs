@@ -12,7 +12,7 @@ namespace TrashBox.ViewModels.DesignsViewModels
     {
         public enum DesignsPages
         {
-            HorizontalParallax
+            HorizontalParallaxCarousel
         }
 
         public ICommand GoToPageCommand { get; }
@@ -35,9 +35,9 @@ namespace TrashBox.ViewModels.DesignsViewModels
             {
                 switch (page)
                 {
-                    case DesignsPages.HorizontalParallax:
+                    case DesignsPages.HorizontalParallaxCarousel:
                     {
-                        await ShellNavigationHelper.GoToAsync(nameof(HorizontalParallaxPage));
+                        await ShellNavigationHelper.GoToAsync(nameof(HorizontalParallaxCarouselPage));
 
                         break;
                     }

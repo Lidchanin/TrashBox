@@ -20,7 +20,6 @@ namespace TrashBox.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            Forms.SetFlags("CollectionView_Experimental");
             Forms.Init();
             LoadApplication(new App());
 

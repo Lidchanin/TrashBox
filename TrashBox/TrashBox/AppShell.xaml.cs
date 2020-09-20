@@ -36,7 +36,7 @@ namespace TrashBox
 
             #region Designs Rotes
 
-            Routing.RegisterRoute(nameof(HorizontalParallaxPage), typeof(HorizontalParallaxPage));
+            Routing.RegisterRoute(nameof(HorizontalParallaxCarouselPage), typeof(HorizontalParallaxCarouselPage));
 
             #endregion Designs Rotes
         }
@@ -64,7 +64,7 @@ namespace TrashBox
 
             #region Designs Routes
 
-            Routing.UnRegisterRoute(nameof(HorizontalParallaxPage));
+            Routing.UnRegisterRoute(nameof(HorizontalParallaxCarouselPage));
 
             #endregion Designs Routes
         }

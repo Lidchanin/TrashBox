@@ -7,7 +7,8 @@
     xmlns:designsViewModels="clr-namespace:TrashBox.ViewModels.DesignsViewModels;assembly=TrashBox"
     xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
     x:Class="TrashBox.Views.DesignsPages.DesignsPage"
-    x:DataType="designsViewModels:DesignsViewModel">
+    x:DataType="designsViewModels:DesignsViewModel"
+    Title="{x:Static helpers:Constants+Texts.Designs}">
 
     <abstractions:BaseContentPage.Content>
 
@@ -16,9 +17,9 @@
             Spacing="10">
 
             <Button
-                Text="{x:Static helpers:Constants+Texts.HorizontalParallax}"
+                Text="{x:Static helpers:Constants+Texts.HorizontalParallaxCarousel}"
                 Command="{Binding GoToPageCommand}"
-                CommandParameter="{x:Static designsViewModels:DesignsViewModel+DesignsPages.HorizontalParallax}" />
+                CommandParameter="{x:Static designsViewModels:DesignsViewModel+DesignsPages.HorizontalParallaxCarousel}" />
         </StackLayout>
     </abstractions:BaseContentPage.Content>
 </abstractions:BaseContentPage>

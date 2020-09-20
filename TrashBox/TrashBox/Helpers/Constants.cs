@@ -20,7 +20,21 @@
             public const string ProgressBars = "Progress Bars";
             public const string RadialProgressBarPages = "Radial Progress Bar Pages";
             public const string RadialProgressBars = "Radial Progress Bars";
-            public const string HorizontalParallax = "Horizontal Parallax";
+            public const string HorizontalParallaxCarousel = "Horizontal Parallax Carousel";
+            public const string Back = "Back";
+
+            public const string Ermak = "Ermak";
+            public const string Goro = "Goro";
+            public const string Kano = "Kano";
+            public const string Kenshi = "Kenshi";
+            public const string Kitana = "Kitana";
+            public const string LiuKang = "Liu Kang";
+            public const string QuanChi = "Quan Chi";
+            public const string Raiden = "Raiden";
+            public const string Scorpion = "Scorpion";
+            public const string SubZero = "Sub-Zero";
+            public const string ChooseYourFighter = "Choose Your Fighter";
+            public const string MKDemo = "MK Demo";
         }
 
         public static class Filenames
@@ -38,6 +52,40 @@
             public const string ProgressBar = "progress_bar_icon.png";
             public const string VerticalProgressBar = "vertical_progress_bar_icon.png";
             public const string RadialProgressBar = "radial_progress_bar_icon.png";
+        }
+
+        public static class EmbeddedImages
+        {
+            private const string BasePath = "TrashBox.EmbeddedFiles.Images.";
+
+            public const string MKBackground1 = BasePath + "mk_background_1.jpg";
+            public const string MKBackground2 = BasePath + "mk_background_2.jpg";
+            public const string MKBackground3 = BasePath + "mk_background_3.jpg";
+            public const string MKBackground4 = BasePath + "mk_background_4.jpg";
+            public const string MKBackground5 = BasePath + "mk_background_5.png";
+            public const string MKErmak = BasePath + "mk_ermak.png";
+            public const string MKGoro = BasePath + "mk_goro.png";
+            public const string MKKano = BasePath + "mk_kano.png";
+            public const string MKKenshi = BasePath + "mk_kenshi.png";
+            public const string MKKitana = BasePath + "mk_kitana.png";
+            public const string MKLiuKang = BasePath + "mk_liu_kang.png";
+            public const string MKQuanChi = BasePath + "mk_quan_chi.png";
+            public const string MKRaiden = BasePath + "mk_raiden.png";
+            public const string MKScorpion = BasePath + "mk_scorpion.png";
+            public const string MKSubZero = BasePath + "mk_sub_zero.png";
+        }
+
+        public static class EmbeddedFonts
+        {
+            private const string BasePath = "TrashBox.EmbeddedFiles.Fonts.";
+
+            public const string MKTitle = BasePath + "mk_title.ttf";
+            public const string FontAwesomeSolid = BasePath + "font_awesome_5_free_solid_900.otf";
+        }
+
+        public static class FontAwesomeIcons
+        {
+            public const string Skull = "\uf54c";
         }
 
         public static class Links

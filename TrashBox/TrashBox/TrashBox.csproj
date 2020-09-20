@@ -7,6 +7,46 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="EmbeddedFiles\Fonts\font_awesome_5_free_solid_900.otf" />
+    <None Remove="EmbeddedFiles\Fonts\mk_title.ttf" />
+    <None Remove="EmbeddedFiles\mk_background_1.jpg" />
+    <None Remove="EmbeddedFiles\mk_background_2.jpg" />
+    <None Remove="EmbeddedFiles\mk_background_3.jpg" />
+    <None Remove="EmbeddedFiles\mk_background_4.jpg" />
+    <None Remove="EmbeddedFiles\mk_background_5.png" />
+    <None Remove="EmbeddedFiles\mk_ermak.png" />
+    <None Remove="EmbeddedFiles\mk_goro.png" />
+    <None Remove="EmbeddedFiles\mk_kano.png" />
+    <None Remove="EmbeddedFiles\mk_kenshi.png" />
+    <None Remove="EmbeddedFiles\mk_kitana.png" />
+    <None Remove="EmbeddedFiles\mk_liu_kang.png" />
+    <None Remove="EmbeddedFiles\mk_quan_chi.png" />
+    <None Remove="EmbeddedFiles\mk_raiden.png" />
+    <None Remove="EmbeddedFiles\mk_scorpion.png" />
+    <None Remove="EmbeddedFiles\mk_sub_zero.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="EmbeddedFiles\Fonts\font_awesome_5_free_solid_900.otf" />
+    <EmbeddedResource Include="EmbeddedFiles\Fonts\mk_title.ttf" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\mk_background_1.jpg" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\mk_background_2.jpg" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\mk_background_3.jpg" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\mk_background_4.jpg" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\mk_background_5.png" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\mk_ermak.png" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\mk_goro.png" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\mk_kano.png" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\mk_kenshi.png" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\mk_kitana.png" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\mk_liu_kang.png" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\mk_quan_chi.png" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\mk_raiden.png" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\mk_scorpion.png" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\mk_sub_zero.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Fody" Version="6.2.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -23,14 +63,31 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="EmbeddedFiles\mk_background_1.jpg" />
+    <Resource Include="EmbeddedFiles\mk_background_2.jpg" />
+    <Resource Include="EmbeddedFiles\mk_background_3.jpg" />
+    <Resource Include="EmbeddedFiles\mk_background_4.jpg" />
+    <Resource Include="EmbeddedFiles\mk_ermak.png" />
+    <Resource Include="EmbeddedFiles\mk_goro.png" />
+    <Resource Include="EmbeddedFiles\mk_kano.png" />
+    <Resource Include="EmbeddedFiles\mk_kenshi.png" />
+    <Resource Include="EmbeddedFiles\mk_kitana.png" />
+    <Resource Include="EmbeddedFiles\mk_liu_kang.png" />
+    <Resource Include="EmbeddedFiles\mk_quan_chi.png" />
+    <Resource Include="EmbeddedFiles\mk_raiden.png" />
+    <Resource Include="EmbeddedFiles\mk_scorpion.png" />
+    <Resource Include="EmbeddedFiles\mk_sub_zero.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Abstractions\BaseContentPage.xaml.cs">
       <DependentUpon>BaseContentPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\ControlsPages\GradientProgressBarPages\GradientProgressBarExperiment1Page.xaml.cs">
       <DependentUpon>GradientProgressBarExperiment1Page.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\DesignsPages\HorizontalParallaxPage.xaml.cs">
-      <DependentUpon>HorizontalParallaxPage.xaml</DependentUpon>
+    <Compile Update="Views\DesignsPages\HorizontalParallaxCarouselPage.xaml.cs">
+      <DependentUpon>HorizontalParallaxCarouselPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -89,7 +146,7 @@
     <EmbeddedResource Update="Views\DesignsPages\DesignsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\DesignsPages\HorizontalParallaxPage.xaml">
+    <EmbeddedResource Update="Views\DesignsPages\HorizontalParallaxCarouselPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
