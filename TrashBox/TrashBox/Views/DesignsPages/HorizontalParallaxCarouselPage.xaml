@@ -100,6 +100,7 @@
                     FontSize="25"
                     HorizontalTextAlignment="Center"
                     VerticalTextAlignment="Center"
+                    InputTransparent="True"
                     Grid.Column="0"
                     Grid.ColumnSpan="2" />
             </Grid>

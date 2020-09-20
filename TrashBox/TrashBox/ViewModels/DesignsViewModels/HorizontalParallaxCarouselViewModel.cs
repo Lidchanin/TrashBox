@@ -83,9 +83,7 @@ namespace TrashBox.ViewModels.DesignsViewModels
             };
         }
 
-        private static async Task GoBackAsync()
-        {
+        private static async Task GoBackAsync() =>
             await ShellNavigationHelper.PopAsync();
-        }
     }
 }
