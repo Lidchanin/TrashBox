@@ -90,19 +90,6 @@
 
         public static class Links
         {
-            public const string AppIcon = "https://www.flaticon.com/free-icon/recycle_702626";
-            public const string DonutChartIcon = "https://www.flaticon.com/free-icon/donut-chart_483637";
-            public const string AboutUsIcon = "https://www.flaticon.com/free-icon/about-us_15659";
-            public const string BrokenFileIcon = "https://www.flaticon.com/free-icon/file_2442628";
-            public const string CarIcon = "https://www.flaticon.com/free-icon/car_2087658";
-            public const string MealIcon = "https://www.flaticon.com/free-icon/serving-dish_2316824";
-            public const string CocktailIcon = "https://www.flaticon.com/free-icon/cocktail_637097";
-            public const string PlaneIcon = "https://www.flaticon.com/free-icon/plane_723955";
-            public const string ShirtIcon = "https://www.flaticon.com/free-icon/shirt_731509";
-            public const string NoBorderIcon = "https://www.flaticon.com/free-icon/no-border_787212";
-            public const string ProgressBarIcon = "https://www.flaticon.com/free-icon/progress-bar_107087";
-            public const string RadialProgressBarIcon = "https://www.flaticon.com/free-icon/half-circumference_1067";
-
             public const string IconsGenerator = "https://www.iconsgenerator.com/Home/AppIcons";
         }
     }

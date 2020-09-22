@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ResourceDictionary
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TrashBox.Themes.DarkTheme">
+
+    <!--#region Colors-->
+
+    <Color x:Key="PageBackgroundColor">#1E1E1E</Color>
+
+    <Color x:Key="TabBarBackgroundColor">DarkSlateGray</Color>
+    <Color x:Key="TabBarTitleColor">LightGray</Color>
+    <Color x:Key="TabBarUnselectedColor">Black</Color>
+    <Color x:Key="NavBarTitleColor">LightGray</Color>
+    <Color x:Key="NavBarBackgroundColor">DarkSlateGray</Color>
+    <Color x:Key="TopTabBarBackgroundColor">DimGray</Color>
+    <Color x:Key="TopTabBarSelectedColor">White</Color>
+    <Color x:Key="TopTabTabUnselectedColor">#0B0B0B</Color>
+
+    <!--#endregion Colors-->
+</ResourceDictionary>

@@ -7,11 +7,51 @@
     x:Class="TrashBox.App">
     <Application.Resources>
 
+        <ResourceDictionary Source="Themes/DarkTheme.xaml" />
+
         <!--#region Colors-->
 
-        <Color x:Key="BrilliantSilverColor">#a9b0b4</Color>
+        <Color x:Key="BrilliantSilverColor">#A9B0B4</Color>
 
         <!--#endregion Colors-->
+
+        <!--#region Styles-->
+
+        <!--#region Shell Styles-->
+
+        <Style x:Key="BaseShellStyle" TargetType="Shell">
+
+            <Setter Property="TabBarBackgroundColor" Value="{DynamicResource TabBarBackgroundColor}" />
+            <Setter Property="TabBarTitleColor" Value="{DynamicResource TabBarTitleColor}" />
+            <Setter Property="TabBarUnselectedColor" Value="{DynamicResource TabBarUnselectedColor}" />
+            <Setter Property="TitleColor" Value="{DynamicResource NavBarTitleColor}" />
+            <Setter Property="ForegroundColor" Value="{DynamicResource NavBarTitleColor}" />
+            <Setter Property="BackgroundColor" Value="{DynamicResource NavBarBackgroundColor}" />
+        </Style>
+
+        <!--#endregion Shell Styles-->
+
+        <!--#region TabbedPage Styles-->
+
+        <Style x:Key="BaseTabbedPageStyle" TargetType="TabbedPage">
+
+            <Setter Property="BarBackgroundColor" Value="{DynamicResource TopTabBarBackgroundColor}" />
+            <Setter Property="SelectedTabColor" Value="{DynamicResource TopTabBarSelectedColor}" />
+            <Setter Property="UnselectedTabColor" Value="{DynamicResource TopTabTabUnselectedColor}" />
+        </Style>
+
+        <!--#endregion TabbedPage Styles-->
+
+        <!--#region ContentPage Styles-->
+
+        <Style x:Key="BaseContentPageStyle" TargetType="ContentPage">
+
+            <Setter Property="BackgroundColor" Value="{DynamicResource PageBackgroundColor}" />
+        </Style>
+
+        <!--#endregion ContentPage Styles-->
+
+        <!--#endregion Styles-->
 
         <!--#region Converters-->
 

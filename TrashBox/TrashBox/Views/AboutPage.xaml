@@ -4,36 +4,12 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:abstractions="clr-namespace:TrashBox.Abstractions;assembly=TrashBox"
-    xmlns:controls="clr-namespace:TrashBox.Controls;assembly=TrashBox"
     xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
     xmlns:viewModels="clr-namespace:TrashBox.ViewModels;assembly=TrashBox"
-    xmlns:models="clr-namespace:TrashBox.Models;assembly=TrashBox"
     x:Class="TrashBox.Views.AboutPage"
     x:DataType="viewModels:AboutViewModel"
     Title="{x:Static helpers:Constants+Texts.About}">
 
     <abstractions:BaseContentPage.Content>
-
-        <CollectionView
-            ItemsSource="{Binding AboutItems}"
-            SelectionMode="None">
-            <CollectionView.ItemTemplate>
-
-                <DataTemplate x:DataType="models:AboutItem">
-
-                    <Grid RowSpacing="0">
-                        <Grid.RowDefinitions>
-
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="10" />
-                        </Grid.RowDefinitions>
-
-                        <controls:AboutItemView
-                            Filename="{Binding Filename}"
-                            Text="{Binding Link}" />
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
     </abstractions:BaseContentPage.Content>
 </abstractions:BaseContentPage>

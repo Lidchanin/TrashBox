@@ -3,6 +3,21 @@
 <TabbedPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="TrashBox.Abstractions.BaseTabbedPage">
+    xmlns:enums="clr-namespace:TrashBox.Enums;assembly=TrashBox"
+    x:Class="TrashBox.Abstractions.BaseTabbedPage"
+    x:Name="BasePage"
+    Style="{StaticResource BaseTabbedPageStyle}">
 
+    <TabbedPage.ToolbarItems>
+
+        <ToolbarItem
+            Text="D"
+            Command="{Binding Source={x:Reference BasePage}, Path=ChangeThemeCommand}"
+            CommandParameter="{x:Static enums:Themes.Dark}" />
+
+        <ToolbarItem
+            Text="L"
+            Command="{Binding Source={x:Reference BasePage}, Path=ChangeThemeCommand}"
+            CommandParameter="{x:Static enums:Themes.Light}" />
+    </TabbedPage.ToolbarItems>
 </TabbedPage>
