@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using TrashBox.Abstractions;
 using TrashBox.Helpers;
-using TrashBox.Views.DesignsPages;
+using TrashBox.Views.DesignsPages.MKDemo;
 using Xamarin.Forms;
 
 namespace TrashBox.ViewModels.DesignsViewModels
@@ -12,7 +12,7 @@ namespace TrashBox.ViewModels.DesignsViewModels
     {
         public enum DesignsPages
         {
-            HorizontalParallaxCarousel
+            MKDemo
         }
 
         public ICommand GoToPageCommand { get; }
@@ -35,9 +35,9 @@ namespace TrashBox.ViewModels.DesignsViewModels
             {
                 switch (page)
                 {
-                    case DesignsPages.HorizontalParallaxCarousel:
+                    case DesignsPages.MKDemo:
                     {
-                        await ShellNavigationHelper.GoToAsync(nameof(HorizontalParallaxCarouselPage));
+                        await ShellNavigationHelper.GoToAsync(nameof(MKDemoPage));
 
                         break;
                     }

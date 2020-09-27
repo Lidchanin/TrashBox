@@ -7,7 +7,9 @@ namespace TrashBox.Abstractions
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected static IThemeService ThemeService => ThemesService.Instance;
+        protected static IPopupService PopupService => Services.PopupService.Instance;
+
+        protected static IThemeService ThemesService => Services.ThemesService.Instance;
 
         protected bool IsBusy { get; set; }
     }

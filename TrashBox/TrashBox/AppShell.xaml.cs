@@ -1,7 +1,7 @@
 ﻿using TrashBox.Views.ControlsPages.DonutChartPages;
 using TrashBox.Views.ControlsPages.GradientProgressBarPages;
 using TrashBox.Views.ControlsPages.GradientRadialProgressBarPages;
-using TrashBox.Views.DesignsPages;
+using TrashBox.Views.DesignsPages.MKDemo;
 using Xamarin.Forms;
 
 namespace TrashBox
@@ -20,23 +20,30 @@ namespace TrashBox
             Routing.RegisterRoute(nameof(DonutChartTabbedPage), typeof(DonutChartTabbedPage));
             Routing.RegisterRoute(nameof(DonutChartExperimentPage), typeof(DonutChartExperimentPage));
 
-            Routing.RegisterRoute(nameof(GradientRadialProgressBarTabbedPage), typeof(GradientRadialProgressBarTabbedPage));
-            Routing.RegisterRoute(nameof(GradientRadialProgressBarVariant1Page), typeof(GradientRadialProgressBarVariant1Page));
-            Routing.RegisterRoute(nameof(GradientRadialProgressBarVariant2Page), typeof(GradientRadialProgressBarVariant2Page));
-            Routing.RegisterRoute(nameof(GradientRadialProgressBarVariant3Page), typeof(GradientRadialProgressBarVariant3Page));
-            Routing.RegisterRoute(nameof(GradientRadialProgressBarExperimentPage), typeof(GradientRadialProgressBarExperimentPage));
+            Routing.RegisterRoute(nameof(GradientRadialProgressBarTabbedPage),
+                typeof(GradientRadialProgressBarTabbedPage));
+            Routing.RegisterRoute(nameof(GradientRadialProgressBarVariant1Page),
+                typeof(GradientRadialProgressBarVariant1Page));
+            Routing.RegisterRoute(nameof(GradientRadialProgressBarVariant2Page),
+                typeof(GradientRadialProgressBarVariant2Page));
+            Routing.RegisterRoute(nameof(GradientRadialProgressBarVariant3Page),
+                typeof(GradientRadialProgressBarVariant3Page));
+            Routing.RegisterRoute(nameof(GradientRadialProgressBarExperimentPage),
+                typeof(GradientRadialProgressBarExperimentPage));
 
             Routing.RegisterRoute(nameof(GradientProgressBarTabbedPage), typeof(GradientProgressBarTabbedPage));
             Routing.RegisterRoute(nameof(GradientProgressBarVariant1Page), typeof(GradientProgressBarVariant1Page));
             Routing.RegisterRoute(nameof(GradientProgressBarVariant2Page), typeof(GradientProgressBarVariant2Page));
-            Routing.RegisterRoute(nameof(GradientProgressBarExperiment1Page), typeof(GradientProgressBarExperiment1Page));
-            Routing.RegisterRoute(nameof(GradientProgressBarExperiment2Page), typeof(GradientProgressBarExperiment2Page));
+            Routing.RegisterRoute(nameof(GradientProgressBarExperiment1Page),
+                typeof(GradientProgressBarExperiment1Page));
+            Routing.RegisterRoute(nameof(GradientProgressBarExperiment2Page),
+                typeof(GradientProgressBarExperiment2Page));
 
             #endregion Controls Routes
 
             #region Designs Rotes
 
-            Routing.RegisterRoute(nameof(HorizontalParallaxCarouselPage), typeof(HorizontalParallaxCarouselPage));
+            Routing.RegisterRoute(nameof(MKDemoPage), typeof(MKDemoPage));
 
             #endregion Designs Rotes
         }
@@ -64,7 +71,7 @@ namespace TrashBox
 
             #region Designs Routes
 
-            Routing.UnRegisterRoute(nameof(HorizontalParallaxCarouselPage));
+            Routing.UnRegisterRoute(nameof(MKDemoPage));
 
             #endregion Designs Routes
         }

@@ -22,19 +22,39 @@
             public const string RadialProgressBars = "Radial Progress Bars";
             public const string HorizontalParallaxCarousel = "Horizontal Parallax Carousel";
             public const string Back = "Back";
+            public const string Select = "Select";
+            public const string DoYouWantToGoOut = "Do you want to go out?";
 
-            public const string Ermak = "Ermak";
-            public const string Goro = "Goro";
-            public const string Kano = "Kano";
-            public const string Kenshi = "Kenshi";
-            public const string Kitana = "Kitana";
-            public const string LiuKang = "Liu Kang";
-            public const string QuanChi = "Quan Chi";
-            public const string Raiden = "Raiden";
-            public const string Scorpion = "Scorpion";
-            public const string SubZero = "Sub-Zero";
-            public const string ChooseYourFighter = "Choose Your Fighter";
+            #region MKDemo
+
             public const string MKDemo = "MK Demo";
+            public const string Ermak = "Ermak";
+            public const string ErmakInfo = "When a teammate is defeated, gain 40% of their attack and toughness. Max once per match.";
+            public const string ErronBlack = "Erron Black";
+            public const string ErronBlackInfo = "+30% attack vs Spec Ops. Archieving 80%+ on Stand Off (special attack 2) makes it unblockable and a critical hit.";
+            public const string JohnnyCage = "Johnny Cage";
+            public const string JohnnyCageInfo = "Stunt double attacks on tag-in, stunning the opponent.";
+            public const string Kano = "Kano";
+            public const string KanoInfo = "+30% attack if the opponent has 40% or lower health.";
+            public const string Kenshi = "Kenshi";
+            public const string KenshiInfo = "All Spec Ops teammates start with +1 bar of power.";
+            public const string Kitana = "Kitana";
+            public const string KitanaInfo = "Ambushes opponent on tag-in with vicious stabs cousing bleed for 15 seconds. Assassin Characters generate 30% more power.";
+            public const string KungLao = "Kung Lao";
+            public const string KungLaoInfo = "All Bronze teammates receive +300% attack, health, toughness, and recovery.";
+            public const string LiuKang = "Liu Kang";
+            public const string LiuKangInfo = "On tag-in, Liu Kang receives a speed increase. +100% basic attack damage, and +25% critical hit chance for 5 seconds.";
+            public const string QuanChi = "Quan Chi";
+            public const string QuanChiInfo = "Re-animates a dead teammate with 25% health. Usable once per fight.";
+            public const string Raiden = "Raiden";
+            public const string RaidenInfo = "When Raiden tags-in, lightning strikes the opponent removing 20% of their current health.";
+            public const string Scorpion = "Scorpion";
+            public const string ScorpionInfo = "Each time Inferno Scorpion tags-in, he gets +200% basic attack damage for 6 seconds.";
+            public const string SubZero = "Sub-Zero";
+            public const string SubZeroInfo = "+30% health for Martial Artist teammates.";
+            public const string ChooseYourFighter = "Choose Your Fighter";
+
+            #endregion MKDemo
         }
 
         public static class Filenames
@@ -58,21 +78,25 @@
         {
             private const string BasePath = "TrashBox.EmbeddedFiles.Images.";
 
-            public const string MKBackground1 = BasePath + "mk_background_1.jpg";
-            public const string MKBackground2 = BasePath + "mk_background_2.jpg";
-            public const string MKBackground3 = BasePath + "mk_background_3.jpg";
-            public const string MKBackground4 = BasePath + "mk_background_4.jpg";
-            public const string MKBackground5 = BasePath + "mk_background_5.png";
+            public const string BackboardBackground = BasePath + "backboard_background.jpg";
+
+            #region MKDemo
+
             public const string MKErmak = BasePath + "mk_ermak.png";
-            public const string MKGoro = BasePath + "mk_goro.png";
+            public const string MKErronBlack = BasePath + "mk_erron_black.png";
+            public const string MKJohnnyCage = BasePath + "mk_johnny_cage.png";
             public const string MKKano = BasePath + "mk_kano.png";
             public const string MKKenshi = BasePath + "mk_kenshi.png";
             public const string MKKitana = BasePath + "mk_kitana.png";
+            public const string MKKungLao = BasePath + "mk_kung_lao.png";
             public const string MKLiuKang = BasePath + "mk_liu_kang.png";
             public const string MKQuanChi = BasePath + "mk_quan_chi.png";
             public const string MKRaiden = BasePath + "mk_raiden.png";
             public const string MKScorpion = BasePath + "mk_scorpion.png";
             public const string MKSubZero = BasePath + "mk_sub_zero.png";
+            public const string MKLogo = BasePath + "mk_logo.png";
+
+            #endregion MKDemo
         }
 
         public static class EmbeddedFonts
@@ -80,17 +104,21 @@
             private const string BasePath = "TrashBox.EmbeddedFiles.Fonts.";
 
             public const string MKTitle = BasePath + "mk_title.ttf";
+            public const string MK4 = BasePath + "mk_4.ttf";
             public const string FontAwesomeSolid = BasePath + "font_awesome_5_free_solid_900.otf";
         }
 
         public static class FontAwesomeIcons
         {
             public const string Skull = "\uf54c";
+            public const string Question = "\uf128";
         }
 
         public static class Links
         {
             public const string IconsGenerator = "https://www.iconsgenerator.com/Home/AppIcons";
+            public const string PngOptimizer = "https://tinypng.com/";
+            public const string SvgPathBuilder = "https://mavo.io/demos/svgpath/";
         }
     }
 }

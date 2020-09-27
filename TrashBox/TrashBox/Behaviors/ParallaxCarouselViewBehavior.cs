@@ -64,10 +64,10 @@ namespace TrashBox.Behaviors
                     var position = offset * ParallaxOffset / carouselWidth - ParallaxOffset;
 
                     var lastItem = carouselItems[lastItemIndex];
-                    lastItem.Position = position + ParallaxOffset;
+                    lastItem.ParallaxTranslation = position + ParallaxOffset;
 
                     var currentItem = carouselItems[centerItemIndex];
-                    currentItem.Position = position;
+                    currentItem.ParallaxTranslation = position;
 
                     break;
                 }
@@ -79,10 +79,10 @@ namespace TrashBox.Behaviors
                     var position = offset * ParallaxOffset / carouselHeight - ParallaxOffset;
 
                     var lastItem = carouselItems[lastItemIndex];
-                    lastItem.Position = position + ParallaxOffset;
+                    lastItem.ParallaxTranslation = position + ParallaxOffset;
 
                     var currentItem = carouselItems[centerItemIndex];
-                    currentItem.Position = position;
+                    currentItem.ParallaxTranslation = position;
 
                     break;
                 }

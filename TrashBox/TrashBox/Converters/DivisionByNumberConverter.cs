@@ -4,7 +4,7 @@ using Xamarin.Forms;
 
 namespace TrashBox.Converters
 {
-    public class DivideByNumberConverter : IValueConverter
+    public class DivisionByNumberConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

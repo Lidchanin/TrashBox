@@ -21,9 +21,12 @@ namespace TrashBox.Droid
 
             base.OnCreate(savedInstanceState);
 
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
+            Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
             Platform.Init(this, savedInstanceState);
             Forms.Init(this, savedInstanceState);
+
             LoadApplication(new App());
         }
 
@@ -33,6 +36,13 @@ namespace TrashBox.Droid
             Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        public override void OnBackPressed()
+        {
+            if (Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed))
+            {
+            }
         }
     }
 }

@@ -12,6 +12,7 @@
         <!--#region Colors-->
 
         <Color x:Key="BrilliantSilverColor">#A9B0B4</Color>
+        <Color x:Key="BlackCoffeeColor">#1D1817</Color>
 
         <!--#endregion Colors-->
 
@@ -55,9 +56,11 @@
 
         <!--#region Converters-->
 
-        <converters:DivideByNumberConverter x:Key="DivideByNumberConverter" />
-        <converters:MultiplyByNumberConverter x:Key="MultiplyByNumberConverter" />
+        <converters:NumberSignChangingConverter x:Key="NumberSignChangingConverter" />
+        <converters:DivisionByNumberConverter x:Key="DivisionByNumberConverter" />
+        <converters:MultiplicationByNumberConverter x:Key="MultiplicationByNumberConverter" />
         <converters:ImageResourceToImageSourceConverter x:Key="ImageResourceToImageSourceConverter" />
+        <converters:ImageResourceToResourceNameConverter x:Key="ImageResourceToResourceNameConverter" />
 
         <!--#endregion Converters-->
     </Application.Resources>

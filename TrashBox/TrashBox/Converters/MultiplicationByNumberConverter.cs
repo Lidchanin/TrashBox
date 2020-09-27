@@ -4,7 +4,7 @@ using Xamarin.Forms;
 
 namespace TrashBox.Converters
 {
-    public class MultiplyByNumberConverter : IValueConverter
+    public class MultiplicationByNumberConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

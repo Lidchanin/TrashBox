@@ -8,7 +8,22 @@
 
   <ItemGroup>
     <None Remove="EmbeddedFiles\Fonts\font_awesome_5_free_solid_900.otf" />
+    <None Remove="EmbeddedFiles\Fonts\mk_4.ttf" />
     <None Remove="EmbeddedFiles\Fonts\mk_title.ttf" />
+    <None Remove="EmbeddedFiles\Images\backboard_background.jpg" />
+    <None Remove="EmbeddedFiles\Images\mk_ermak.png" />
+    <None Remove="EmbeddedFiles\Images\mk_erron_black.png" />
+    <None Remove="EmbeddedFiles\Images\mk_johnny_cage.png" />
+    <None Remove="EmbeddedFiles\Images\mk_kano.png" />
+    <None Remove="EmbeddedFiles\Images\mk_kenshi.png" />
+    <None Remove="EmbeddedFiles\Images\mk_kitana.png" />
+    <None Remove="EmbeddedFiles\Images\mk_kung_lao.png" />
+    <None Remove="EmbeddedFiles\Images\mk_liu_kang.png" />
+    <None Remove="EmbeddedFiles\Images\mk_logo.png" />
+    <None Remove="EmbeddedFiles\Images\mk_quan_chi.png" />
+    <None Remove="EmbeddedFiles\Images\mk_raiden.png" />
+    <None Remove="EmbeddedFiles\Images\mk_scorpion.png" />
+    <None Remove="EmbeddedFiles\Images\mk_sub_zero.png" />
     <None Remove="EmbeddedFiles\mk_background_1.jpg" />
     <None Remove="EmbeddedFiles\mk_background_2.jpg" />
     <None Remove="EmbeddedFiles\mk_background_3.jpg" />
@@ -28,18 +43,18 @@
 
   <ItemGroup>
     <EmbeddedResource Include="EmbeddedFiles\Fonts\font_awesome_5_free_solid_900.otf" />
+    <EmbeddedResource Include="EmbeddedFiles\Fonts\mk_4.ttf" />
     <EmbeddedResource Include="EmbeddedFiles\Fonts\mk_title.ttf" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\mk_background_1.jpg" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\mk_background_2.jpg" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\mk_background_3.jpg" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\mk_background_4.jpg" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\mk_background_5.png" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\backboard_background.jpg" />
     <EmbeddedResource Include="EmbeddedFiles\Images\mk_ermak.png" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\mk_goro.png" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\mk_erron_black.png" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\mk_johnny_cage.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\mk_kano.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\mk_kenshi.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\mk_kitana.png" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\mk_kung_lao.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\mk_liu_kang.png" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\mk_logo.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\mk_quan_chi.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\mk_raiden.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\mk_scorpion.png" />
@@ -53,9 +68,18 @@
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json" Version="8.0.3" />
     <PackageReference Include="PropertyChanged.Fody" Version="3.2.9" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.5" />
     <PackageReference Include="SkiaSharp.Views.Forms" Version="2.80.2" />
+    <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1364" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Xamarin.Forms.Platform.iOS">
+      <HintPath>..\..\..\..\..\.nuget\packages\xamarin.forms\4.8.0.1364\buildTransitive\XCODE11\Xamarin.Forms.Platform.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>
@@ -82,13 +106,19 @@
     <Compile Update="Views\ControlsPages\GradientProgressBarPages\GradientProgressBarExperiment1Page.xaml.cs">
       <DependentUpon>GradientProgressBarExperiment1Page.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\DesignsPages\HorizontalParallaxCarouselPage.xaml.cs">
-      <DependentUpon>HorizontalParallaxCarouselPage.xaml</DependentUpon>
+    <Compile Update="Views\DesignsPages\MKDemo\MKDemoCell.xaml.cs">
+      <DependentUpon>MKDemoCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\DesignsPages\MKDemo\MKDemoPage.xaml.cs">
+      <DependentUpon>MKDemoPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="Abstractions\BaseContentPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Abstractions\BasePopup.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Abstractions\BaseTabbedPage.xaml">
@@ -148,7 +178,10 @@
     <EmbeddedResource Update="Views\DesignsPages\DesignsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\DesignsPages\HorizontalParallaxCarouselPage.xaml">
+    <EmbeddedResource Update="Views\DesignsPages\MKDemo\MKDemoCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DesignsPages\MKDemo\MKDemoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

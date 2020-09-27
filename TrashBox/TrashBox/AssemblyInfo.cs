@@ -7,6 +7,7 @@ using Xamarin.Forms.Xaml;
 #region Fonts
 
 [assembly: ExportFont(Constants.EmbeddedFonts.MKTitle)]
+[assembly: ExportFont(Constants.EmbeddedFonts.MK4)]
 [assembly: ExportFont(Constants.EmbeddedFonts.FontAwesomeSolid)]
 
 #endregion Fonts

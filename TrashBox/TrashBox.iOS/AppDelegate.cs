@@ -20,7 +20,10 @@ namespace TrashBox.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            Rg.Plugins.Popup.Popup.Init();
             Forms.Init();
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

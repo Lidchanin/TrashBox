@@ -19,7 +19,7 @@
             <Button
                 Text="{x:Static helpers:Constants+Texts.HorizontalParallaxCarousel}"
                 Command="{Binding GoToPageCommand}"
-                CommandParameter="{x:Static designsViewModels:DesignsViewModel+DesignsPages.HorizontalParallaxCarousel}" />
+                CommandParameter="{x:Static designsViewModels:DesignsViewModel+DesignsPages.MKDemo}" />
         </StackLayout>
     </abstractions:BaseContentPage.Content>
 </abstractions:BaseContentPage>
