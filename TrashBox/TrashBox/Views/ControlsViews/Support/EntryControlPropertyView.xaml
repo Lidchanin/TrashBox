@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:support="clr-namespace:TrashBox.Views.ControlsViews.Support;assembly=TrashBox"
+    x:Class="TrashBox.Views.ControlsViews.Support.EntryControlPropertyView"
+    x:Name="View"
+    x:FieldModifier="private">
+
+    <ContentView.Resources>
+
+        <Style x:Key="LocalEntryStyle" TargetType="Entry">
+
+            <Setter Property="TextColor" Value="{DynamicResource ControlsPropertyViewTextColor}" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
+    </ContentView.Resources>
+
+    <ContentView.Content>
+
+        <support:BaseControlPropertyView Title="{Binding Source={x:Reference View}, Path=Title}">
+            <support:BaseControlPropertyView.InnerView>
+
+                <Entry
+                    Style="{StaticResource LocalEntryStyle}"
+                    Text="{Binding Source={x:Reference View}, Path=Value}"
+                    Placeholder="{Binding Source={x:Reference View}, Path=Placeholder}" />
+            </support:BaseControlPropertyView.InnerView>
+        </support:BaseControlPropertyView>
+    </ContentView.Content>
+</ContentView>

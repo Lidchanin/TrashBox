@@ -1,9 +1,11 @@
 ﻿using SkiaSharp;
 using SkiaSharp.Views.Forms;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+using TrashBox.Models;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -17,13 +19,13 @@ namespace TrashBox.Controls.DonutChart
 
         public static readonly BindableProperty ItemsSourceProperty = BindableProperty.Create(
             nameof(ItemsSource),
-            typeof(IList<DonutChartItem>),
+            typeof(IEnumerable),
             typeof(DonutChartView),
             propertyChanged: OnChartChanged);
 
-        public ObservableCollection<DonutChartItem> ItemsSource
+        public ObservableCollection<ExpenseChartItem> ItemsSource
         {
-            get => (ObservableCollection<DonutChartItem>) GetValue(ItemsSourceProperty);
+            get => (ObservableCollection<ExpenseChartItem>) GetValue(ItemsSourceProperty);
             set => SetValue(ItemsSourceProperty, value);
         }
 
@@ -389,8 +391,6 @@ namespace TrashBox.Controls.DonutChart
             Touch += DonutChartView_Touch;
         }
 
-        #region Private methods
-
         private static void OnChartChanged(BindableObject bindable, object oldValue, object newValue)
         {
             InvalidateSurface((SKCanvasView) bindable);
@@ -497,48 +497,28 @@ namespace TrashBox.Controls.DonutChart
 
                 if (ItemsSource == null || ItemsSource.Count == 0)
                 {
-                    DrawEmptyState(canvas, outerRadius, innerRadius);
+                    DonutChartHelper.DrawEmptyState(canvas, outerRadius, innerRadius, EmptyStateColor.ToSKColor());
                 }
                 else
                 {
-                    DrawSectors(canvas, outerRadius, innerRadius);
+                    DonutChartHelper.DrawSectors(canvas, outerRadius, innerRadius, ItemsSource);
                 }
 
-                DrawHole(canvas, innerRadius);
+                DonutChartHelper.DrawHole(canvas, innerRadius, HoleColor.ToSKColor());
 
-                DrawTextInHole(canvas, innerRadius);
+                DonutChartHelper.DrawTextInHole(canvas, innerRadius, HolePrimaryTextScale, HoleSecondaryTextScale,
+                    HolePrimaryText, HoleSecondaryText, HolePrimaryTextColor.ToSKColor(),
+                    HoleSecondaryTextColor.ToSKColor());
 
-                DrawSeparators(canvas, outerRadius, innerRadius);
+                DonutChartHelper.DrawSeparators(canvas, outerRadius, innerRadius, SeparatorsColor.ToSKColor(),
+                    SeparatorsWidth, ItemsSource);
 
                 if (DescriptionCircleRadius > 0)
                 {
-                    DrawDescriptions(canvas, outerRadius);
+                    DonutChartHelper.DrawDescriptions(canvas, outerRadius, SeparatorsColor.ToSKColor(), SeparatorsWidth,
+                        ItemsSource, DescriptionCircleRadius, LineToCircleLength);
                 }
             }
         }
-
-        private void DrawEmptyState(SKCanvas canvas, float outerRadius, float innerRadius) =>
-            DonutChartHelper.DrawEmptyState(canvas, outerRadius, innerRadius, EmptyStateColor.ToSKColor());
-
-        private void DrawSectors(SKCanvas canvas, float outerRadius, float innerRadius) =>
-            DonutChartHelper.DrawSectors(canvas, outerRadius, innerRadius, ItemsSource);
-
-        private void DrawSeparators(SKCanvas canvas, float outerRadius, float innerRadius) =>
-            DonutChartHelper.DrawSeparators(canvas, outerRadius, innerRadius, SeparatorsColor.ToSKColor(),
-                SeparatorsWidth, ItemsSource);
-
-        private void DrawHole(SKCanvas canvas, float innerRadius) =>
-            DonutChartHelper.DrawHole(canvas, innerRadius, HoleColor.ToSKColor());
-
-        private void DrawTextInHole(SKCanvas canvas, float innerRadius) =>
-            DonutChartHelper.DrawTextInHole(canvas, innerRadius, HolePrimaryTextScale, HoleSecondaryTextScale,
-                HolePrimaryText, HoleSecondaryText, HolePrimaryTextColor.ToSKColor(),
-                HoleSecondaryTextColor.ToSKColor());
-
-        private void DrawDescriptions(SKCanvas canvas, float outerRadius) =>
-            DonutChartHelper.DrawDescriptions(canvas, outerRadius, SeparatorsColor.ToSKColor(), SeparatorsWidth,
-                ItemsSource, DescriptionCircleRadius, LineToCircleLength);
-
-        #endregion Private methods
     }
 }

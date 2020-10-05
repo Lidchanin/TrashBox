@@ -1,8 +1,10 @@
 ﻿using SkiaSharp;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using TrashBox.DependencyServices;
+using TrashBox.Models;
 using Xamarin.Forms;
 
 namespace TrashBox.Controls.DonutChart
@@ -46,7 +48,7 @@ namespace TrashBox.Controls.DonutChart
         }
 
         internal static void DrawSeparators(SKCanvas canvas, float outerRadius, float innerRadius,
-            SKColor separatorsColor, float separatorsWidth, IList<DonutChartItem> itemsSource)
+            SKColor separatorsColor, float separatorsWidth, ObservableCollection<ExpenseChartItem> itemsSource)
         {
             if (separatorsWidth <= 0 || separatorsColor == SKColors.Transparent)
             {
@@ -87,7 +89,7 @@ namespace TrashBox.Controls.DonutChart
         }
 
         internal static void DrawSectors(SKCanvas canvas, float outerRadius, float innerRadius,
-            IList<DonutChartItem> itemsSource)
+            ObservableCollection<ExpenseChartItem> itemsSource)
         {
             if (itemsSource == null)
             {
@@ -121,7 +123,7 @@ namespace TrashBox.Controls.DonutChart
         }
 
         internal static void DrawDescriptions(SKCanvas canvas, float outerRadius, SKColor separatorsColor,
-            float separatorsWidth, IList<DonutChartItem> itemsSource, float circleRadius, float lineToCircleLength)
+            float separatorsWidth, ObservableCollection<ExpenseChartItem> itemsSource, float circleRadius, float lineToCircleLength)
         {
             if (itemsSource == null || circleRadius <= 0)
             {

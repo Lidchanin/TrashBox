@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using TrashBox.Abstractions;
+using TrashBox.Models;
 using Xamarin.Forms;
 
 namespace TrashBox.Behaviors

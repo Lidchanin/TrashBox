@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace TrashBox.Abstractions
+namespace TrashBox.Models
 {
     public abstract class BaseParallaxCarouselItem : INotifyPropertyChanged
     {

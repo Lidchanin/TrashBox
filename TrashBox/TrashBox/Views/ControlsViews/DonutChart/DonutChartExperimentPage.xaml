@@ -18,8 +18,8 @@
             <support:ControlExperimentView.ControlPreviewView>
 
                 <donutChart:DonutChartView
-                    ItemsSource="{Binding ChartItems}"
-                    HolePrimaryText="Total"
+                    ItemsSource="{Binding Expenses}"
+                    HolePrimaryText="{Binding HolePrimaryText}"
                     HoleSecondaryText="{Binding TotalValue}"
                     HoleCommand="{Binding HoleTouchCommand}"
                     SectorCommand="{Binding SectorTouchCommand}"
@@ -30,7 +30,9 @@
                     SeparatorsColor="Black"
                     DescriptionCircleRadius="{Binding DescriptionCircleRadius}"
                     LineToCircleLength="{Binding LineToCircleLength}"
-                    InnerMargin="{Binding InnerMargin}" />
+                    InnerMargin="{Binding InnerMargin}"
+                    HolePrimaryTextScale="{Binding HolePrimaryTextScale}"
+                    HoleSecondaryTextScale="{Binding HoleSecondaryTextScale}" />
             </support:ControlExperimentView.ControlPreviewView>
             <support:ControlExperimentView.ControlPropertiesView>
 
@@ -38,6 +40,9 @@
                     RowSpacing="10">
                     <Grid.RowDefinitions>
 
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
@@ -86,6 +91,26 @@
                         PositiveCommand="{Binding AddSectorCommand}"
                         NegativeCommand="{Binding RemoveSectorCommand}"
                         Grid.Row="5" />
+
+                    <support:SliderControlPropertyView
+                        Title="HolePrimaryTextScale"
+                        Value="{Binding HolePrimaryTextScale}"
+                        Minimum="0"
+                        Maximum="1"
+                        Grid.Row="6" />
+
+                    <support:SliderControlPropertyView
+                        Title="HoleSecondaryTextScale"
+                        Value="{Binding HoleSecondaryTextScale}"
+                        Minimum="0"
+                        Maximum="1"
+                        Grid.Row="7" />
+
+                    <support:EntryControlPropertyView
+                        Title="Primary Text"
+                        Value="{Binding HolePrimaryText}"
+                        Placeholder="Enter Primary Text"
+                        Grid.Row="8" />
                 </Grid>
             </support:ControlExperimentView.ControlPropertiesView>
         </support:ControlExperimentView>

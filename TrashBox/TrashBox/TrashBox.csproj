@@ -178,6 +178,9 @@
     <EmbeddedResource Update="Views\ControlsViews\GradientRadialProgressBar\GradientRadialProgressBarVariant3Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\ControlsViews\Support\EntryControlPropertyView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\ControlsViews\Support\SliderControlPropertyView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

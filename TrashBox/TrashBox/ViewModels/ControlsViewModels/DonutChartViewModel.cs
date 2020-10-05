@@ -4,15 +4,15 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
 using TrashBox.Abstractions;
-using TrashBox.Controls.DonutChart;
 using TrashBox.Helpers;
+using TrashBox.Models;
 using Xamarin.Forms;
 
 namespace TrashBox.ViewModels.ControlsViewModels
 {
     public class DonutChartViewModel : BaseViewModel
     {
-        public ObservableCollection<DonutChartItem> ChartItems { get; }
+        public ObservableCollection<ExpenseChartItem> Expenses { get; }
         public float TotalValue { get; private set; }
 
         public float HoleRadius { get; set; } = 0.5f;
@@ -20,6 +20,9 @@ namespace TrashBox.ViewModels.ControlsViewModels
         public float DescriptionCircleRadius { get; set; } = 20f;
         public float SeparatorsWidth { get; set; } = 2f;
         public float InnerMargin { get; set; } = 100f;
+        public float HolePrimaryTextScale { get; set; } = 1;
+        public float HoleSecondaryTextScale { get; set; } = 1;
+        public string HolePrimaryText { get; set; } = "Total";
 
         public ICommand SectorTouchCommand { get; }
         public ICommand HoleTouchCommand { get; }
@@ -34,7 +37,11 @@ namespace TrashBox.ViewModels.ControlsViewModels
             Color.Green,
             Color.SkyBlue,
             Color.Blue,
-            Color.DarkViolet
+            Color.DarkViolet,
+            Color.Gold,
+            Color.Chocolate,
+            Color.Blue,
+            Color.Violet
         };
 
         private readonly IList<string> _chartImages = new List<string>
@@ -48,22 +55,26 @@ namespace TrashBox.ViewModels.ControlsViewModels
 
         public DonutChartViewModel()
         {
-            ChartItems = new ObservableCollection<DonutChartItem>();
-            ChartItems.CollectionChanged += (sender, args) => { TotalValue = ChartItems.Sum(x => x.Value); };
-            ChartItems.Add(new DonutChartItem
+            Expenses = new ObservableCollection<ExpenseChartItem>();
+            Expenses.CollectionChanged += (sender, args) => { TotalValue = Expenses.Sum(x => x.Value); };
+
+            Expenses.Add(new ExpenseChartItem
             {
+                Name = Constants.Filenames.AboutUs.Split('.').FirstOrDefault(),
                 Value = 55,
                 SectionHexColor = Color.DarkRed.ToHex(),
                 ImagePath = Constants.Filenames.AboutUs
             });
-            ChartItems.Add(new DonutChartItem
+            Expenses.Add(new ExpenseChartItem
             {
+                Name = Constants.Filenames.BrokenFile.Split('.').FirstOrDefault(),
                 Value = 45,
                 SectionHexColor = Color.White.ToHex(),
                 ImagePath = Constants.Filenames.BrokenFile
             });
-            ChartItems.Add(new DonutChartItem
+            Expenses.Add(new ExpenseChartItem
             {
+                Name = "Without Image",
                 Value = 50,
                 SectionHexColor = Color.DarkGreen.ToHex()
             });
@@ -76,12 +87,13 @@ namespace TrashBox.ViewModels.ControlsViewModels
 
         private static void SectorTouch(object parameter)
         {
-            if (!(parameter is DonutChartItem item))
+            if (!(parameter is ExpenseChartItem item))
             {
                 return;
             }
 
-            Application.Current.MainPage.DisplayAlert("Info", $"Sector was touched.\nValue = {item.Value}", "Ok");
+            Application.Current.MainPage.DisplayAlert("Info",
+                $"Sector \"{item.Name}\" was touched.\nValue = {item.Value}", "Ok");
         }
 
         private static void HoleTouch()
@@ -92,23 +104,25 @@ namespace TrashBox.ViewModels.ControlsViewModels
         private void AddSector()
         {
             var random = new Random();
-            var value = random.Next(30, 80);
-            var color = _chartColors[random.Next(_chartColors.Count)];
-            var imagePath = _chartImages[random.Next(_chartImages.Count)];
 
-            ChartItems?.Add(new DonutChartItem
+            var image = _chartImages[random.Next(_chartImages.Count)];
+
+            var expense = new ExpenseChartItem
             {
-                Value = value,
-                SectionHexColor = color.ToHex(),
-                ImagePath = imagePath
-            });
+                Value = random.Next(30, 80),
+                SectionHexColor = _chartColors[random.Next(_chartColors.Count)].ToHex(),
+                ImagePath = image,
+                Name = image.Split('.').FirstOrDefault()
+            };
+
+            Expenses?.Add(expense);
         }
 
         private void RemoveSector()
         {
-            if (ChartItems?.Count > 0)
+            if (Expenses?.Count > 0)
             {
-                ChartItems.Remove(ChartItems[ChartItems.Count - 1]);
+                Expenses.Remove(Expenses[Expenses.Count - 1]);
             }
         }
     }

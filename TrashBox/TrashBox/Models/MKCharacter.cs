@@ -1,6 +1,4 @@
-﻿using TrashBox.Abstractions;
-
-namespace TrashBox.Models
+﻿namespace TrashBox.Models
 {
     public class MKCharacter : BaseParallaxCarouselItem
     {
