@@ -14,6 +14,7 @@ namespace TrashBox.ViewModels.ControlsViewModels
     {
         public ObservableCollection<DonutChartItem> ChartItems { get; }
         public float TotalValue { get; private set; }
+
         public float HoleRadius { get; set; } = 0.5f;
         public float LineToCircleLength { get; set; } = 20f;
         public float DescriptionCircleRadius { get; set; } = 20f;

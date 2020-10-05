@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<abstractions:BaseTabbedPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:abstractions="clr-namespace:TrashBox.Abstractions;assembly=TrashBox"
+    xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
+    xmlns:gradientProgressBarPages="clr-namespace:TrashBox.Views.ControlsViews.GradientProgressBar;assembly=TrashBox"
+    x:Class="TrashBox.Views.ControlsViews.GradientProgressBar.GradientProgressBarTabbedPage"
+    Title="{x:Static helpers:Constants+Texts.ProgressBars}">
+
+    <gradientProgressBarPages:GradientProgressBarVariant1Page />
+
+    <gradientProgressBarPages:GradientProgressBarExperiment1Page />
+
+    <gradientProgressBarPages:GradientProgressBarVariant2Page />
+
+    <gradientProgressBarPages:GradientProgressBarExperiment2Page />
+</abstractions:BaseTabbedPage>

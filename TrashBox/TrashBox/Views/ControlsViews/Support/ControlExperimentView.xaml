@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:TrashBox;assembly=TrashBox"
+    x:Class="TrashBox.Views.ControlsViews.Support.ControlExperimentView">
+
+    <ContentView.Resources>
+
+        <Style x:Key="LocalControlPreviewFrameStyle" TargetType="Frame">
+
+            <Setter Property="HasShadow" Value="True" />
+            <Setter Property="BorderColor" Value="Transparent" />
+            <Setter Property="BackgroundColor" Value="{DynamicResource ControlsPreviewViewColor}" />
+            <Setter Property="IsClippedToBounds" Value="True" />
+            <Setter Property="CornerRadius" Value="10" />
+        </Style>
+    </ContentView.Resources>
+
+    <ContentView.Content>
+
+        <Grid
+            RowSpacing="10"
+            Padding="10">
+            <Grid.RowDefinitions>
+
+                <RowDefinition
+                    Height="{Binding Source={x:Static local:App.ScreenHeight}, 
+                                     Converter={StaticResource MultiplicationByNumberConverter}, 
+                                     ConverterParameter=0.5}" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Frame
+                x:Name="ControlPreviewFrame"
+                x:FieldModifier="private"
+                Style="{StaticResource LocalControlPreviewFrameStyle}"
+                Padding="0"
+                Grid.Row="0" />
+
+            <ScrollView
+                x:Name="ControlPropertiesScrollView"
+                x:FieldModifier="private"
+                VerticalOptions="Start"
+                Grid.Row="1" />
+        </Grid>
+    </ContentView.Content>
+</ContentView>

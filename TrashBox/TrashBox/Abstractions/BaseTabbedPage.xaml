@@ -4,8 +4,10 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:enums="clr-namespace:TrashBox.Enums;assembly=TrashBox"
+    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
     x:Class="TrashBox.Abstractions.BaseTabbedPage"
     x:Name="BasePage"
+    android:TabbedPage.IsSwipePagingEnabled="False"
     Style="{StaticResource BaseTabbedPageStyle}">
 
     <TabbedPage.ToolbarItems>

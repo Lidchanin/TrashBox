@@ -87,7 +87,7 @@ namespace TrashBox.Controls.GradientRadialProgressBar
 
         #endregion BarWidth Property
 
-        #region StartColor Property
+        #region StartProgressColor Property
 
         public static readonly BindableProperty StartColorProperty = BindableProperty.Create(
             nameof(StartColor),
@@ -104,9 +104,9 @@ namespace TrashBox.Controls.GradientRadialProgressBar
             set => SetValue(StartColorProperty, value);
         }
 
-        #endregion StartColor Property
+        #endregion StartProgressColor Property
 
-        #region EndColor Property
+        #region EndProgressColor Property
 
         public static readonly BindableProperty EndColorProperty = BindableProperty.Create(
             nameof(EndColor),
@@ -123,7 +123,7 @@ namespace TrashBox.Controls.GradientRadialProgressBar
             set => SetValue(EndColorProperty, value);
         }
 
-        #endregion EndColor Property
+        #endregion EndProgressColor Property
 
         #region StartBackgroundColor Property
 

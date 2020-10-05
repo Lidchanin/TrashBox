@@ -23,6 +23,8 @@
             public const string HorizontalParallaxCarousel = "Horizontal Parallax Carousel";
             public const string Back = "Back";
             public const string Select = "Select";
+            public const string Add = "Add";
+            public const string Remove = "Remove";
             public const string DoYouWantToGoOut = "Do you want to go out?";
 
             #region MKDemo

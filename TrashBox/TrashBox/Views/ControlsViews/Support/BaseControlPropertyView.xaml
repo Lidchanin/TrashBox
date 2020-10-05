@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TrashBox.Views.ControlsViews.Support.BaseControlPropertyView"
+    x:Name="BasePropertyView"
+    x:FieldModifier="private">
+
+    <ContentView.Resources>
+
+        <Style x:Key="LocalFrameStyle" TargetType="Frame">
+
+            <Setter Property="BackgroundColor" Value="{DynamicResource ControlsPropertyViewBackgroundColor}" />
+            <Setter Property="BorderColor" Value="Transparent" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="HasShadow" Value="False" />
+            <Setter Property="IsClippedToBounds" Value="True" />
+        </Style>
+
+        <Style x:Key="LocalTitleLabelStyle" TargetType="Label">
+
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="TextColor" Value="{DynamicResource ControlsPropertyViewTextColor}" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="LineBreakMode" Value="NoWrap" />
+        </Style>
+    </ContentView.Resources>
+
+    <ContentView.Content>
+
+        <Frame
+            Style="{StaticResource LocalFrameStyle}"
+            Padding="10">
+
+            <Grid RowSpacing="10">
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Label
+                    Style="{StaticResource LocalTitleLabelStyle}"
+                    Text="{Binding Source={x:Reference BasePropertyView}, Path=Title}"
+                    Grid.Row="0" />
+
+                <Grid
+                    x:Name="InnerViewGrid"
+                    x:FieldModifier="private"
+                    Grid.Row="1" />
+            </Grid>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

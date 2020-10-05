@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using TrashBox.Abstractions;
 using TrashBox.Helpers;
-using TrashBox.Views.DesignsPages.MKDemo;
+using TrashBox.Views.DesignsViews.MKDemo;
 using Xamarin.Forms;
 
 namespace TrashBox.ViewModels.DesignsViewModels

@@ -5,9 +5,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:abstractions="clr-namespace:TrashBox.Abstractions;assembly=TrashBox"
     xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
-    xmlns:controlsPages="clr-namespace:TrashBox.Views.ControlsPages;assembly=TrashBox"
+    xmlns:controlsPages="clr-namespace:TrashBox.Views.ControlsViews;assembly=TrashBox"
     xmlns:views="clr-namespace:TrashBox.Views;assembly=TrashBox"
-    xmlns:designsPages="clr-namespace:TrashBox.Views.DesignsPages;assembly=TrashBox"
+    xmlns:designsPages="clr-namespace:TrashBox.Views.DesignsViews;assembly=TrashBox"
     x:Class="TrashBox.AppShell"
     Title="{x:Static helpers:Constants+Texts.TrashBox}"
     Style="{StaticResource BaseShellStyle}">

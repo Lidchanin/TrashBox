@@ -51,7 +51,7 @@ namespace TrashBox.Controls.GradientProgressBar
         }
 
         internal static void DrawProgress(SKCanvas canvas, ProgressBarOrientation orientation, SKImageInfo info,
-            int percentage, float innerCornerRadius, SKColor topBackgroundColor, SKColor bottomBackgroundColor)
+            int percentage, float innerCornerRadius, SKColor startColor, SKColor endColor)
         {
             SKRoundRect progressBar;
             SKPoint startPoint;
@@ -84,19 +84,24 @@ namespace TrashBox.Controls.GradientProgressBar
             {
                 IsAntialias = true,
                 Shader = SKShader.CreateLinearGradient(startPoint, endPoint,
-                    new[] {topBackgroundColor, bottomBackgroundColor}, new float[] {0, 1}, SKShaderTileMode.Clamp)
+                    new[] {startColor, endColor}, new float[] {0, 1}, SKShaderTileMode.Clamp)
             };
 
             canvas.DrawRoundRect(progressBar, paint);
         }
 
         internal static void DrawText(SKCanvas canvas, ProgressBarOrientation orientation, SKImageInfo info,
-            int percentage, float textSize, float percentageValue, string format, SKColor primaryTextColor,
-            SKColor secondaryTextColor)
+            int percentage, float textSize, float percentageValue, string format, SKColor primaryColor,
+            SKColor secondaryColor)
         {
             var str = string.Format(format, percentageValue);
 
-            var textPaint = new SKPaint {Color = primaryTextColor, TextSize = textSize, IsAntialias = true};
+            var textPaint = new SKPaint
+            {
+                TextSize = textSize,
+                IsAntialias = true,
+                Color = percentageValue < 0.5f ? secondaryColor : primaryColor
+            };
 
             var textBounds = new SKRect();
 
@@ -108,13 +113,9 @@ namespace TrashBox.Controls.GradientProgressBar
             {
                 case ProgressBarOrientation.Horizontal:
                 {
-                    xText = percentage / 2f - textBounds.MidX;
-
-                    if (xText < 0)
-                    {
-                        xText = (info.Width + percentage) / 2f - textBounds.MidX;
-                        textPaint.Color = secondaryTextColor;
-                    }
+                    xText = percentageValue < 0.5f
+                        ? (info.Width + percentage) / 2f - textBounds.MidX
+                        : percentage / 2f - textBounds.MidX;
 
                     yText = info.Height / 2f - textBounds.MidY;
 
@@ -123,17 +124,10 @@ namespace TrashBox.Controls.GradientProgressBar
                 case ProgressBarOrientation.Vertical:
                 {
                     xText = info.Width / 2f - textBounds.MidX;
-                    yText = percentage / 2f - Math.Abs(textBounds.MidY);
 
-                    if (yText < 0)
-                    {
-                        yText = (info.Height - percentage) / 2f + Math.Abs(textBounds.MidY);
-                        textPaint.Color = secondaryTextColor;
-                    }
-                    else
-                    {
-                        yText = info.Height - yText;
-                    }
+                    yText = percentageValue < 0.5f
+                        ? (info.Height - percentage) / 2f + textBounds.MidY
+                        : info.Height - (percentage / 2f - textBounds.MidY);
 
                     break;
                 }
@@ -143,8 +137,6 @@ namespace TrashBox.Controls.GradientProgressBar
 
             canvas.DrawText(str, xText, yText, textPaint);
         }
-
-        #region Private Methods
 
         private static SKPath CreateClipPath(SKImageInfo info, float cornerRadius)
         {
@@ -159,7 +151,5 @@ namespace TrashBox.Controls.GradientProgressBar
 
         private static SKRoundRect CreateRoundRect(int right, int bottom, float cornerRadius) =>
             new SKRoundRect(new SKRect(0, 0, right, bottom), cornerRadius, cornerRadius);
-
-        #endregion Private Methods
     }
 }

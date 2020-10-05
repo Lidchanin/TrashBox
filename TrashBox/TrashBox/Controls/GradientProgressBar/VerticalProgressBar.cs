@@ -65,10 +65,10 @@ namespace TrashBox.Controls.GradientProgressBar
 
         #endregion InnerCornerRadiusProperty
 
-        #region TopColor Property
+        #region StartProgressColor Property
 
-        public static readonly BindableProperty TopColorProperty = BindableProperty.Create(
-            nameof(TopColor),
+        public static readonly BindableProperty StartProgressColorProperty = BindableProperty.Create(
+            nameof(StartProgressColor),
             typeof(Color),
             typeof(VerticalProgressBar),
             Color.White,
@@ -76,18 +76,18 @@ namespace TrashBox.Controls.GradientProgressBar
             (bindable, value) => value != null,
             OnPropertyChangedInvalidate);
 
-        public Color TopColor
+        public Color StartProgressColor
         {
-            get => (Color) GetValue(TopColorProperty);
-            set => SetValue(TopColorProperty, value);
+            get => (Color) GetValue(StartProgressColorProperty);
+            set => SetValue(StartProgressColorProperty, value);
         }
 
-        #endregion TopColor Property
+        #endregion StartProgressColor Property
 
-        #region BottomColor Property
+        #region EndProgressColor Property
 
-        public static readonly BindableProperty BottomColorProperty = BindableProperty.Create(
-            nameof(BottomColor),
+        public static readonly BindableProperty EndProgressColorProperty = BindableProperty.Create(
+            nameof(EndProgressColor),
             typeof(Color),
             typeof(VerticalProgressBar),
             Color.White,
@@ -95,18 +95,18 @@ namespace TrashBox.Controls.GradientProgressBar
             (bindable, value) => value != null,
             OnPropertyChangedInvalidate);
 
-        public Color BottomColor
+        public Color EndProgressColor
         {
-            get => (Color) GetValue(BottomColorProperty);
-            set => SetValue(BottomColorProperty, value);
+            get => (Color) GetValue(EndProgressColorProperty);
+            set => SetValue(EndProgressColorProperty, value);
         }
 
-        #endregion BottomColor Property
+        #endregion EndProgressColor Property
 
-        #region TopBackgroundColor Property
+        #region StartBackgroundColor Property
 
-        public static readonly BindableProperty TopBackgroundColorProperty = BindableProperty.Create(
-            nameof(TopBackgroundColor),
+        public static readonly BindableProperty StartBackgroundColorProperty = BindableProperty.Create(
+            nameof(StartBackgroundColor),
             typeof(Color),
             typeof(VerticalProgressBar),
             Color.Blue,
@@ -114,18 +114,18 @@ namespace TrashBox.Controls.GradientProgressBar
             (bindable, value) => value != null,
             OnPropertyChangedInvalidate);
 
-        public Color TopBackgroundColor
+        public Color StartBackgroundColor
         {
-            get => (Color) GetValue(TopBackgroundColorProperty);
-            set => SetValue(TopBackgroundColorProperty, value);
+            get => (Color) GetValue(StartBackgroundColorProperty);
+            set => SetValue(StartBackgroundColorProperty, value);
         }
 
-        #endregion LeftBackgroundColor Property
+        #endregion StartBackgroundColor Property
 
-        #region BottomBackgroundColor Property
+        #region EndBackgroundColor Property
 
-        public static readonly BindableProperty BottomBackgroundColorProperty = BindableProperty.Create(
-            nameof(BottomBackgroundColor),
+        public static readonly BindableProperty EndBackgroundColorProperty = BindableProperty.Create(
+            nameof(EndBackgroundColor),
             typeof(Color),
             typeof(VerticalProgressBar),
             Color.Blue,
@@ -133,13 +133,13 @@ namespace TrashBox.Controls.GradientProgressBar
             (bindable, value) => value != null,
             OnPropertyChangedInvalidate);
 
-        public Color BottomBackgroundColor
+        public Color EndBackgroundColor
         {
-            get => (Color) GetValue(BottomBackgroundColorProperty);
-            set => SetValue(BottomBackgroundColorProperty, value);
+            get => (Color) GetValue(EndBackgroundColorProperty);
+            set => SetValue(EndBackgroundColorProperty, value);
         }
 
-        #endregion RightBackgroundColor Property
+        #endregion EndBackgroundColor Property
 
         #endregion Bindable Properties
 
@@ -169,9 +169,9 @@ namespace TrashBox.Controls.GradientProgressBar
             ProgressBarHelper.SetClip(canvas, info, outerCornerRadius);
 
             ProgressBarHelper.DrawBackground(canvas, ProgressBarOrientation.Vertical, e.Info, outerCornerRadius,
-                TopBackgroundColor.ToSKColor(), BottomBackgroundColor.ToSKColor());
+                EndBackgroundColor.ToSKColor(), StartBackgroundColor.ToSKColor());
             ProgressBarHelper.DrawProgress(canvas, ProgressBarOrientation.Vertical, e.Info, percentageHeight,
-                innerCornerRadius, TopColor.ToSKColor(), BottomColor.ToSKColor());
+                innerCornerRadius, EndProgressColor.ToSKColor(), StartProgressColor.ToSKColor());
         }
     }
 }

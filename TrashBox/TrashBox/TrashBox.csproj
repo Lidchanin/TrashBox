@@ -103,13 +103,13 @@
     <Compile Update="Abstractions\BaseContentPage.xaml.cs">
       <DependentUpon>BaseContentPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\ControlsPages\GradientProgressBarPages\GradientProgressBarExperiment1Page.xaml.cs">
+    <Compile Update="Views\ControlsViews\GradientProgressBar\GradientProgressBarExperiment1Page.xaml.cs">
       <DependentUpon>GradientProgressBarExperiment1Page.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\DesignsPages\MKDemo\MKDemoCell.xaml.cs">
+    <Compile Update="Views\DesignsViews\MKDemo\MKDemoCell.xaml.cs">
       <DependentUpon>MKDemoCell.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\DesignsPages\MKDemo\MKDemoPage.xaml.cs">
+    <Compile Update="Views\DesignsViews\MKDemo\MKDemoPage.xaml.cs">
       <DependentUpon>MKDemoPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -124,9 +124,6 @@
     <EmbeddedResource Update="Abstractions\BaseTabbedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Controls\AboutItemView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Themes\DarkTheme.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -136,53 +133,69 @@
     <EmbeddedResource Update="Views\AboutPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ControlsPages\ControlsPage.xaml">
+    <EmbeddedResource Update="Views\ControlsViews\Support\BaseControlPropertyView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ControlsPages\DonutChartPages\DonutChartExperimentPage.xaml">
+    <EmbeddedResource Update="Views\ControlsViews\Support\ControlExperimentView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ControlsPages\DonutChartPages\DonutChartTabbedPage.xaml">
+    <EmbeddedResource Update="Views\ControlsViews\ControlsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ControlsPages\GradientProgressBarPages\GradientProgressBarExperiment1Page.xaml">
+    <EmbeddedResource Update="Views\ControlsViews\DonutChart\DonutChartExperimentPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ControlsPages\GradientProgressBarPages\GradientProgressBarExperiment2Page.xaml">
+    <EmbeddedResource Update="Views\ControlsViews\DonutChart\DonutChartTabbedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ControlsPages\GradientProgressBarPages\GradientProgressBarTabbedPage.xaml">
+    <EmbeddedResource Update="Views\ControlsViews\GradientProgressBar\GradientProgressBarExperiment1Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ControlsPages\GradientProgressBarPages\GradientProgressBarVariant1Page.xaml">
+    <EmbeddedResource Update="Views\ControlsViews\GradientProgressBar\GradientProgressBarExperiment2Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ControlsPages\GradientProgressBarPages\GradientProgressBarVariant2Page.xaml">
+    <EmbeddedResource Update="Views\ControlsViews\GradientProgressBar\GradientProgressBarTabbedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ControlsPages\GradientRadialProgressBarPages\GradientRadialProgressBarExperimentPage.xaml">
+    <EmbeddedResource Update="Views\ControlsViews\GradientProgressBar\GradientProgressBarVariant1Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ControlsPages\GradientRadialProgressBarPages\GradientRadialProgressBarTabbedPage.xaml">
+    <EmbeddedResource Update="Views\ControlsViews\GradientProgressBar\GradientProgressBarVariant2Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ControlsPages\GradientRadialProgressBarPages\GradientRadialProgressBarVariant1Page.xaml">
+    <EmbeddedResource Update="Views\ControlsViews\GradientRadialProgressBar\GradientRadialProgressBarExperimentPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ControlsPages\GradientRadialProgressBarPages\GradientRadialProgressBarVariant2Page.xaml">
+    <EmbeddedResource Update="Views\ControlsViews\GradientRadialProgressBar\GradientRadialProgressBarTabbedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ControlsPages\GradientRadialProgressBarPages\GradientRadialProgressBarVariant3Page.xaml">
+    <EmbeddedResource Update="Views\ControlsViews\GradientRadialProgressBar\GradientRadialProgressBarVariant1Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\DesignsPages\DesignsPage.xaml">
+    <EmbeddedResource Update="Views\ControlsViews\GradientRadialProgressBar\GradientRadialProgressBarVariant2Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\DesignsPages\MKDemo\MKDemoCell.xaml">
+    <EmbeddedResource Update="Views\ControlsViews\GradientRadialProgressBar\GradientRadialProgressBarVariant3Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\DesignsPages\MKDemo\MKDemoPage.xaml">
+    <EmbeddedResource Update="Views\ControlsViews\Support\SliderControlPropertyView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\ControlsViews\Support\TwoButtonsControlPropertyView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DesignsViews\DesignsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DesignsViews\MKDemo\MKDemoCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DesignsViews\MKDemo\MKDemoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Support\" />
   </ItemGroup>
 </Project>

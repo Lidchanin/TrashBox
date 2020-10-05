@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:support="clr-namespace:TrashBox.Views.ControlsViews.Support;assembly=TrashBox"
+    x:Class="TrashBox.Views.ControlsViews.Support.SliderControlPropertyView"
+    x:Name="View"
+    x:FieldModifier="private">
+
+    <ContentView.Resources>
+
+        <Style x:Key="LocalHintLabelStyle" TargetType="Label">
+
+            <Setter Property="TextColor" Value="{DynamicResource ControlsPropertyViewTextColor}" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
+
+        <Style x:Key="LocalSliderStyle" TargetType="Slider">
+
+            <Setter Property="ThumbColor" Value="{DynamicResource ControlsPropertyViewThumbColor}" />
+            <Setter Property="MinimumTrackColor" Value="{DynamicResource ControlsPropertyViewTrackColor}" />
+            <Setter Property="MaximumTrackColor" Value="{DynamicResource ControlsPropertyViewTrackColor}" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
+    </ContentView.Resources>
+
+    <ContentView.Content>
+
+        <support:BaseControlPropertyView Title="{Binding Source={x:Reference View}, Path=Title}">
+            <support:BaseControlPropertyView.InnerView>
+
+                <Grid ColumnSpacing="0">
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+                        Style="{StaticResource LocalHintLabelStyle}"
+                        Text="{Binding Source={x:Reference View}, Path=Minimum}"
+                        HorizontalOptions="Start"
+                        Grid.Column="0" />
+
+                    <Slider
+                        Style="{StaticResource LocalSliderStyle}"
+                        Value="{Binding Source={x:Reference View}, Path=Value}"
+                        Maximum="{Binding Source={x:Reference View}, Path=Maximum}"
+                        Minimum="{Binding Source={x:Reference View}, Path=Minimum}"
+                        Grid.Column="1" />
+
+                    <Label
+                        Style="{StaticResource LocalHintLabelStyle}"
+                        Text="{Binding Source={x:Reference View}, Path=Maximum}"
+                        HorizontalOptions="End"
+                        Grid.Column="2" />
+                </Grid>
+            </support:BaseControlPropertyView.InnerView>
+        </support:BaseControlPropertyView>
+    </ContentView.Content>
+</ContentView>

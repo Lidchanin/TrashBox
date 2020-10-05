@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<abstractions:BaseContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:abstractions="clr-namespace:TrashBox.Abstractions;assembly=TrashBox"
+    xmlns:gradientRadialProgressBar="clr-namespace:TrashBox.Controls.GradientRadialProgressBar;assembly=TrashBox"
+    xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
+    xmlns:controlsViewModels="clr-namespace:TrashBox.ViewModels.ControlsViewModels;assembly=TrashBox"
+    xmlns:support="clr-namespace:TrashBox.Views.ControlsViews.Support;assembly=TrashBox"
+    xmlns:local="clr-namespace:TrashBox;assembly=TrashBox"
+    x:Class="TrashBox.Views.ControlsViews.GradientRadialProgressBar.GradientRadialProgressBarVariant3Page"
+    x:DataType="controlsViewModels:GradientRadialProgressBarViewModel"
+    Title="{x:Static helpers:Constants+Texts.Variant3}">
+
+    <abstractions:BaseContentPage.Content>
+
+        <support:ControlExperimentView>
+            <support:ControlExperimentView.ControlPreviewView>
+
+                <Grid>
+
+                    <gradientRadialProgressBar:RadialProgressBar
+                        SweepAngle="220"
+                        StartAngle="70"
+                        PercentageValue="0.20"
+                        BarWidth="{Binding BarWidth}"
+                        StartColor="#E7FD8C"
+                        EndColor="#91C035"
+                        StartBackgroundColor="#FB0003"
+                        EndBackgroundColor="#1D00FB"
+                        WidthRequest="{Binding Source={x:Static local:App.ScreenWidth}, 
+                                               Converter={StaticResource MultiplicationByNumberConverter}, 
+                                               ConverterParameter=0.8}"
+                        HeightRequest="{Binding Source={x:Static local:App.ScreenWidth},
+                                                Converter={StaticResource MultiplicationByNumberConverter}, 
+                                                ConverterParameter=0.8}"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Margin="10" />
+
+                    <gradientRadialProgressBar:RadialProgressBar
+                        SweepAngle="100"
+                        StartAngle="310"
+                        PercentageValue="0"
+                        BarWidth="{Binding BarWidth}"
+                        StartColor="#E7FD8C"
+                        EndColor="#91C035"
+                        StartBackgroundColor="#FB0003"
+                        EndBackgroundColor="#1D00FB"
+                        WidthRequest="{Binding Source={x:Static local:App.ScreenWidth}, 
+                                               Converter={StaticResource MultiplicationByNumberConverter}, 
+                                               ConverterParameter=0.8}"
+                        HeightRequest="{Binding Source={x:Static local:App.ScreenWidth},
+                                                Converter={StaticResource MultiplicationByNumberConverter}, 
+                                                ConverterParameter=0.8}"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Margin="10" />
+                </Grid>
+            </support:ControlExperimentView.ControlPreviewView>
+        </support:ControlExperimentView>
+    </abstractions:BaseContentPage.Content>
+</abstractions:BaseContentPage>

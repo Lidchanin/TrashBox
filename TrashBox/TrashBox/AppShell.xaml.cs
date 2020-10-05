@@ -1,7 +1,7 @@
-﻿using TrashBox.Views.ControlsPages.DonutChartPages;
-using TrashBox.Views.ControlsPages.GradientProgressBarPages;
-using TrashBox.Views.ControlsPages.GradientRadialProgressBarPages;
-using TrashBox.Views.DesignsPages.MKDemo;
+﻿using TrashBox.Views.ControlsViews.DonutChart;
+using TrashBox.Views.ControlsViews.GradientProgressBar;
+using TrashBox.Views.ControlsViews.GradientRadialProgressBar;
+using TrashBox.Views.DesignsViews.MKDemo;
 using Xamarin.Forms;
 
 namespace TrashBox

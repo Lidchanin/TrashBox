@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<abstractions:BaseContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:abstractions="clr-namespace:TrashBox.Abstractions;assembly=TrashBox"
+    xmlns:donutChart="clr-namespace:TrashBox.Controls.DonutChart;assembly=TrashBox"
+    xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
+    xmlns:controlsViewModels="clr-namespace:TrashBox.ViewModels.ControlsViewModels;assembly=TrashBox"
+    xmlns:support="clr-namespace:TrashBox.Views.ControlsViews.Support;assembly=TrashBox"
+    x:Class="TrashBox.Views.ControlsViews.DonutChart.DonutChartExperimentPage"
+    x:DataType="controlsViewModels:DonutChartViewModel"
+    Title="{x:Static helpers:Constants+Texts.Experiment}">
+
+    <abstractions:BaseContentPage.Content>
+
+        <support:ControlExperimentView>
+            <support:ControlExperimentView.ControlPreviewView>
+
+                <donutChart:DonutChartView
+                    ItemsSource="{Binding ChartItems}"
+                    HolePrimaryText="Total"
+                    HoleSecondaryText="{Binding TotalValue}"
+                    HoleCommand="{Binding HoleTouchCommand}"
+                    SectorCommand="{Binding SectorTouchCommand}"
+                    HoleRadius="{Binding HoleRadius}"
+                    HolePrimaryTextColor="Blue"
+                    HoleSecondaryTextColor="Red"
+                    SeparatorsWidth="{Binding SeparatorsWidth}"
+                    SeparatorsColor="Black"
+                    DescriptionCircleRadius="{Binding DescriptionCircleRadius}"
+                    LineToCircleLength="{Binding LineToCircleLength}"
+                    InnerMargin="{Binding InnerMargin}" />
+            </support:ControlExperimentView.ControlPreviewView>
+            <support:ControlExperimentView.ControlPropertiesView>
+
+                <Grid
+                    RowSpacing="10">
+                    <Grid.RowDefinitions>
+
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <support:SliderControlPropertyView
+                        Title="HoleRadius"
+                        Value="{Binding HoleRadius}"
+                        Minimum="0"
+                        Maximum="1"
+                        Grid.Row="0" />
+
+                    <support:SliderControlPropertyView
+                        Title="SeparatorsWidth"
+                        Value="{Binding SeparatorsWidth}"
+                        Minimum="0"
+                        Maximum="20"
+                        Grid.Row="1" />
+
+                    <support:SliderControlPropertyView
+                        Title="DescriptionCircleRadius"
+                        Value="{Binding DescriptionCircleRadius}"
+                        Minimum="0"
+                        Maximum="200"
+                        Grid.Row="2" />
+
+                    <support:SliderControlPropertyView
+                        Title="LineToCircleLength"
+                        Value="{Binding LineToCircleLength}"
+                        Minimum="-100"
+                        Maximum="100"
+                        Grid.Row="3" />
+
+                    <support:SliderControlPropertyView
+                        Title="InnerMargin"
+                        Value="{Binding InnerMargin}"
+                        Minimum="-200"
+                        Maximum="200"
+                        Grid.Row="4" />
+
+                    <support:TwoButtonsControlPropertyView
+                        Title="Sectors"
+                        PositiveCommand="{Binding AddSectorCommand}"
+                        NegativeCommand="{Binding RemoveSectorCommand}"
+                        Grid.Row="5" />
+                </Grid>
+            </support:ControlExperimentView.ControlPropertiesView>
+        </support:ControlExperimentView>
+    </abstractions:BaseContentPage.Content>
+</abstractions:BaseContentPage>

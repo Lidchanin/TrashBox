@@ -18,5 +18,13 @@
     <Color x:Key="TopTabBarSelectedColor">White</Color>
     <Color x:Key="TopTabTabUnselectedColor">#0B0B0B</Color>
 
+    <Color x:Key="ControlsPreviewViewColor">#999999</Color>
+    <Color x:Key="ControlsPropertyViewBackgroundColor">#999999</Color>
+    <Color x:Key="ControlsPropertyViewTextColor">White</Color>
+    <Color x:Key="ControlsPropertyViewThumbColor">White</Color>
+    <Color x:Key="ControlsPropertyViewTrackColor">#111111</Color>
+    <Color x:Key="ControlsPropertyViewButtonTextColor">DimGray</Color>
+    <Color x:Key="ControlsPropertyViewButtonBackgroundColor">White</Color>
+
     <!--#endregion Colors-->
 </ResourceDictionary>
