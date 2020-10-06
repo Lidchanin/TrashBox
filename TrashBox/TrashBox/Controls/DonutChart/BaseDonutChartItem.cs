@@ -8,7 +8,7 @@ namespace TrashBox.Controls.DonutChart
 
         public string SectionHexColor { get; set; }
 
-        public string ImagePath { get; set; }
+        public string IconResourceName { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
     }

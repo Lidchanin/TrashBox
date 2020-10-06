@@ -32,7 +32,7 @@
                     LineToCircleLength="{Binding LineToCircleLength}"
                     InnerMargin="{Binding InnerMargin}"
                     HolePrimaryTextScale="{Binding HolePrimaryTextScale}"
-                    HoleSecondaryTextScale="{Binding HoleSecondaryTextScale}" />
+                    HoleSecondaryTextScale="{Binding HoleSecondaryTextScale}"/>
             </support:ControlExperimentView.ControlPreviewView>
             <support:ControlExperimentView.ControlPropertiesView>
 
@@ -88,8 +88,8 @@
 
                     <support:TwoButtonsControlPropertyView
                         Title="Sectors"
-                        PositiveCommand="{Binding AddSectorCommand}"
-                        NegativeCommand="{Binding RemoveSectorCommand}"
+                        PositiveCommand="{Binding AddExpenseCommand}"
+                        NegativeCommand="{Binding RemoveExpenseCommand}"
                         Grid.Row="5" />
 
                     <support:SliderControlPropertyView

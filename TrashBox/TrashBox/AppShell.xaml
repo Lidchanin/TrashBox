@@ -17,19 +17,37 @@
         <ShellContent
             Route="ControlsPage"
             Title="{x:Static helpers:Constants+Texts.Controls}"
-            Icon="{x:Static helpers:Constants+Filenames.DonutChart}"
-            ContentTemplate="{DataTemplate TypeName=controlsPages:ControlsPage}" />
+            ContentTemplate="{DataTemplate TypeName=controlsPages:ControlsPage}">
+            <ShellContent.Icon>
+
+                <FontImageSource
+                    FontFamily="{x:Static helpers:Constants+EmbeddedFonts.FontAwesomeSolid}"
+                    Glyph="{x:Static helpers:Constants+FontAwesomeIcons.Gamepad}" />
+            </ShellContent.Icon>
+        </ShellContent>
 
         <ShellContent
             Route="DesignsPage"
             Title="{x:Static helpers:Constants+Texts.Designs}"
-            Icon="{x:Static helpers:Constants+Filenames.BrokenFile}"
-            ContentTemplate="{DataTemplate TypeName=designsPages:DesignsPage}" />
+            ContentTemplate="{DataTemplate TypeName=designsPages:DesignsPage}">
+            <ShellContent.Icon>
+
+                <FontImageSource
+                    FontFamily="{x:Static helpers:Constants+EmbeddedFonts.FontAwesomeSolid}"
+                    Glyph="{x:Static helpers:Constants+FontAwesomeIcons.PencilRuler}" />
+            </ShellContent.Icon>
+        </ShellContent>
 
         <ShellContent
             Route="AboutPage"
             Title="{x:Static helpers:Constants+Texts.About}"
-            Icon="{x:Static helpers:Constants+Filenames.AboutUs}"
-            ContentTemplate="{DataTemplate TypeName=views:AboutPage}" />
+            ContentTemplate="{DataTemplate TypeName=views:AboutPage}">
+            <ShellContent.Icon>
+
+                <FontImageSource
+                    FontFamily="{x:Static helpers:Constants+EmbeddedFonts.FontAwesomeSolid}"
+                    Glyph="{x:Static helpers:Constants+FontAwesomeIcons.IdCard}" />
+            </ShellContent.Icon>
+        </ShellContent>
     </TabBar>
 </abstractions:BaseShell>

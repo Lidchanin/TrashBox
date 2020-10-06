@@ -12,6 +12,11 @@ namespace TrashBox.ViewModels.ControlsViewModels
 {
     public class DonutChartViewModel : BaseViewModel
     {
+        public ICommand SectorTouchCommand { get; }
+        public ICommand HoleTouchCommand { get; }
+        public ICommand AddExpenseCommand { get; }
+        public ICommand RemoveExpenseCommand { get; }
+
         public ObservableCollection<ExpenseChartItem> Expenses { get; }
         public float TotalValue { get; private set; }
 
@@ -24,76 +29,43 @@ namespace TrashBox.ViewModels.ControlsViewModels
         public float HoleSecondaryTextScale { get; set; } = 1;
         public string HolePrimaryText { get; set; } = "Total";
 
-        public ICommand SectorTouchCommand { get; }
-        public ICommand HoleTouchCommand { get; }
-        public ICommand AddSectorCommand { get; }
-        public ICommand RemoveSectorCommand { get; }
-
-        private readonly IList<Color> _chartColors = new List<Color>
-        {
-            Color.Red,
-            Color.Orange,
-            Color.Yellow,
-            Color.Green,
-            Color.SkyBlue,
-            Color.Blue,
-            Color.DarkViolet,
-            Color.Gold,
-            Color.Chocolate,
-            Color.Blue,
-            Color.Violet
-        };
-
-        private readonly IList<string> _chartImages = new List<string>
-        {
-            Constants.Filenames.Car,
-            Constants.Filenames.Cocktail,
-            Constants.Filenames.Meal,
-            Constants.Filenames.Plane,
-            Constants.Filenames.Shirt
-        };
+        private readonly IList<(string Name, string Filename)> _possibleExpenses;
 
         public DonutChartViewModel()
         {
+            SectorTouchCommand = new Command(ExpenseTouch);
+            HoleTouchCommand = new Command(HoleTouch);
+            AddExpenseCommand = new Command(AddExpense);
+            RemoveExpenseCommand = new Command(RemoveExpense);
+
+            _possibleExpenses = new List<(string Name, string Filename)>
+            {
+                ("Everyday Food", Constants.EmbeddedImages.Dish),
+                ("Entertainment", Constants.EmbeddedImages.Entertainment),
+                ("Fast Food", Constants.EmbeddedImages.FastFood),
+                ("Medicine", Constants.EmbeddedImages.Pills),
+                ("Repairing", Constants.EmbeddedImages.RepairTools),
+                ("Transport", Constants.EmbeddedImages.Transport),
+                ("Games", Constants.EmbeddedImages.VideoGame)
+            };
+
             Expenses = new ObservableCollection<ExpenseChartItem>();
             Expenses.CollectionChanged += (sender, args) => { TotalValue = Expenses.Sum(x => x.Value); };
 
-            Expenses.Add(new ExpenseChartItem
-            {
-                Name = Constants.Filenames.AboutUs.Split('.').FirstOrDefault(),
-                Value = 55,
-                SectionHexColor = Color.DarkRed.ToHex(),
-                ImagePath = Constants.Filenames.AboutUs
-            });
-            Expenses.Add(new ExpenseChartItem
-            {
-                Name = Constants.Filenames.BrokenFile.Split('.').FirstOrDefault(),
-                Value = 45,
-                SectionHexColor = Color.White.ToHex(),
-                ImagePath = Constants.Filenames.BrokenFile
-            });
-            Expenses.Add(new ExpenseChartItem
-            {
-                Name = "Without Image",
-                Value = 50,
-                SectionHexColor = Color.DarkGreen.ToHex()
-            });
-
-            SectorTouchCommand = new Command(SectorTouch);
-            HoleTouchCommand = new Command(HoleTouch);
-            AddSectorCommand = new Command(AddSector);
-            RemoveSectorCommand = new Command(RemoveSector);
+            AddExpense();
+            AddExpense();
+            AddExpense();
         }
 
-        private static void SectorTouch(object parameter)
+        private static void ExpenseTouch(object parameter)
         {
             if (!(parameter is ExpenseChartItem item))
             {
                 return;
             }
 
-            Application.Current.MainPage.DisplayAlert("Info",
-                $"Sector \"{item.Name}\" was touched.\nValue = {item.Value}", "Ok");
+            Application.Current.MainPage.DisplayAlert("Info", $"\"{item.Name}\" was selected.\nValue = {item.Value}",
+                "Ok");
         }
 
         private static void HoleTouch()
@@ -101,24 +73,22 @@ namespace TrashBox.ViewModels.ControlsViewModels
             Application.Current.MainPage.DisplayAlert("Info", "Hole was touched.", "Ok");
         }
 
-        private void AddSector()
+        private void AddExpense()
         {
             var random = new Random();
 
-            var image = _chartImages[random.Next(_chartImages.Count)];
+            var (name, filename) = _possibleExpenses[random.Next(_possibleExpenses.Count)];
 
-            var expense = new ExpenseChartItem
+            Expenses?.Add(new ExpenseChartItem
             {
-                Value = random.Next(30, 80),
-                SectionHexColor = _chartColors[random.Next(_chartColors.Count)].ToHex(),
-                ImagePath = image,
-                Name = image.Split('.').FirstOrDefault()
-            };
-
-            Expenses?.Add(expense);
+                Value = random.Next(20, 100),
+                SectionHexColor = Color.FromRgb(random.Next(0, 256), random.Next(0, 256), random.Next(0, 256)).ToHex(),
+                IconResourceName = filename,
+                Name = name
+            });
         }
 
-        private void RemoveSector()
+        private void RemoveExpense()
         {
             if (Expenses?.Count > 0)
             {

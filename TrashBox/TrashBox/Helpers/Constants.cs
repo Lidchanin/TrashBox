@@ -62,18 +62,6 @@
         public static class Filenames
         {
             public const string AppIcon = "ic_launcher.png";
-            public const string DonutChart = "donut_chart_icon.png";
-            public const string AboutUs = "about_us_icon.png";
-            public const string BrokenFile = "broken_file_icon.png";
-            public const string Car = "car_icon.png";
-            public const string Meal = "meal_icon.png";
-            public const string Shirt = "shirt_icon.png";
-            public const string Cocktail = "cocktail_icon.png";
-            public const string Plane = "plane_icon.png";
-            public const string NoBorder = "no_border_icon.png";
-            public const string ProgressBar = "progress_bar_icon.png";
-            public const string VerticalProgressBar = "vertical_progress_bar_icon.png";
-            public const string RadialProgressBar = "radial_progress_bar_icon.png";
         }
 
         public static class EmbeddedImages
@@ -81,6 +69,14 @@
             private const string BasePath = "TrashBox.EmbeddedFiles.Images.";
 
             public const string BackboardBackground = BasePath + "backboard_background.jpg";
+
+            public const string Dish = BasePath + "dish_icon.png";
+            public const string Entertainment = BasePath + "entertainment_icon.png";
+            public const string FastFood = BasePath + "fast_food_icon.png";
+            public const string Pills = BasePath + "pills_icon.png";
+            public const string RepairTools = BasePath + "repair_tools_icon.png";
+            public const string Transport = BasePath + "transport_icon.png";
+            public const string VideoGame = BasePath + "video_game_icon.png";
 
             #region MKDemo
 
@@ -114,6 +110,9 @@
         {
             public const string Skull = "\uf54c";
             public const string Question = "\uf128";
+            public const string Gamepad = "\uf11b";
+            public const string PencilRuler = "\uf5ae";
+            public const string IdCard = "\uf2c2";
         }
 
         public static class Links

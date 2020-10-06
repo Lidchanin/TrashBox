@@ -11,6 +11,9 @@
     <None Remove="EmbeddedFiles\Fonts\mk_4.ttf" />
     <None Remove="EmbeddedFiles\Fonts\mk_title.ttf" />
     <None Remove="EmbeddedFiles\Images\backboard_background.jpg" />
+    <None Remove="EmbeddedFiles\Images\dish_icon.png" />
+    <None Remove="EmbeddedFiles\Images\entertainment_icon.png" />
+    <None Remove="EmbeddedFiles\Images\fast_food_icon.png" />
     <None Remove="EmbeddedFiles\Images\mk_ermak.png" />
     <None Remove="EmbeddedFiles\Images\mk_erron_black.png" />
     <None Remove="EmbeddedFiles\Images\mk_johnny_cage.png" />
@@ -24,6 +27,10 @@
     <None Remove="EmbeddedFiles\Images\mk_raiden.png" />
     <None Remove="EmbeddedFiles\Images\mk_scorpion.png" />
     <None Remove="EmbeddedFiles\Images\mk_sub_zero.png" />
+    <None Remove="EmbeddedFiles\Images\pills_icon.png" />
+    <None Remove="EmbeddedFiles\Images\repair_tools_icon.png" />
+    <None Remove="EmbeddedFiles\Images\transport_icon.png" />
+    <None Remove="EmbeddedFiles\Images\video_game_icon.png" />
     <None Remove="EmbeddedFiles\mk_background_1.jpg" />
     <None Remove="EmbeddedFiles\mk_background_2.jpg" />
     <None Remove="EmbeddedFiles\mk_background_3.jpg" />
@@ -46,6 +53,9 @@
     <EmbeddedResource Include="EmbeddedFiles\Fonts\mk_4.ttf" />
     <EmbeddedResource Include="EmbeddedFiles\Fonts\mk_title.ttf" />
     <EmbeddedResource Include="EmbeddedFiles\Images\backboard_background.jpg" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\dish_icon.png" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\entertainment_icon.png" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\fast_food_icon.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\mk_ermak.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\mk_erron_black.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\mk_johnny_cage.png" />
@@ -59,20 +69,24 @@
     <EmbeddedResource Include="EmbeddedFiles\Images\mk_raiden.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\mk_scorpion.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\mk_sub_zero.png" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\pills_icon.png" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\repair_tools_icon.png" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\transport_icon.png" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\video_game_icon.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Fody" Version="6.2.5">
+    <PackageReference Include="Fody" Version="6.2.6">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Newtonsoft.Json" Version="8.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="PropertyChanged.Fody" Version="3.2.9" />
-    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.5" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.6" />
     <PackageReference Include="SkiaSharp.Views.Forms" Version="2.80.2" />
     <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
-    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1364" />  
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
 

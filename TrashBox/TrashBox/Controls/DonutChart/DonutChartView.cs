@@ -391,10 +391,8 @@ namespace TrashBox.Controls.DonutChart
             Touch += DonutChartView_Touch;
         }
 
-        private static void OnChartChanged(BindableObject bindable, object oldValue, object newValue)
-        {
+        private static void OnChartChanged(BindableObject bindable, object oldValue, object newValue) =>
             InvalidateSurface((SKCanvasView) bindable);
-        }
 
         private void OnPaintCanvas(object sender, SKPaintSurfaceEventArgs e)
         {
