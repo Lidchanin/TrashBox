@@ -1,6 +1,5 @@
 ﻿using SkiaSharp.Views.Forms;
 using System;
-using TrashBox.Controls.GradientProgressBar;
 using Xamarin.Forms;
 
 namespace TrashBox.Controls.GradientRadialProgressBar
@@ -130,7 +129,7 @@ namespace TrashBox.Controls.GradientRadialProgressBar
         public static readonly BindableProperty StartBackgroundColorProperty = BindableProperty.Create(
             nameof(StartBackgroundColor),
             typeof(Color),
-            typeof(VerticalProgressBar),
+            typeof(RadialProgressBar),
             Color.Red,
             BindingMode.OneWay,
             (bindable, value) => value != null,
@@ -149,7 +148,7 @@ namespace TrashBox.Controls.GradientRadialProgressBar
         public static readonly BindableProperty EndBackgroundColorProperty = BindableProperty.Create(
             nameof(EndBackgroundColor),
             typeof(Color),
-            typeof(VerticalProgressBar),
+            typeof(RadialProgressBar),
             Color.Blue,
             BindingMode.OneWay,
             (bindable, value) => value != null,

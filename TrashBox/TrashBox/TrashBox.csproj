@@ -7,11 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="EmbeddedFiles\Fonts\coolvetica.ttf" />
     <None Remove="EmbeddedFiles\Fonts\font_awesome_5_free_solid_900.otf" />
     <None Remove="EmbeddedFiles\Fonts\mk_4.ttf" />
     <None Remove="EmbeddedFiles\Fonts\mk_title.ttf" />
+    <None Remove="EmbeddedFiles\Fonts\september_22.otf" />
     <None Remove="EmbeddedFiles\Images\backboard_background.jpg" />
     <None Remove="EmbeddedFiles\Images\dish_icon.png" />
+    <None Remove="EmbeddedFiles\Images\donut_chart_icon.png" />
     <None Remove="EmbeddedFiles\Images\entertainment_icon.png" />
     <None Remove="EmbeddedFiles\Images\fast_food_icon.png" />
     <None Remove="EmbeddedFiles\Images\mk_ermak.png" />
@@ -28,6 +31,8 @@
     <None Remove="EmbeddedFiles\Images\mk_scorpion.png" />
     <None Remove="EmbeddedFiles\Images\mk_sub_zero.png" />
     <None Remove="EmbeddedFiles\Images\pills_icon.png" />
+    <None Remove="EmbeddedFiles\Images\progress_bar_icon.png" />
+    <None Remove="EmbeddedFiles\Images\radial_progress_bar_icon.png" />
     <None Remove="EmbeddedFiles\Images\repair_tools_icon.png" />
     <None Remove="EmbeddedFiles\Images\transport_icon.png" />
     <None Remove="EmbeddedFiles\Images\video_game_icon.png" />
@@ -49,11 +54,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="EmbeddedFiles\Fonts\coolvetica.ttf" />
     <EmbeddedResource Include="EmbeddedFiles\Fonts\font_awesome_5_free_solid_900.otf" />
     <EmbeddedResource Include="EmbeddedFiles\Fonts\mk_4.ttf" />
     <EmbeddedResource Include="EmbeddedFiles\Fonts\mk_title.ttf" />
+    <EmbeddedResource Include="EmbeddedFiles\Fonts\september_22.otf" />
     <EmbeddedResource Include="EmbeddedFiles\Images\backboard_background.jpg" />
     <EmbeddedResource Include="EmbeddedFiles\Images\dish_icon.png" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\donut_chart_icon.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\entertainment_icon.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\fast_food_icon.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\mk_ermak.png" />
@@ -70,6 +78,8 @@
     <EmbeddedResource Include="EmbeddedFiles\Images\mk_scorpion.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\mk_sub_zero.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\pills_icon.png" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\progress_bar_icon.png" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\radial_progress_bar_icon.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\repair_tools_icon.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\transport_icon.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\video_game_icon.png" />
@@ -147,6 +157,12 @@
     <EmbeddedResource Update="Views\AboutPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\ControlsViews\DonutChart\DonutChartVariant1Page.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ControlsViews\DonutChart\DonutChartVariant2Page.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\ControlsViews\Support\BaseControlPropertyView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -210,9 +226,8 @@
     <EmbeddedResource Update="Views\DesignsViews\MKDemo\MKDemoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\Support\" />
+    <EmbeddedResource Update="Views\Support\PagePreviewerCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

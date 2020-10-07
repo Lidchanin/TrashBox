@@ -126,8 +126,8 @@ namespace TrashBox.Controls.GradientProgressBar
                     xText = info.Width / 2f - textBounds.MidX;
 
                     yText = percentageValue < 0.5f
-                        ? (info.Height - percentage) / 2f + textBounds.MidY
-                        : info.Height - (percentage / 2f - textBounds.MidY);
+                        ? (info.Height - percentage) / 2f - textBounds.MidY
+                        : info.Height - (percentage / 2f + textBounds.MidY);
 
                     break;
                 }

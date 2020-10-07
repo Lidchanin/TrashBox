@@ -59,8 +59,8 @@
         <converters:NumberSignChangingConverter x:Key="NumberSignChangingConverter" />
         <converters:DivisionByNumberConverter x:Key="DivisionByNumberConverter" />
         <converters:MultiplicationByNumberConverter x:Key="MultiplicationByNumberConverter" />
-        <converters:ImageResourceToImageSourceConverter x:Key="ImageResourceToImageSourceConverter" />
-        <converters:ImageResourceToResourceNameConverter x:Key="ImageResourceToResourceNameConverter" />
+        <converters:EmbeddedResourceToResourcePathConverter x:Key="EmbeddedResourceToResourcePathConverter" />
+        <converters:IsStringNotEmptyConverter x:Key="IsStringNotEmptyConverter" />
 
         <!--#endregion Converters-->
     </Application.Resources>

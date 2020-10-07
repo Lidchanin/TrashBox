@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ffImageLoading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    x:Class="TrashBox.Views.Support.PagePreviewerCell"
+    x:Name="Cell"
+    x:FieldModifier="private">
+
+    <ContentView.Resources>
+
+        <Style x:Key="LocalMainFrameStyle" TargetType="Frame">
+
+            <Setter Property="BackgroundColor" Value="{DynamicResource ControlsPropertyViewBackgroundColor}" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="BorderColor" Value="Transparent" />
+            <Setter Property="HasShadow" Value="False" />
+            <Setter Property="IsClippedToBounds" Value="True" />
+            <Setter Property="Padding" Value="10" />
+        </Style>
+
+        <Style x:Key="LocalLabelStyle" TargetType="Label">
+
+            <Setter Property="TextColor" Value="{DynamicResource ControlsPropertyViewTextColor}" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+        </Style>
+    </ContentView.Resources>
+
+    <ContentView.Content>
+
+        <Frame Style="{StaticResource LocalMainFrameStyle}">
+            <Frame.GestureRecognizers>
+
+                <TapGestureRecognizer
+                    Command="{Binding Source={x:Reference Cell}, Path=Command}"
+                    CommandParameter="{Binding Source={x:Reference Cell}, Path=PageInfo}" />
+            </Frame.GestureRecognizers>
+
+            <Grid
+                RowSpacing="0"
+                ColumnSpacing="10">
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+
+                    <ColumnDefinition Width="60" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <ffImageLoading:CachedImage
+                    Source="{Binding Source={x:Reference Cell},
+                                     Path=PageInfo.IconResourceName, 
+                                     Converter={StaticResource EmbeddedResourceToResourcePathConverter}}"
+                    DownsampleToViewSize="True"
+                    WidthRequest="60"
+                    HeightRequest="{Binding Source={RelativeSource Self}, Path=WidthRequest}"
+                    Grid.Row="0"
+                    Grid.Column="0" />
+
+                <Label
+                    Style="{StaticResource LocalLabelStyle}"
+                    Text="{Binding Source={x:Reference Cell}, Path=PageInfo.Title}"
+                    FontFamily="{Binding Source={x:Reference Cell}, Path=TitleFontFamily}"
+                    FontSize="30"
+                    Grid.Row="0"
+                    Grid.Column="1" />
+
+                <Label
+                    IsVisible="{Binding Source={x:Reference Cell}, 
+                                        Path=PageInfo.Description, 
+                                        Converter={StaticResource IsStringNotEmptyConverter}}"
+                    Style="{StaticResource LocalLabelStyle}"
+                    Text="{Binding Source={x:Reference Cell}, Path=PageInfo.Description}"
+                    FontFamily="{Binding Source={x:Reference Cell}, Path=DescriptionFontFamily}"
+                    FontSize="20"
+                    Margin="0,10,0,0"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2" />
+            </Grid>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

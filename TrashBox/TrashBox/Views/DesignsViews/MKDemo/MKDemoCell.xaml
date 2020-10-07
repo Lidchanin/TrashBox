@@ -102,7 +102,7 @@
                                     <ffImageLoading:CachedImage
                                         Source="{Binding Source={x:Reference Cell},
                                                          Path=Character.Image,
-                                                         Converter={StaticResource ImageResourceToResourceNameConverter}}"
+                                                         Converter={StaticResource EmbeddedResourceToResourcePathConverter}}"
                                         Aspect="AspectFit"
                                         TranslationX="{Binding Source={x:Reference Cell}, Path=Character.ParallaxTranslation}"
                                         HorizontalOptions="CenterAndExpand"

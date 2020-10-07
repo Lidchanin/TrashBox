@@ -4,16 +4,35 @@ using Xamarin.Forms;
 
 namespace TrashBox.Controls.GradientProgressBar
 {
-    public class VerticalDetailedProgressBar : SKCanvasView
+    public class GradientProgressBar : SKCanvasView
     {
         #region Bindable Properties
+
+        #region Orientation Property
+
+        public static readonly BindableProperty OrientationProperty = BindableProperty.Create(
+            nameof(Orientation),
+            typeof(ProgressBarOrientation),
+            typeof(GradientProgressBar),
+            ProgressBarOrientation.Horizontal,
+            BindingMode.OneWay,
+            (bindable, value) => value != null,
+            OnPropertyChangedInvalidate);
+
+        public ProgressBarOrientation Orientation
+        {
+            get => (ProgressBarOrientation) GetValue(OrientationProperty);
+            set => SetValue(OrientationProperty, value);
+        }
+
+        #endregion Orientation Property
 
         #region PecentageValue Property
 
         public static readonly BindableProperty PercentageValueProperty = BindableProperty.Create(
             nameof(PercentageValue),
             typeof(float),
-            typeof(VerticalDetailedProgressBar),
+            typeof(GradientProgressBar),
             0f,
             BindingMode.OneWay,
             (bindable, value) => value != null,
@@ -32,7 +51,7 @@ namespace TrashBox.Controls.GradientProgressBar
         public static readonly BindableProperty OuterCornerRadiusProperty = BindableProperty.Create(
             nameof(OuterCornerRadius),
             typeof(float),
-            typeof(VerticalDetailedProgressBar),
+            typeof(GradientProgressBar),
             5f,
             BindingMode.OneWay,
             (bindable, value) => value != null && (float) value >= 0,
@@ -51,7 +70,7 @@ namespace TrashBox.Controls.GradientProgressBar
         public static readonly BindableProperty InnerCornerRadiusProperty = BindableProperty.Create(
             nameof(InnerCornerRadius),
             typeof(float),
-            typeof(VerticalDetailedProgressBar),
+            typeof(GradientProgressBar),
             5f,
             BindingMode.OneWay,
             (bindable, value) => value != null && (float) value >= 0,
@@ -65,50 +84,12 @@ namespace TrashBox.Controls.GradientProgressBar
 
         #endregion InnerCornerRadiusProperty
 
-        #region FontSize Property
-
-        public static readonly BindableProperty FontSizeProperty = BindableProperty.Create(
-            nameof(FontSize),
-            typeof(float),
-            typeof(VerticalDetailedProgressBar),
-            12f,
-            BindingMode.OneWay,
-            (bindable, value) => value != null && (float) value >= 0,
-            OnPropertyChangedInvalidate);
-
-        public float FontSize
-        {
-            get => (float) GetValue(FontSizeProperty);
-            set => SetValue(FontSizeProperty, value);
-        }
-
-        #endregion FontSize Property
-
-        #region StringFormat Property
-
-        public static readonly BindableProperty StringFormatProperty = BindableProperty.Create(
-            nameof(StringFormat),
-            typeof(string),
-            typeof(VerticalDetailedProgressBar),
-            "{0:0%}",
-            BindingMode.OneWay,
-            (bindable, value) => value != null,
-            OnPropertyChangedInvalidate);
-
-        public string StringFormat
-        {
-            get => (string) GetValue(StringFormatProperty);
-            set => SetValue(StringFormatProperty, value);
-        }
-
-        #endregion StringFormat Property
-
         #region StartProgressColor Property
 
         public static readonly BindableProperty StartProgressColorProperty = BindableProperty.Create(
             nameof(StartProgressColor),
             typeof(Color),
-            typeof(VerticalDetailedProgressBar),
+            typeof(GradientProgressBar),
             Color.White,
             BindingMode.OneWay,
             (bindable, value) => value != null,
@@ -127,7 +108,7 @@ namespace TrashBox.Controls.GradientProgressBar
         public static readonly BindableProperty EndProgressColorProperty = BindableProperty.Create(
             nameof(EndProgressColor),
             typeof(Color),
-            typeof(VerticalDetailedProgressBar),
+            typeof(GradientProgressBar),
             Color.White,
             BindingMode.OneWay,
             (bindable, value) => value != null,
@@ -146,7 +127,7 @@ namespace TrashBox.Controls.GradientProgressBar
         public static readonly BindableProperty StartBackgroundColorProperty = BindableProperty.Create(
             nameof(StartBackgroundColor),
             typeof(Color),
-            typeof(VerticalDetailedProgressBar),
+            typeof(GradientProgressBar),
             Color.Blue,
             BindingMode.OneWay,
             (bindable, value) => value != null,
@@ -165,7 +146,7 @@ namespace TrashBox.Controls.GradientProgressBar
         public static readonly BindableProperty EndBackgroundColorProperty = BindableProperty.Create(
             nameof(EndBackgroundColor),
             typeof(Color),
-            typeof(VerticalDetailedProgressBar),
+            typeof(GradientProgressBar),
             Color.Blue,
             BindingMode.OneWay,
             (bindable, value) => value != null,
@@ -179,53 +160,13 @@ namespace TrashBox.Controls.GradientProgressBar
 
         #endregion EndBackgroundColor Property
 
-        #region PrimaryTextColor Property
-
-        public static readonly BindableProperty PrimaryTextColorProperty = BindableProperty.Create(
-            nameof(PrimaryTextColor),
-            typeof(Color),
-            typeof(VerticalDetailedProgressBar),
-            Color.White,
-            BindingMode.OneWay,
-            (bindable, value) => value != null,
-            OnPropertyChangedInvalidate);
-
-        public Color PrimaryTextColor
-        {
-            get => (Color) GetValue(PrimaryTextColorProperty);
-            set => SetValue(PrimaryTextColorProperty, value);
-        }
-
-        #endregion PrimaryTextColor Property
-
-        #region SecondaryTextColor Property
-
-        public static readonly BindableProperty SecondaryTextColorProperty = BindableProperty.Create(
-            nameof(SecondaryTextColor),
-            typeof(Color),
-            typeof(VerticalDetailedProgressBar),
-            Color.Blue,
-            BindingMode.OneWay,
-            (bindable, value) => value != null,
-            OnPropertyChangedInvalidate);
-
-        public Color SecondaryTextColor
-        {
-            get => (Color) GetValue(SecondaryTextColorProperty);
-            set => SetValue(SecondaryTextColorProperty, value);
-        }
-
-        #endregion SecondaryTextColor Property
-
         #endregion Bindable Properties
 
-        private static void OnPropertyChangedInvalidate(BindableObject bindable, object oldValue, object newValue)
+        protected static void OnPropertyChangedInvalidate(BindableObject bindable, object oldValue, object newValue)
         {
-            var control = (VerticalDetailedProgressBar) bindable;
-
             if (oldValue != newValue)
             {
-                control.InvalidateSurface();
+                ((SKCanvasView) bindable)?.InvalidateSurface();
             }
         }
 
@@ -234,23 +175,40 @@ namespace TrashBox.Controls.GradientProgressBar
             var canvas = e.Surface.Canvas;
             var info = e.Info;
 
-            var scale = CanvasSize.Width / (float) Width;
+            canvas.Clear();
+
+            float scale;
+            int percentageWidth;
+
+            switch (Orientation)
+            {
+                case ProgressBarOrientation.Horizontal:
+                {
+                    scale = CanvasSize.Width / (float) Width;
+                    percentageWidth = (int) Math.Floor(info.Width * PercentageValue);
+
+                    break;
+                }
+                case ProgressBarOrientation.Vertical:
+                {
+                    scale = CanvasSize.Height / (float) Height;
+                    percentageWidth = (int) Math.Floor(info.Height * PercentageValue);
+
+                    break;
+                }
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+
             var outerCornerRadius = OuterCornerRadius * scale;
             var innerCornerRadius = InnerCornerRadius * scale;
 
-            var percentageHeight = (int) Math.Floor(info.Height * PercentageValue);
-            var textSize = FontSize * scale;
-
-            canvas.Clear();
-
             ProgressBarHelper.SetClip(canvas, info, outerCornerRadius);
 
-            ProgressBarHelper.DrawBackground(canvas, ProgressBarOrientation.Vertical, e.Info, outerCornerRadius,
-                EndBackgroundColor.ToSKColor(), StartBackgroundColor.ToSKColor());
-            ProgressBarHelper.DrawProgress(canvas, ProgressBarOrientation.Vertical, e.Info, percentageHeight,
-                innerCornerRadius, EndProgressColor.ToSKColor(), StartProgressColor.ToSKColor());
-            ProgressBarHelper.DrawText(canvas, ProgressBarOrientation.Vertical, e.Info, percentageHeight, textSize,
-                PercentageValue, StringFormat, PrimaryTextColor.ToSKColor(), SecondaryTextColor.ToSKColor());
+            ProgressBarHelper.DrawBackground(canvas, Orientation, e.Info, outerCornerRadius,
+                StartBackgroundColor.ToSKColor(), EndBackgroundColor.ToSKColor());
+            ProgressBarHelper.DrawProgress(canvas, Orientation, e.Info, percentageWidth,
+                innerCornerRadius, StartProgressColor.ToSKColor(), EndProgressColor.ToSKColor());
         }
     }
 }

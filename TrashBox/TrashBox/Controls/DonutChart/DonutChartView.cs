@@ -383,6 +383,10 @@ namespace TrashBox.Controls.DonutChart
 
         private readonly List<long> _touchIds = new List<long>();
 
+        private IList<SKPath> _sectorsPaths;
+        private IList<SKPath> _descriptionsPaths;
+        private SKPath _holePath;
+
         public DonutChartView()
         {
             PaintSurface += OnPaintCanvas;
@@ -404,12 +408,7 @@ namespace TrashBox.Controls.DonutChart
             }
         }
 
-        private static void InvalidateSurface(SKCanvasView skCanvasView)
-        {
-            skCanvasView.InvalidateSurface();
-            DonutChartHelper.SectorsPaths.Clear();
-            DonutChartHelper.DescriptionsPaths.Clear();
-        }
+        private static void InvalidateSurface(SKCanvasView skCanvasView) => skCanvasView.InvalidateSurface();
 
         private void DonutChartView_Touch(object sender, SKTouchEventArgs e)
         {
@@ -462,18 +461,19 @@ namespace TrashBox.Controls.DonutChart
             var translatedLocation = new SKPoint(touchLocation.X - CanvasSize.Width / 2,
                 touchLocation.Y - CanvasSize.Height / 2);
 
-            if (DonutChartHelper.HolePath.Contains(translatedLocation.X, translatedLocation.Y))
+            if (_holePath != null && _holePath.Contains(translatedLocation.X, translatedLocation.Y))
             {
                 HoleCommand?.Execute(null);
 
                 return;
             }
 
-            for (var i = 0; i < DonutChartHelper.SectorsPaths.Count; i++)
+            for (var i = 0; i < _sectorsPaths?.Count; i++)
             {
-                if (DonutChartHelper.SectorsPaths[i].Contains(translatedLocation.X, translatedLocation.Y) ||
-                    DonutChartHelper.DescriptionsPaths[i] != null &&
-                    DonutChartHelper.DescriptionsPaths[i].Contains(translatedLocation.X, translatedLocation.Y))
+                if (_sectorsPaths[i] != null &&
+                    _sectorsPaths[i].Contains(translatedLocation.X, translatedLocation.Y) ||
+                    _descriptionsPaths[i] != null &&
+                    _descriptionsPaths[i].Contains(translatedLocation.X, translatedLocation.Y))
                 {
                     SectorCommand?.Execute(ItemsSource?[i]);
 
@@ -484,6 +484,10 @@ namespace TrashBox.Controls.DonutChart
 
         private void DrawContent(SKCanvas canvas, int width, int height)
         {
+            _sectorsPaths = null;
+            _descriptionsPaths = null;
+            _holePath = null;
+
             canvas.Clear();
 
             using (new SKAutoCanvasRestore(canvas))
@@ -499,10 +503,10 @@ namespace TrashBox.Controls.DonutChart
                 }
                 else
                 {
-                    DonutChartHelper.DrawSectors(canvas, outerRadius, innerRadius, ItemsSource);
+                    _sectorsPaths = DonutChartHelper.DrawSectors(canvas, outerRadius, innerRadius, ItemsSource);
                 }
 
-                DonutChartHelper.DrawHole(canvas, innerRadius, HoleColor.ToSKColor());
+                _holePath = DonutChartHelper.DrawHole(canvas, innerRadius, HoleColor.ToSKColor());
 
                 DonutChartHelper.DrawTextInHole(canvas, innerRadius, HolePrimaryTextScale, HoleSecondaryTextScale,
                     HolePrimaryText, HoleSecondaryText, HolePrimaryTextColor.ToSKColor(),
@@ -513,8 +517,9 @@ namespace TrashBox.Controls.DonutChart
 
                 if (DescriptionCircleRadius > 0)
                 {
-                    DonutChartHelper.DrawDescriptions(canvas, outerRadius, SeparatorsColor.ToSKColor(), SeparatorsWidth,
-                        ItemsSource, DescriptionCircleRadius, LineToCircleLength);
+                    _descriptionsPaths = DonutChartHelper.DrawDescriptions(canvas, outerRadius,
+                        SeparatorsColor.ToSKColor(), SeparatorsWidth, ItemsSource, DescriptionCircleRadius,
+                        LineToCircleLength);
                 }
             }
         }

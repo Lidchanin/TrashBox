@@ -9,16 +9,12 @@ namespace TrashBox.Controls.DonutChart
 {
     internal static partial class DonutChartHelper
     {
-        internal static readonly IList<SKPath> SectorsPaths = new List<SKPath>();
-        internal static readonly IList<SKPath> DescriptionsPaths = new List<SKPath>();
-        internal static SKPath HolePath;
-
         private const float UprightAngle = 1.57079637050629f;
         private const float TotalAngle = 6.28318548202515f;
 
-        internal static void DrawHole(SKCanvas canvas, float innerRadius, SKColor holeColor)
+        internal static SKPath DrawHole(SKCanvas canvas, float innerRadius, SKColor holeColor)
         {
-            HolePath = CreateHolePath(innerRadius);
+            var holePath = CreateHolePath(innerRadius);
 
             using var paint = new SKPaint
             {
@@ -27,7 +23,9 @@ namespace TrashBox.Controls.DonutChart
                 IsAntialias = true
             };
 
-            canvas.DrawPath(HolePath, paint);
+            canvas.DrawPath(holePath, paint);
+
+            return holePath;
         }
 
         internal static void DrawEmptyState(SKCanvas canvas, float outerRadius, float innerRadius,
@@ -86,13 +84,15 @@ namespace TrashBox.Controls.DonutChart
             }
         }
 
-        internal static void DrawSectors(SKCanvas canvas, float outerRadius, float innerRadius,
+        internal static IList<SKPath> DrawSectors(SKCanvas canvas, float outerRadius, float innerRadius,
             ObservableCollection<ExpenseChartItem> itemsSource)
         {
             if (itemsSource == null)
             {
-                return;
+                return null;
             }
+
+            var sectorsPaths = new List<SKPath>();
 
             var sumValues = itemsSource.Sum(x => Math.Abs(x.Value));
             var start = 0f;
@@ -116,18 +116,22 @@ namespace TrashBox.Controls.DonutChart
 
                 start = end;
 
-                SectorsPaths.Add(sectorPath);
+                sectorsPaths.Add(sectorPath);
             }
+
+            return sectorsPaths;
         }
 
-        internal static void DrawDescriptions(SKCanvas canvas, float outerRadius, SKColor separatorsColor,
+        internal static IList<SKPath> DrawDescriptions(SKCanvas canvas, float outerRadius, SKColor separatorsColor,
             float separatorsWidth, ObservableCollection<ExpenseChartItem> itemsSource, float circleRadius,
             float lineToCircleLength)
         {
             if (itemsSource == null || circleRadius <= 0)
             {
-                return;
+                return null;
             }
+
+            var descriptionsPaths = new List<SKPath>();
 
             var sumValues = itemsSource.Sum(x => Math.Abs(x.Value));
             var resizedBitmapSide = (int) GetInnerRectSideOfCircle(circleRadius);
@@ -186,11 +190,11 @@ namespace TrashBox.Controls.DonutChart
                             circlePoint3.Y - resizedBitmap.Height / 2f);
                     }
 
-                    DescriptionsPaths.Add(descriptionSeparatorPath);
+                    descriptionsPaths.Add(descriptionSeparatorPath);
                 }
                 else
                 {
-                    DescriptionsPaths.Add(null);
+                    descriptionsPaths.Add(null);
                 }
 
                 start = end;
@@ -198,6 +202,8 @@ namespace TrashBox.Controls.DonutChart
 
             descPaint.Dispose();
             separatorPaint.Dispose();
+
+            return descriptionsPaths;
         }
 
         internal static void DrawTextInHole(SKCanvas canvas, float innerRadius, float holePrimaryTextScale,

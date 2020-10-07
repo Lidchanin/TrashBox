@@ -26,7 +26,8 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <gradientProgressBar:VerticalDetailedProgressBar
+                    <gradientProgressBar:DetailedGradientProgressBar
+                        Orientation="Vertical"
                         PercentageValue="{Binding PercentageValue}"
                         OuterCornerRadius="{Binding OuterCornerRadius}"
                         InnerCornerRadius="{Binding InnerCornerRadius}"
@@ -41,7 +42,8 @@
                         WidthRequest="100"
                         Grid.Column="0" />
 
-                    <gradientProgressBar:VerticalProgressBar
+                    <gradientProgressBar:GradientProgressBar
+                        Orientation="Vertical"
                         PercentageValue="{Binding PercentageValue}"
                         OuterCornerRadius="{Binding OuterCornerRadius}"
                         InnerCornerRadius="{Binding InnerCornerRadius}"

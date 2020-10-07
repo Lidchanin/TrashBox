@@ -27,7 +27,8 @@
                         <RowDefinition Height="100" />
                     </Grid.RowDefinitions>
 
-                    <gradientProgressBar:HorizontalDetailedProgressBar
+                    <gradientProgressBar:DetailedGradientProgressBar
+                        Orientation="Horizontal"
                         PercentageValue="{Binding PercentageValue}"
                         OuterCornerRadius="{Binding OuterCornerRadius}"
                         InnerCornerRadius="{Binding InnerCornerRadius}"
@@ -40,7 +41,8 @@
                         EndBackgroundColor="#FB0003"
                         Grid.Row="0" />
 
-                    <gradientProgressBar:HorizontalProgressBar
+                    <gradientProgressBar:GradientProgressBar
+                        Orientation="Horizontal"
                         PercentageValue="{Binding PercentageValue}"
                         OuterCornerRadius="{Binding OuterCornerRadius}"
                         InnerCornerRadius="{Binding InnerCornerRadius}"

@@ -5,31 +5,37 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:abstractions="clr-namespace:TrashBox.Abstractions;assembly=TrashBox"
     xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
-    xmlns:controlsViewModels="clr-namespace:TrashBox.ViewModels.ControlsViewModels;assembly=TrashBox"
+    xmlns:models="clr-namespace:TrashBox.Models;assembly=TrashBox"
+    xmlns:viewModels="clr-namespace:TrashBox.ViewModels.ControlsViewModels;assembly=TrashBox"
+    xmlns:supportViews="clr-namespace:TrashBox.Views.Support;assembly=TrashBox"
     x:Class="TrashBox.Views.ControlsViews.ControlsPage"
-    x:DataType="controlsViewModels:ControlsViewModel"
+    x:DataType="viewModels:ControlsViewModel"
     Title="{x:Static helpers:Constants+Texts.Controls}">
 
     <abstractions:BaseContentPage.Content>
 
-        <StackLayout
-            Padding="10"
-            Spacing="10">
+        <CollectionView
+            ItemsSource="{x:Static viewModels:ControlsViewModel.PagesInfos}"
+            ItemSizingStrategy="MeasureAllItems"
+            HorizontalScrollBarVisibility="Never"
+            VerticalScrollBarVisibility="Never"
+            Margin="10">
+            <CollectionView.ItemsLayout>
 
-            <Button
-                Text="{x:Static helpers:Constants+Texts.DonutChartPages}"
-                Command="{Binding GoToPageCommand}"
-                CommandParameter="{x:Static controlsViewModels:ControlsViewModel+ControlsPages.DonutChart}" />
+                <LinearItemsLayout
+                    Orientation="Vertical"
+                    ItemSpacing="10" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
 
-            <Button
-                Text="{x:Static helpers:Constants+Texts.ProgressBarPages}"
-                Command="{Binding GoToPageCommand}"
-                CommandParameter="{x:Static controlsViewModels:ControlsViewModel+ControlsPages.ProgressBar}" />
+                <DataTemplate x:DataType="models:PageInfo">
 
-            <Button
-                Text="{x:Static helpers:Constants+Texts.RadialProgressBarPages}"
-                Command="{Binding GoToPageCommand}"
-                CommandParameter="{x:Static controlsViewModels:ControlsViewModel+ControlsPages.RadialProgressBar}" />
-        </StackLayout>
+                    <supportViews:PagePreviewerCell
+                        PageInfo="{Binding .}"
+                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:ControlsViewModel}},
+                                          Path=GoToPageCommand}" />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </abstractions:BaseContentPage.Content>
 </abstractions:BaseContentPage>

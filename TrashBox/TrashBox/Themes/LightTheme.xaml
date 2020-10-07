@@ -20,7 +20,7 @@
 
     <Color x:Key="ControlsPreviewViewColor">#DDDDDD</Color>
     <Color x:Key="ControlsPropertyViewBackgroundColor">#DDDDDD</Color>
-    <Color x:Key="ControlsPropertyViewTextColor">DarkSlateGray</Color>
+    <Color x:Key="ControlsPropertyViewTextColor">#111111</Color>
     <Color x:Key="ControlsPropertyViewThumbColor">DarkSlateGray</Color>
     <Color x:Key="ControlsPropertyViewTrackColor">#111111</Color>
     <Color x:Key="ControlsPropertyViewButtonTextColor">White</Color>

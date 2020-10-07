@@ -4,12 +4,12 @@ using Xamarin.Forms;
 
 namespace TrashBox.Converters
 {
-    public class ImageResourceToImageSourceConverter : IValueConverter
+    public class EmbeddedResourceToResourcePathConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture) =>
             !(value is string source) || string.IsNullOrWhiteSpace(source)
                 ? null
-                : ImageSource.FromResource(source);
+                : $"resource://{source}";
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {

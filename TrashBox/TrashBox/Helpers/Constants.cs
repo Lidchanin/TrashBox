@@ -14,18 +14,23 @@
             public const string Controls = "Controls";
             public const string Designs = "Designs";
             public const string About = "About";
-            public const string DonutChartPages = "Donut Chart Pages";
             public const string DonutCharts = "Donut Charts";
-            public const string ProgressBarPages = "Progress Bar Pages";
+            public const string DonutChartsDescription = @"1. Commands for sectors and the hole.
+2. Primary and secondary texts are automatically resized according to the size of the view.
+3. Circles with pictures as description.";
             public const string ProgressBars = "Progress Bars";
-            public const string RadialProgressBarPages = "Radial Progress Bar Pages";
+            public const string ProgressBarsDescription = @"1. Orientation: Vertical and Horizontal.
+2. Percentage text with StringFormat.
+3. Gradient for background and progress.
+4. Outer and inner CornerReadius.";
             public const string RadialProgressBars = "Radial Progress Bars";
+            public const string RadialProgressBarsDescription = @"1. Gradient for background and progress.
+2. Start and Sweep angles.";
             public const string HorizontalParallaxCarousel = "Horizontal Parallax Carousel";
             public const string Back = "Back";
             public const string Select = "Select";
             public const string Add = "Add";
             public const string Remove = "Remove";
-            public const string DoYouWantToGoOut = "Do you want to go out?";
 
             #region MKDemo
 
@@ -70,6 +75,9 @@
 
             public const string BackboardBackground = BasePath + "backboard_background.jpg";
 
+            public const string DonutChart = BasePath + "donut_chart_icon.png";
+            public const string ProgressBar = BasePath + "progress_bar_icon.png";
+            public const string RadialProgressBar = BasePath + "radial_progress_bar_icon.png";
             public const string Dish = BasePath + "dish_icon.png";
             public const string Entertainment = BasePath + "entertainment_icon.png";
             public const string FastFood = BasePath + "fast_food_icon.png";
@@ -104,12 +112,12 @@
             public const string MKTitle = BasePath + "mk_title.ttf";
             public const string MK4 = BasePath + "mk_4.ttf";
             public const string FontAwesomeSolid = BasePath + "font_awesome_5_free_solid_900.otf";
+            public const string Coolvetica = BasePath + "coolvetica.ttf";
+            public const string September22 = BasePath + "september_22.otf";
         }
 
         public static class FontAwesomeIcons
         {
-            public const string Skull = "\uf54c";
-            public const string Question = "\uf128";
             public const string Gamepad = "\uf11b";
             public const string PencilRuler = "\uf5ae";
             public const string IdCard = "\uf2c2";

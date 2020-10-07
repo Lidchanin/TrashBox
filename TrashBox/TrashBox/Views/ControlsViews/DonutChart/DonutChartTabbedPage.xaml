@@ -9,5 +9,9 @@
     x:Class="TrashBox.Views.ControlsViews.DonutChart.DonutChartTabbedPage"
     Title="{x:Static helpers:Constants+Texts.DonutCharts}">
 
+    <donutChartPages:DonutChartVariant1Page />
+
+    <donutChartPages:DonutChartVariant2Page />
+
     <donutChartPages:DonutChartExperimentPage />
 </abstractions:BaseTabbedPage>
