@@ -1,8 +1,9 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using TrashBox.Abstractions;
 using TrashBox.Helpers;
+using TrashBox.Models;
 using TrashBox.Views.DesignsViews.MKDemo;
 using Xamarin.Forms;
 
@@ -10,12 +11,25 @@ namespace TrashBox.ViewModels.DesignsViewModels
 {
     public class DesignsViewModel : BaseViewModel
     {
-        public enum DesignsPages
-        {
-            MKDemo
-        }
-
         public ICommand GoToPageCommand { get; }
+
+        public static readonly IList<PageInfo> PagesInfos;
+
+        static DesignsViewModel()
+        {
+            PagesInfos = new List<PageInfo>
+            {
+                new PageInfo
+                {
+                    Title = Constants.Texts.MKDemo,
+                    Description = Constants.Texts.MKDemoDescription,
+                    IconResourceName = Constants.EmbeddedImages.MKLogo2,
+                    Route = nameof(MKDemoPage),
+                    TitleFontFamily = Constants.EmbeddedFonts.MKTitle,
+                    DescriptionFontFamily = Constants.EmbeddedFonts.MK4
+                }
+            };
+        }
 
         public DesignsViewModel()
         {
@@ -24,7 +38,7 @@ namespace TrashBox.ViewModels.DesignsViewModels
 
         private async Task GoToPageAsync(object parameter)
         {
-            if (IsBusy || !(parameter is DesignsPages page))
+            if (IsBusy || !(parameter is PageInfo pageInfo))
             {
                 return;
             }
@@ -33,17 +47,7 @@ namespace TrashBox.ViewModels.DesignsViewModels
 
             try
             {
-                switch (page)
-                {
-                    case DesignsPages.MKDemo:
-                    {
-                        await ShellNavigationHelper.GoToAsync(nameof(MKDemoPage));
-
-                        break;
-                    }
-                    default:
-                        throw new ArgumentOutOfRangeException();
-                }
+                await ShellNavigationHelper.GoToAsync(pageInfo.Route);
             }
             finally
             {

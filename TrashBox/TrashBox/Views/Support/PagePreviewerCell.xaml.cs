@@ -39,38 +39,6 @@ namespace TrashBox.Views.Support
 
         #endregion Command Property
 
-        #region TitleFontFamily Property
-
-        public static readonly BindableProperty TitleFontFamilyProperty = BindableProperty.Create(
-            nameof(TitleFontFamily),
-            typeof(string),
-            typeof(PagePreviewerCell),
-            Constants.EmbeddedFonts.September22);
-
-        public string TitleFontFamily
-        {
-            get => (string) GetValue(TitleFontFamilyProperty);
-            set => SetValue(TitleFontFamilyProperty, value);
-        }
-
-        #endregion TitleFontFamily Property
-
-        #region DescriptionFontFamily Property
-
-        public static readonly BindableProperty DescriptionFontFamilyProperty = BindableProperty.Create(
-            nameof(DescriptionFontFamily),
-            typeof(string),
-            typeof(PagePreviewerCell),
-            Constants.EmbeddedFonts.September22);
-
-        public string DescriptionFontFamily
-        {
-            get => (string) GetValue(DescriptionFontFamilyProperty);
-            set => SetValue(DescriptionFontFamilyProperty, value);
-        }
-
-        #endregion DescriptionFontFamily Property
-
         #endregion Bindable Properties
 
         public PagePreviewerCell()

@@ -5,21 +5,37 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:abstractions="clr-namespace:TrashBox.Abstractions;assembly=TrashBox"
     xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
-    xmlns:designsViewModels="clr-namespace:TrashBox.ViewModels.DesignsViewModels;assembly=TrashBox"
+    xmlns:models="clr-namespace:TrashBox.Models;assembly=TrashBox"
+    xmlns:viewModels="clr-namespace:TrashBox.ViewModels.DesignsViewModels;assembly=TrashBox"
+    xmlns:support="clr-namespace:TrashBox.Views.Support;assembly=TrashBox"
     x:Class="TrashBox.Views.DesignsViews.DesignsPage"
-    x:DataType="designsViewModels:DesignsViewModel"
+    x:DataType="viewModels:DesignsViewModel"
     Title="{x:Static helpers:Constants+Texts.Designs}">
 
     <abstractions:BaseContentPage.Content>
 
-        <StackLayout
-            Padding="10"
-            Spacing="10">
+        <CollectionView
+            ItemsSource="{x:Static viewModels:DesignsViewModel.PagesInfos}"
+            ItemSizingStrategy="MeasureAllItems"
+            HorizontalScrollBarVisibility="Never"
+            VerticalScrollBarVisibility="Never"
+            Margin="10">
+            <CollectionView.ItemsLayout>
 
-            <Button
-                Text="{x:Static helpers:Constants+Texts.HorizontalParallaxCarousel}"
-                Command="{Binding GoToPageCommand}"
-                CommandParameter="{x:Static designsViewModels:DesignsViewModel+DesignsPages.MKDemo}" />
-        </StackLayout>
+                <LinearItemsLayout
+                    Orientation="Vertical"
+                    ItemSpacing="10" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+
+                <DataTemplate x:DataType="models:PageInfo">
+
+                    <support:PagePreviewerCell
+                        PageInfo="{Binding .}"
+                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:DesignsViewModel}},
+                                          Path=GoToPageCommand}" />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </abstractions:BaseContentPage.Content>
 </abstractions:BaseContentPage>

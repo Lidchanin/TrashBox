@@ -26,6 +26,10 @@
             public const string RadialProgressBars = "Radial Progress Bars";
             public const string RadialProgressBarsDescription = @"1. Gradient for background and progress.
 2. Start and Sweep angles.";
+            public const string MKDemo = "MK Demo";
+            public const string MKDemoDescription = @"Mortal Kombat design.
+1. Horizontal parallax behavior for CarouselView.
+2. Card flipping.";
             public const string HorizontalParallaxCarousel = "Horizontal Parallax Carousel";
             public const string Back = "Back";
             public const string Select = "Select";
@@ -34,7 +38,6 @@
 
             #region MKDemo
 
-            public const string MKDemo = "MK Demo";
             public const string Ermak = "Ermak";
             public const string ErmakInfo = "When a teammate is defeated, gain 40% of their attack and toughness. Max once per match.";
             public const string ErronBlack = "Erron Black";
@@ -101,6 +104,7 @@
             public const string MKScorpion = BasePath + "mk_scorpion.png";
             public const string MKSubZero = BasePath + "mk_sub_zero.png";
             public const string MKLogo = BasePath + "mk_logo.png";
+            public const string MKLogo2 = BasePath + "mk_logo_2.png";
 
             #endregion MKDemo
         }

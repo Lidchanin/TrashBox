@@ -26,6 +26,7 @@
     <None Remove="EmbeddedFiles\Images\mk_kung_lao.png" />
     <None Remove="EmbeddedFiles\Images\mk_liu_kang.png" />
     <None Remove="EmbeddedFiles\Images\mk_logo.png" />
+    <None Remove="EmbeddedFiles\Images\mk_logo_2.png" />
     <None Remove="EmbeddedFiles\Images\mk_quan_chi.png" />
     <None Remove="EmbeddedFiles\Images\mk_raiden.png" />
     <None Remove="EmbeddedFiles\Images\mk_scorpion.png" />
@@ -73,6 +74,7 @@
     <EmbeddedResource Include="EmbeddedFiles\Images\mk_kung_lao.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\mk_liu_kang.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\mk_logo.png" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\mk_logo_2.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\mk_quan_chi.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\mk_raiden.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\mk_scorpion.png" />
