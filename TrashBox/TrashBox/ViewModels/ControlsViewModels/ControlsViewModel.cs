@@ -4,6 +4,7 @@ using System.Windows.Input;
 using TrashBox.Abstractions;
 using TrashBox.Helpers;
 using TrashBox.Models;
+using TrashBox.Views.ControlsViews.BorderlessControls;
 using TrashBox.Views.ControlsViews.DonutChart;
 using TrashBox.Views.ControlsViews.GradientProgressBar;
 using TrashBox.Views.ControlsViews.GradientRadialProgressBar;
@@ -42,6 +43,13 @@ namespace TrashBox.ViewModels.ControlsViewModels
                     IconResourceName = Constants.EmbeddedImages.RadialProgressBar,
                     Route = nameof(GradientRadialProgressBarTabbedPage)
                 },
+                new PageInfo
+                {
+                    Title = Constants.Texts.BorderlessControls,
+                    Description = Constants.Texts.BorderlessControlsDescription,
+                    IconResourceName = Constants.EmbeddedImages.Entertainment,
+                    Route = nameof(BorderlessControlsTabbedPage)
+                }
             };
         }
 

@@ -1,4 +1,5 @@
-﻿using TrashBox.Views.ControlsViews.DonutChart;
+﻿using TrashBox.Views.ControlsViews.BorderlessControls;
+using TrashBox.Views.ControlsViews.DonutChart;
 using TrashBox.Views.ControlsViews.GradientProgressBar;
 using TrashBox.Views.ControlsViews.GradientRadialProgressBar;
 using TrashBox.Views.DesignsViews.MKDemo;
@@ -18,6 +19,8 @@ namespace TrashBox
             #region Controls Routes
 
             Routing.RegisterRoute(nameof(DonutChartTabbedPage), typeof(DonutChartTabbedPage));
+            Routing.RegisterRoute(nameof(DonutChartVariant1Page), typeof(DonutChartVariant1Page));
+            Routing.RegisterRoute(nameof(DonutChartVariant2Page), typeof(DonutChartVariant2Page));
             Routing.RegisterRoute(nameof(DonutChartExperimentPage), typeof(DonutChartExperimentPage));
 
             Routing.RegisterRoute(nameof(GradientRadialProgressBarTabbedPage),
@@ -39,6 +42,9 @@ namespace TrashBox
             Routing.RegisterRoute(nameof(GradientProgressBarExperiment2Page),
                 typeof(GradientProgressBarExperiment2Page));
 
+            Routing.RegisterRoute(nameof(BorderlessControlsTabbedPage), typeof(BorderlessControlsTabbedPage));
+            Routing.RegisterRoute(nameof(BorderlessControlsVariant1Page), typeof(BorderlessControlsVariant1Page));
+
             #endregion Controls Routes
 
             #region Designs Rotes
@@ -53,6 +59,8 @@ namespace TrashBox
             #region Controls Routes
 
             Routing.UnRegisterRoute(nameof(DonutChartTabbedPage));
+            Routing.UnRegisterRoute(nameof(DonutChartVariant1Page));
+            Routing.UnRegisterRoute(nameof(DonutChartVariant2Page));
             Routing.UnRegisterRoute(nameof(DonutChartExperimentPage));
 
             Routing.UnRegisterRoute(nameof(GradientRadialProgressBarTabbedPage));
@@ -66,6 +74,9 @@ namespace TrashBox
             Routing.UnRegisterRoute(nameof(GradientProgressBarVariant2Page));
             Routing.UnRegisterRoute(nameof(GradientProgressBarExperiment1Page));
             Routing.UnRegisterRoute(nameof(GradientProgressBarExperiment2Page));
+
+            Routing.UnRegisterRoute(nameof(BorderlessControlsTabbedPage));
+            Routing.UnRegisterRoute(nameof(BorderlessControlsVariant1Page));
 
             #endregion Controls Routes
 

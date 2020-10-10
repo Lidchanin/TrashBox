@@ -30,7 +30,8 @@
             public const string MKDemoDescription = @"Mortal Kombat design.
 1. Horizontal parallax behavior for CarouselView.
 2. Card flipping.";
-            public const string HorizontalParallaxCarousel = "Horizontal Parallax Carousel";
+            public const string BorderlessControls = "Borderless Controls";
+            public const string BorderlessControlsDescription = @"Borderless Date, Time, Date & Time pickers.";
             public const string Back = "Back";
             public const string Select = "Select";
             public const string Add = "Add";

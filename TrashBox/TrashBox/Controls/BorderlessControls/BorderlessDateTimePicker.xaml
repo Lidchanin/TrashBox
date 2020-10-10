@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TrashBox.Controls.BorderlessControls.BorderlessDateTimePicker"
+    x:Name="Picker"
+    x:FieldModifier="private">
+
+    <ContentView.Content>
+
+        <Grid>
+
+            <Label
+                Text="{Binding Source={x:Reference Picker}, Path=DateTimeString}"
+                TextColor="{Binding Source={x:Reference Picker}, Path=TextColor}"
+                FontFamily="{Binding Source={x:Reference Picker}, Path=FontFamily}"
+                FontSize="{Binding Source={x:Reference Picker}, Path=FontSize}"
+                FontAttributes="{Binding Source={x:Reference Picker}, Path=FontAttributes}">
+                <Label.GestureRecognizers>
+
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <DatePicker
+                x:Name="DatePicker"
+                x:FieldModifier="private"
+                IsVisible="False"
+                MaximumDate="{Binding Source={x:Reference Picker}, Path=MaximumDate}"
+                MinimumDate="{Binding Source={x:Reference Picker}, Path=MinimumDate}"
+                Date="{Binding Source={x:Reference Picker}, Path=DateTime}"
+                Unfocused="DatePicker_OnUnfocused" />
+
+            <TimePicker
+                x:Name="TimePicker"
+                x:FieldModifier="private"
+                IsVisible="False"
+                Time="{Binding Source={x:Reference Picker}, Path=Time}" />
+        </Grid>
+    </ContentView.Content>
+</ContentView>

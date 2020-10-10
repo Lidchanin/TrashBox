@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<abstractions:BaseContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:abstractions="clr-namespace:TrashBox.Abstractions;assembly=TrashBox"
+    xmlns:borderlessControls="clr-namespace:TrashBox.Controls.BorderlessControls;assembly=TrashBox"
+    xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
+    xmlns:support="clr-namespace:TrashBox.Views.ControlsViews.Support;assembly=TrashBox"
+    x:Class="TrashBox.Views.ControlsViews.BorderlessControls.BorderlessControlsVariant1Page"
+    Title="{x:Static helpers:Constants+Texts.Variant1}">
+
+    <abstractions:BaseContentPage.Content>
+
+        <support:ControlExperimentView>
+            <support:ControlExperimentView.ControlPreviewView>
+
+                <Grid
+                    RowSpacing="10"
+                    Margin="10">
+                    <Grid.RowDefinitions>
+
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <borderlessControls:BorderlessDatePicker
+                        TextColor="Black"
+                        FontSize="20"
+                        Grid.Row="0" />
+
+                    <borderlessControls:BorderlessTimePicker
+                        TextColor="Black"
+                        FontSize="20"
+                        Grid.Row="1" />
+
+                    <borderlessControls:BorderlessDateTimePicker
+                        TextColor="Black"
+                        FontSize="20"
+                        Grid.Row="2" />
+                </Grid>
+            </support:ControlExperimentView.ControlPreviewView>
+        </support:ControlExperimentView>
+    </abstractions:BaseContentPage.Content>
+</abstractions:BaseContentPage>
