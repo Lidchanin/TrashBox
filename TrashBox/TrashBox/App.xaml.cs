@@ -7,6 +7,13 @@ namespace TrashBox
 {
     public partial class App
     {
+        public delegate void OnSleepDelegate();
+
+        public delegate void OnResumeDelegate();
+
+        public static OnSleepDelegate AdditionalOnSleep { get; set; }
+        public static OnResumeDelegate AdditionalOnResumeDelegate { get; set; }
+
         public static double ScreenWidth;
         public static double ScreenHeight;
 
@@ -25,17 +32,13 @@ namespace TrashBox
 
         protected override void OnStart()
         {
-
             var themeService = ThemesService.Instance;
+
             themeService.Init();
         }
 
-        protected override void OnSleep()
-        {
-        }
+        protected override void OnSleep() => AdditionalOnSleep();
 
-        protected override void OnResume()
-        {
-        }
+        protected override void OnResume() => AdditionalOnResumeDelegate();
     }
 }

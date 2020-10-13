@@ -196,9 +196,35 @@ namespace TrashBox.Controls.BorderlessControls
                 value.Seconds);
         }
 
-        public BorderlessDateTimePicker() => InitializeComponent();
+        public BorderlessDateTimePicker()
+        {
+            InitializeComponent();
+
+            if (Device.RuntimePlatform == Device.Android)
+            {
+                DatePicker.DateSelected += DatePicker_OnDateSelected;
+            }
+            else
+            {
+                DatePicker.Unfocused += DatePicker_OnUnfocused;
+            }
+        }
+
+        ~BorderlessDateTimePicker()
+        {
+            if (Device.RuntimePlatform == Device.Android)
+            {
+                DatePicker.DateSelected -= DatePicker_OnDateSelected;
+            }
+            else
+            {
+                DatePicker.Unfocused -= DatePicker_OnUnfocused;
+            }
+        }
 
         private void TapGestureRecognizer_OnTapped(object sender, EventArgs e) => DatePicker?.Focus();
+
+        private void DatePicker_OnDateSelected(object sender, DateChangedEventArgs e) => TimePicker?.Focus();
 
         private void DatePicker_OnUnfocused(object sender, FocusEventArgs e) => TimePicker?.Focus();
     }

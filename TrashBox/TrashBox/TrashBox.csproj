@@ -52,6 +52,7 @@
     <None Remove="EmbeddedFiles\mk_raiden.png" />
     <None Remove="EmbeddedFiles\mk_scorpion.png" />
     <None Remove="EmbeddedFiles\mk_sub_zero.png" />
+    <None Remove="EmbeddedFiles\Audios\mk_background.mp3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -85,6 +86,7 @@
     <EmbeddedResource Include="EmbeddedFiles\Images\repair_tools_icon.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\transport_icon.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\video_game_icon.png" />
+    <EmbeddedResource Include="EmbeddedFiles\Audios\mk_background.mp3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -100,6 +102,10 @@
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1534" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="EmbeddedFiles\Audios\mk_background.mp3" />
   </ItemGroup>
 
   <ItemGroup>

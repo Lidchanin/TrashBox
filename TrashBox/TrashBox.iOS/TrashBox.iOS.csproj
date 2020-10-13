@@ -71,6 +71,7 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Renderers\BorderlessDatePickerRenderer.cs" />
     <Compile Include="Renderers\BorderlessTimePickerRenderer.cs" />
+    <Compile Include="Services\AudioPlayerService.cs" />
     <Compile Include="Services\StatusBarService.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />

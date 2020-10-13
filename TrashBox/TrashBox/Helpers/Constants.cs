@@ -121,6 +121,13 @@
             public const string September22 = BasePath + "september_22.otf";
         }
 
+        public static class EmbeddedAudios
+        {
+            private const string BasePath = "TrashBox.EmbeddedFiles.Audios.";
+
+            public const string MKBackground = BasePath + "mk_background.mp3";
+        }
+
         public static class FontAwesomeIcons
         {
             public const string Gamepad = "\uf11b";
