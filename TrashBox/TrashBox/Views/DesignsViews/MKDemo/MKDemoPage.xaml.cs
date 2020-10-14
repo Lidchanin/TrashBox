@@ -24,7 +24,7 @@ namespace TrashBox.Views.DesignsViews.MKDemo
         {
             base.OnAppearing();
 
-            App.AdditionalOnResumeDelegate += _audioPlayerService.Play;
+            App.AdditionalOnResume += _audioPlayerService.Play;
             App.AdditionalOnSleep += _audioPlayerService.Pause;
         }
 
@@ -32,7 +32,7 @@ namespace TrashBox.Views.DesignsViews.MKDemo
         {
             _audioPlayerService.Dispose();
 
-            App.AdditionalOnResumeDelegate -= _audioPlayerService.Play;
+            App.AdditionalOnResume -= _audioPlayerService.Play;
             App.AdditionalOnSleep -= _audioPlayerService.Pause;
 
             base.OnDisappearing();

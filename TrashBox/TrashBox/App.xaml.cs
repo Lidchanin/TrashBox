@@ -12,7 +12,7 @@ namespace TrashBox
         public delegate void OnResumeDelegate();
 
         public static OnSleepDelegate AdditionalOnSleep { get; set; }
-        public static OnResumeDelegate AdditionalOnResumeDelegate { get; set; }
+        public static OnResumeDelegate AdditionalOnResume { get; set; }
 
         public static double ScreenWidth;
         public static double ScreenHeight;
@@ -26,7 +26,6 @@ namespace TrashBox
             ScreenWidth = DeviceDisplay.MainDisplayInfo.Width / DeviceDisplay.MainDisplayInfo.Density;
             ScreenHeight = DeviceDisplay.MainDisplayInfo.Height / DeviceDisplay.MainDisplayInfo.Density;
 
-
             MainPage = ShellLifecycleHelper.CreateShell<AppShell>();
         }
 
@@ -37,8 +36,8 @@ namespace TrashBox
             themeService.Init();
         }
 
-        protected override void OnSleep() => AdditionalOnSleep();
+        protected override void OnSleep() => AdditionalOnSleep?.Invoke();
 
-        protected override void OnResume() => AdditionalOnResumeDelegate();
+        protected override void OnResume() => AdditionalOnResume?.Invoke();
     }
 }
