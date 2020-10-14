@@ -1,10 +1,10 @@
 # TrashBox - repository with custom views, some helpers and services, and XF designs.
 
 ## Contents    
-1. **Controls**    
+1. [**Controls**](#controls)    
     - [Gradient Progress Bar](#gradient-progress-bar-original--detailed)    
     - [Gradient Radial Progress Bar](#gradient-radial-progress-bar)    
-2. **Designs**
+2. [**Designs**](#designs)
 ____
 ## Controls
 
