@@ -4,6 +4,7 @@
 1. [**Controls**](#controls)    
     - [Gradient Progress Bar](#gradient-progress-bar-original--detailed)    
     - [Gradient Radial Progress Bar](#gradient-radial-progress-bar)    
+    - [Donut Chart](#donut-chart)
 2. [**Designs**](#designs)
 ____
 ## Controls
@@ -27,7 +28,13 @@ Main features:
 - Start and Sweep angles.
 
 ![Alt](https://github.com/Lidchanin/TrashBox/blob/master/GitFiles/android_gradient_radial_progress_bar_preview.jpg "Android Gradient Progress Bar")
-![Alt](https://github.com/Lidchanin/TrashBox/blob/master/GitFiles/ios_gradient_radial_progress_bar_preview.jpg "Android Gradient Progress Bar")
+![Alt](https://github.com/Lidchanin/TrashBox/blob/master/GitFiles/ios_gradient_radial_progress_bar_preview.jpg "iOS Gradient Progress Bar")
+[:arrow_up: Go To Contents](#contents)
+____
+### **Donut Chart**    
+
+![Alt](https://github.com/Lidchanin/TrashBox/blob/master/GitFiles/android_donut_chart_preview.jpg "Android Donut Chart")
+![Alt](https://github.com/Lidchanin/TrashBox/blob/master/GitFiles/ios_donut_chart_preview.jpg "iOS Donut Chart")
 [:arrow_up: Go To Contents](#contents)
 ____
 ## Designs
