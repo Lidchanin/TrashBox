@@ -31,6 +31,7 @@
     <None Remove="EmbeddedFiles\Images\mk_raiden.png" />
     <None Remove="EmbeddedFiles\Images\mk_scorpion.png" />
     <None Remove="EmbeddedFiles\Images\mk_sub_zero.png" />
+    <None Remove="EmbeddedFiles\Images\no_border_icon.png" />
     <None Remove="EmbeddedFiles\Images\pills_icon.png" />
     <None Remove="EmbeddedFiles\Images\progress_bar_icon.png" />
     <None Remove="EmbeddedFiles\Images\radial_progress_bar_icon.png" />
@@ -80,6 +81,7 @@
     <EmbeddedResource Include="EmbeddedFiles\Images\mk_raiden.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\mk_scorpion.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\mk_sub_zero.png" />
+    <EmbeddedResource Include="EmbeddedFiles\Images\no_border_icon.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\pills_icon.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\progress_bar_icon.png" />
     <EmbeddedResource Include="EmbeddedFiles\Images\radial_progress_bar_icon.png" />

@@ -47,7 +47,7 @@ namespace TrashBox.ViewModels.ControlsViewModels
                 {
                     Title = Constants.Texts.BorderlessControls,
                     Description = Constants.Texts.BorderlessControlsDescription,
-                    IconResourceName = Constants.EmbeddedImages.Entertainment,
+                    IconResourceName = Constants.EmbeddedImages.NoBorder,
                     Route = nameof(BorderlessControlsTabbedPage)
                 }
             };

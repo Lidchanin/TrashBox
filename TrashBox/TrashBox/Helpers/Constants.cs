@@ -82,6 +82,7 @@
             public const string DonutChart = BasePath + "donut_chart_icon.png";
             public const string ProgressBar = BasePath + "progress_bar_icon.png";
             public const string RadialProgressBar = BasePath + "radial_progress_bar_icon.png";
+            public const string NoBorder = BasePath + "no_border_icon.png";
             public const string Dish = BasePath + "dish_icon.png";
             public const string Entertainment = BasePath + "entertainment_icon.png";
             public const string FastFood = BasePath + "fast_food_icon.png";
