@@ -1,6 +1,6 @@
 ﻿namespace TrashBox.Helpers
 {
-    public static class Constants
+    public static partial class Constants
     {
         public static class Texts
         {
@@ -37,8 +37,6 @@
             public const string Add = "Add";
             public const string Remove = "Remove";
 
-            #region MKDemo
-
             public const string Ermak = "Ermak";
             public const string ErmakInfo = "When a teammate is defeated, gain 40% of their attack and toughness. Max once per match.";
             public const string ErronBlack = "Erron Black";
@@ -64,83 +62,6 @@
             public const string SubZero = "Sub-Zero";
             public const string SubZeroInfo = "+30% health for Martial Artist teammates.";
             public const string ChooseYourFighter = "Choose Your Fighter";
-
-            #endregion MKDemo
-        }
-
-        public static class Filenames
-        {
-            public const string AppIcon = "ic_launcher.png";
-        }
-
-        public static class EmbeddedImages
-        {
-            private const string BasePath = "TrashBox.EmbeddedFiles.Images.";
-
-            public const string BackboardBackground = BasePath + "backboard_background.jpg";
-
-            public const string DonutChart = BasePath + "donut_chart_icon.png";
-            public const string ProgressBar = BasePath + "progress_bar_icon.png";
-            public const string RadialProgressBar = BasePath + "radial_progress_bar_icon.png";
-            public const string NoBorder = BasePath + "no_border_icon.png";
-            public const string Dish = BasePath + "dish_icon.png";
-            public const string Entertainment = BasePath + "entertainment_icon.png";
-            public const string FastFood = BasePath + "fast_food_icon.png";
-            public const string Pills = BasePath + "pills_icon.png";
-            public const string RepairTools = BasePath + "repair_tools_icon.png";
-            public const string Transport = BasePath + "transport_icon.png";
-            public const string VideoGame = BasePath + "video_game_icon.png";
-
-            #region MKDemo
-
-            public const string MKErmak = BasePath + "mk_ermak.png";
-            public const string MKErronBlack = BasePath + "mk_erron_black.png";
-            public const string MKJohnnyCage = BasePath + "mk_johnny_cage.png";
-            public const string MKKano = BasePath + "mk_kano.png";
-            public const string MKKenshi = BasePath + "mk_kenshi.png";
-            public const string MKKitana = BasePath + "mk_kitana.png";
-            public const string MKKungLao = BasePath + "mk_kung_lao.png";
-            public const string MKLiuKang = BasePath + "mk_liu_kang.png";
-            public const string MKQuanChi = BasePath + "mk_quan_chi.png";
-            public const string MKRaiden = BasePath + "mk_raiden.png";
-            public const string MKScorpion = BasePath + "mk_scorpion.png";
-            public const string MKSubZero = BasePath + "mk_sub_zero.png";
-            public const string MKLogo = BasePath + "mk_logo.png";
-            public const string MKLogo2 = BasePath + "mk_logo_2.png";
-
-            #endregion MKDemo
-        }
-
-        public static class EmbeddedFonts
-        {
-            private const string BasePath = "TrashBox.EmbeddedFiles.Fonts.";
-
-            public const string MKTitle = BasePath + "mk_title.ttf";
-            public const string MK4 = BasePath + "mk_4.ttf";
-            public const string FontAwesomeSolid = BasePath + "font_awesome_5_free_solid_900.otf";
-            public const string Coolvetica = BasePath + "coolvetica.ttf";
-            public const string September22 = BasePath + "september_22.otf";
-        }
-
-        public static class EmbeddedAudios
-        {
-            private const string BasePath = "TrashBox.EmbeddedFiles.Audios.";
-
-            public const string MKBackground = BasePath + "mk_background.mp3";
-        }
-
-        public static class FontAwesomeIcons
-        {
-            public const string Gamepad = "\uf11b";
-            public const string PencilRuler = "\uf5ae";
-            public const string IdCard = "\uf2c2";
-        }
-
-        public static class Links
-        {
-            public const string IconsGenerator = "https://www.iconsgenerator.com/Home/AppIcons";
-            public const string PngOptimizer = "https://tinypng.com/";
-            public const string SvgPathBuilder = "https://mavo.io/demos/svgpath/";
         }
     }
 }

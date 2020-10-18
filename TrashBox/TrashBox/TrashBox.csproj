@@ -7,88 +7,88 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="EmbeddedFiles\Fonts\coolvetica.ttf" />
-    <None Remove="EmbeddedFiles\Fonts\font_awesome_5_free_solid_900.otf" />
-    <None Remove="EmbeddedFiles\Fonts\mk_4.ttf" />
-    <None Remove="EmbeddedFiles\Fonts\mk_title.ttf" />
-    <None Remove="EmbeddedFiles\Fonts\september_22.otf" />
-    <None Remove="EmbeddedFiles\Images\backboard_background.jpg" />
-    <None Remove="EmbeddedFiles\Images\dish_icon.png" />
-    <None Remove="EmbeddedFiles\Images\donut_chart_icon.png" />
-    <None Remove="EmbeddedFiles\Images\entertainment_icon.png" />
-    <None Remove="EmbeddedFiles\Images\fast_food_icon.png" />
-    <None Remove="EmbeddedFiles\Images\mk_ermak.png" />
-    <None Remove="EmbeddedFiles\Images\mk_erron_black.png" />
-    <None Remove="EmbeddedFiles\Images\mk_johnny_cage.png" />
-    <None Remove="EmbeddedFiles\Images\mk_kano.png" />
-    <None Remove="EmbeddedFiles\Images\mk_kenshi.png" />
-    <None Remove="EmbeddedFiles\Images\mk_kitana.png" />
-    <None Remove="EmbeddedFiles\Images\mk_kung_lao.png" />
-    <None Remove="EmbeddedFiles\Images\mk_liu_kang.png" />
-    <None Remove="EmbeddedFiles\Images\mk_logo.png" />
-    <None Remove="EmbeddedFiles\Images\mk_logo_2.png" />
-    <None Remove="EmbeddedFiles\Images\mk_quan_chi.png" />
-    <None Remove="EmbeddedFiles\Images\mk_raiden.png" />
-    <None Remove="EmbeddedFiles\Images\mk_scorpion.png" />
-    <None Remove="EmbeddedFiles\Images\mk_sub_zero.png" />
-    <None Remove="EmbeddedFiles\Images\no_border_icon.png" />
-    <None Remove="EmbeddedFiles\Images\pills_icon.png" />
-    <None Remove="EmbeddedFiles\Images\progress_bar_icon.png" />
-    <None Remove="EmbeddedFiles\Images\radial_progress_bar_icon.png" />
-    <None Remove="EmbeddedFiles\Images\repair_tools_icon.png" />
-    <None Remove="EmbeddedFiles\Images\transport_icon.png" />
-    <None Remove="EmbeddedFiles\Images\video_game_icon.png" />
-    <None Remove="EmbeddedFiles\mk_background_1.jpg" />
-    <None Remove="EmbeddedFiles\mk_background_2.jpg" />
-    <None Remove="EmbeddedFiles\mk_background_3.jpg" />
-    <None Remove="EmbeddedFiles\mk_background_4.jpg" />
-    <None Remove="EmbeddedFiles\mk_background_5.png" />
-    <None Remove="EmbeddedFiles\mk_ermak.png" />
-    <None Remove="EmbeddedFiles\mk_goro.png" />
-    <None Remove="EmbeddedFiles\mk_kano.png" />
-    <None Remove="EmbeddedFiles\mk_kenshi.png" />
-    <None Remove="EmbeddedFiles\mk_kitana.png" />
-    <None Remove="EmbeddedFiles\mk_liu_kang.png" />
-    <None Remove="EmbeddedFiles\mk_quan_chi.png" />
-    <None Remove="EmbeddedFiles\mk_raiden.png" />
-    <None Remove="EmbeddedFiles\mk_scorpion.png" />
-    <None Remove="EmbeddedFiles\mk_sub_zero.png" />
-    <None Remove="EmbeddedFiles\Audios\mk_background.mp3" />
+    <None Remove="EmbeddedResources\Fonts\coolvetica.ttf" />
+    <None Remove="EmbeddedResources\Fonts\font_awesome_5_free_solid_900.otf" />
+    <None Remove="EmbeddedResources\Fonts\mk_4.ttf" />
+    <None Remove="EmbeddedResources\Fonts\mk_title.ttf" />
+    <None Remove="EmbeddedResources\Fonts\september_22.otf" />
+    <None Remove="EmbeddedResources\Images\backboard_background.jpg" />
+    <None Remove="EmbeddedResources\Images\dish_icon.png" />
+    <None Remove="EmbeddedResources\Images\donut_chart_icon.png" />
+    <None Remove="EmbeddedResources\Images\entertainment_icon.png" />
+    <None Remove="EmbeddedResources\Images\fast_food_icon.png" />
+    <None Remove="EmbeddedResources\Images\mk_ermak.png" />
+    <None Remove="EmbeddedResources\Images\mk_erron_black.png" />
+    <None Remove="EmbeddedResources\Images\mk_johnny_cage.png" />
+    <None Remove="EmbeddedResources\Images\mk_kano.png" />
+    <None Remove="EmbeddedResources\Images\mk_kenshi.png" />
+    <None Remove="EmbeddedResources\Images\mk_kitana.png" />
+    <None Remove="EmbeddedResources\Images\mk_kung_lao.png" />
+    <None Remove="EmbeddedResources\Images\mk_liu_kang.png" />
+    <None Remove="EmbeddedResources\Images\mk_logo.png" />
+    <None Remove="EmbeddedResources\Images\mk_logo_2.png" />
+    <None Remove="EmbeddedResources\Images\mk_quan_chi.png" />
+    <None Remove="EmbeddedResources\Images\mk_raiden.png" />
+    <None Remove="EmbeddedResources\Images\mk_scorpion.png" />
+    <None Remove="EmbeddedResources\Images\mk_sub_zero.png" />
+    <None Remove="EmbeddedResources\Images\no_border_icon.png" />
+    <None Remove="EmbeddedResources\Images\pills_icon.png" />
+    <None Remove="EmbeddedResources\Images\progress_bar_icon.png" />
+    <None Remove="EmbeddedResources\Images\radial_progress_bar_icon.png" />
+    <None Remove="EmbeddedResources\Images\repair_tools_icon.png" />
+    <None Remove="EmbeddedResources\Images\transport_icon.png" />
+    <None Remove="EmbeddedResources\Images\video_game_icon.png" />
+    <None Remove="EmbeddedResources\mk_background_1.jpg" />
+    <None Remove="EmbeddedResources\mk_background_2.jpg" />
+    <None Remove="EmbeddedResources\mk_background_3.jpg" />
+    <None Remove="EmbeddedResources\mk_background_4.jpg" />
+    <None Remove="EmbeddedResources\mk_background_5.png" />
+    <None Remove="EmbeddedResources\mk_ermak.png" />
+    <None Remove="EmbeddedResources\mk_goro.png" />
+    <None Remove="EmbeddedResources\mk_kano.png" />
+    <None Remove="EmbeddedResources\mk_kenshi.png" />
+    <None Remove="EmbeddedResources\mk_kitana.png" />
+    <None Remove="EmbeddedResources\mk_liu_kang.png" />
+    <None Remove="EmbeddedResources\mk_quan_chi.png" />
+    <None Remove="EmbeddedResources\mk_raiden.png" />
+    <None Remove="EmbeddedResources\mk_scorpion.png" />
+    <None Remove="EmbeddedResources\mk_sub_zero.png" />
+    <None Remove="EmbeddedResources\Audios\mk_background.mp3" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="EmbeddedFiles\Fonts\coolvetica.ttf" />
-    <EmbeddedResource Include="EmbeddedFiles\Fonts\font_awesome_5_free_solid_900.otf" />
-    <EmbeddedResource Include="EmbeddedFiles\Fonts\mk_4.ttf" />
-    <EmbeddedResource Include="EmbeddedFiles\Fonts\mk_title.ttf" />
-    <EmbeddedResource Include="EmbeddedFiles\Fonts\september_22.otf" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\backboard_background.jpg" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\dish_icon.png" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\donut_chart_icon.png" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\entertainment_icon.png" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\fast_food_icon.png" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\mk_ermak.png" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\mk_erron_black.png" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\mk_johnny_cage.png" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\mk_kano.png" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\mk_kenshi.png" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\mk_kitana.png" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\mk_kung_lao.png" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\mk_liu_kang.png" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\mk_logo.png" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\mk_logo_2.png" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\mk_quan_chi.png" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\mk_raiden.png" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\mk_scorpion.png" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\mk_sub_zero.png" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\no_border_icon.png" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\pills_icon.png" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\progress_bar_icon.png" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\radial_progress_bar_icon.png" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\repair_tools_icon.png" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\transport_icon.png" />
-    <EmbeddedResource Include="EmbeddedFiles\Images\video_game_icon.png" />
-    <EmbeddedResource Include="EmbeddedFiles\Audios\mk_background.mp3" />
+    <EmbeddedResource Include="EmbeddedResources\Fonts\coolvetica.ttf" />
+    <EmbeddedResource Include="EmbeddedResources\Fonts\font_awesome_5_free_solid_900.otf" />
+    <EmbeddedResource Include="EmbeddedResources\Fonts\mk_4.ttf" />
+    <EmbeddedResource Include="EmbeddedResources\Fonts\mk_title.ttf" />
+    <EmbeddedResource Include="EmbeddedResources\Fonts\september_22.otf" />
+    <EmbeddedResource Include="EmbeddedResources\Images\backboard_background.jpg" />
+    <EmbeddedResource Include="EmbeddedResources\Images\dish_icon.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\donut_chart_icon.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\entertainment_icon.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\fast_food_icon.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\mk_ermak.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\mk_erron_black.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\mk_johnny_cage.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\mk_kano.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\mk_kenshi.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\mk_kitana.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\mk_kung_lao.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\mk_liu_kang.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\mk_logo.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\mk_logo_2.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\mk_quan_chi.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\mk_raiden.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\mk_scorpion.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\mk_sub_zero.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\no_border_icon.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\pills_icon.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\progress_bar_icon.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\radial_progress_bar_icon.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\repair_tools_icon.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\transport_icon.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\video_game_icon.png" />
+    <EmbeddedResource Include="EmbeddedResources\Audios\mk_background.mp3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -107,7 +107,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Include="EmbeddedFiles\Audios\mk_background.mp3" />
+    <Page Include="EmbeddedResources\Audios\mk_background.mp3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -117,20 +117,20 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="EmbeddedFiles\mk_background_1.jpg" />
-    <Resource Include="EmbeddedFiles\mk_background_2.jpg" />
-    <Resource Include="EmbeddedFiles\mk_background_3.jpg" />
-    <Resource Include="EmbeddedFiles\mk_background_4.jpg" />
-    <Resource Include="EmbeddedFiles\mk_ermak.png" />
-    <Resource Include="EmbeddedFiles\mk_goro.png" />
-    <Resource Include="EmbeddedFiles\mk_kano.png" />
-    <Resource Include="EmbeddedFiles\mk_kenshi.png" />
-    <Resource Include="EmbeddedFiles\mk_kitana.png" />
-    <Resource Include="EmbeddedFiles\mk_liu_kang.png" />
-    <Resource Include="EmbeddedFiles\mk_quan_chi.png" />
-    <Resource Include="EmbeddedFiles\mk_raiden.png" />
-    <Resource Include="EmbeddedFiles\mk_scorpion.png" />
-    <Resource Include="EmbeddedFiles\mk_sub_zero.png" />
+    <Resource Include="EmbeddedResources\mk_background_1.jpg" />
+    <Resource Include="EmbeddedResources\mk_background_2.jpg" />
+    <Resource Include="EmbeddedResources\mk_background_3.jpg" />
+    <Resource Include="EmbeddedResources\mk_background_4.jpg" />
+    <Resource Include="EmbeddedResources\mk_ermak.png" />
+    <Resource Include="EmbeddedResources\mk_goro.png" />
+    <Resource Include="EmbeddedResources\mk_kano.png" />
+    <Resource Include="EmbeddedResources\mk_kenshi.png" />
+    <Resource Include="EmbeddedResources\mk_kitana.png" />
+    <Resource Include="EmbeddedResources\mk_liu_kang.png" />
+    <Resource Include="EmbeddedResources\mk_quan_chi.png" />
+    <Resource Include="EmbeddedResources\mk_raiden.png" />
+    <Resource Include="EmbeddedResources\mk_scorpion.png" />
+    <Resource Include="EmbeddedResources\mk_sub_zero.png" />
   </ItemGroup>
 
   <ItemGroup>
