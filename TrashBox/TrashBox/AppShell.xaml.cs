@@ -42,8 +42,7 @@ namespace TrashBox
             Routing.RegisterRoute(nameof(GradientProgressBarExperiment2Page),
                 typeof(GradientProgressBarExperiment2Page));
 
-            Routing.RegisterRoute(nameof(BorderlessControlsTabbedPage), typeof(BorderlessControlsTabbedPage));
-            Routing.RegisterRoute(nameof(BorderlessControlsVariant1Page), typeof(BorderlessControlsVariant1Page));
+            Routing.RegisterRoute(nameof(BorderlessControlsPage), typeof(BorderlessControlsPage));
 
             #endregion Controls Routes
 
@@ -75,8 +74,7 @@ namespace TrashBox
             Routing.UnRegisterRoute(nameof(GradientProgressBarExperiment1Page));
             Routing.UnRegisterRoute(nameof(GradientProgressBarExperiment2Page));
 
-            Routing.UnRegisterRoute(nameof(BorderlessControlsTabbedPage));
-            Routing.UnRegisterRoute(nameof(BorderlessControlsVariant1Page));
+            Routing.UnRegisterRoute(nameof(BorderlessControlsPage));
 
             #endregion Controls Routes
 

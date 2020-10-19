@@ -1,8 +1,8 @@
 ﻿namespace TrashBox.Views.ControlsViews.BorderlessControls
 {
-    public partial class BorderlessControlsVariant1Page
+    public partial class BorderlessControlsPage
     {
-        public BorderlessControlsVariant1Page()
+        public BorderlessControlsPage()
         {
             InitializeComponent();
         }

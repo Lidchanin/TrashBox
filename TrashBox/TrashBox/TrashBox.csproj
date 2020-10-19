@@ -137,6 +137,9 @@
     <Compile Update="Abstractions\BaseContentPage.xaml.cs">
       <DependentUpon>BaseContentPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\ControlsViews\BorderlessControls\BorderlessControlsPage.xaml.cs">
+      <DependentUpon>BorderlessControlsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\ControlsViews\GradientProgressBar\GradientProgressBarExperiment1Page.xaml.cs">
       <DependentUpon>GradientProgressBarExperiment1Page.xaml</DependentUpon>
     </Compile>
@@ -170,10 +173,7 @@
     <EmbeddedResource Update="Views\AboutPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ControlsViews\BorderlessControls\BorderlessControlsTabbedPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\ControlsViews\BorderlessControls\BorderlessControlsVariant1Page.xaml">
+    <EmbeddedResource Update="Views\ControlsViews\BorderlessControls\BorderlessControlsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ControlsViews\DonutChart\DonutChartVariant1Page.xaml">

@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<abstractions:BaseContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:abstractions="clr-namespace:TrashBox.Abstractions;assembly=TrashBox"
+    xmlns:borderlessControls="clr-namespace:TrashBox.Controls.BorderlessControls;assembly=TrashBox"
+    xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
+    xmlns:support="clr-namespace:TrashBox.Views.ControlsViews.Support;assembly=TrashBox"
+    x:Class="TrashBox.Views.ControlsViews.BorderlessControls.BorderlessControlsPage"
+    Title="{x:Static helpers:Constants+Texts.BorderlessControls}">
+
+    <abstractions:BaseContentPage.Resources>
+
+        <Style x:Key="LocalLabelStyle" TargetType="Label">
+
+            <Setter Property="TextColor" Value="{DynamicResource ControlsPropertyViewTextColor}" />
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+    </abstractions:BaseContentPage.Resources>
+
+    <abstractions:BaseContentPage.Content>
+
+        <support:ControlExperimentView>
+            <support:ControlExperimentView.ControlPreviewView>
+
+                <ScrollView>
+
+                    <Grid
+                        RowSpacing="10"
+                        Padding="10">
+                        <Grid.RowDefinitions>
+
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Label
+                            Style="{StaticResource LocalLabelStyle}"
+                            Text="BorderlessDatePicker"
+                            Grid.Row="0" />
+
+                        <borderlessControls:BorderlessDatePicker
+                            TextColor="Black"
+                            FontSize="20"
+                            Grid.Row="1" />
+
+                        <Label
+                            Style="{StaticResource LocalLabelStyle}"
+                            Text="BorderlessTimePicker"
+                            Grid.Row="2" />
+
+                        <borderlessControls:BorderlessTimePicker
+                            TextColor="Black"
+                            FontSize="20"
+                            Grid.Row="3" />
+
+                        <Label
+                            Style="{StaticResource LocalLabelStyle}"
+                            Text="BorderlessDateTimePicker"
+                            Grid.Row="4" />
+
+                        <borderlessControls:BorderlessDateTimePicker
+                            TextColor="Black"
+                            FontSize="20"
+                            Grid.Row="5" />
+
+                        <Label
+                            Style="{StaticResource LocalLabelStyle}"
+                            Text="BorderlessPicker"
+                            Grid.Row="6" />
+
+                        <borderlessControls:BorderlessPicker
+                            Title="BorderlessPicker"
+                            Grid.Row="7">
+                            <borderlessControls:BorderlessPicker.Items>
+
+                                <x:String>BorderlessPicker 1</x:String>
+                                <x:String>BorderlessPicker 2</x:String>
+                                <x:String>BorderlessPicker 3</x:String>
+                            </borderlessControls:BorderlessPicker.Items>
+                        </borderlessControls:BorderlessPicker>
+
+                        <Label
+                            Style="{StaticResource LocalLabelStyle}"
+                            Text="BorderlessEntry"
+                            Grid.Row="8" />
+
+                        <borderlessControls:BorderlessEntry
+                            Text="BorderlessEntry"
+                            Placeholder="BorderlessEntry"
+                            Grid.Row="9" />
+
+                        <Label
+                            Style="{StaticResource LocalLabelStyle}"
+                            Text="BorderlessEditor"
+                            Grid.Row="10" />
+
+                        <borderlessControls:BorderlessEditor
+                            Text="BorderlessEditor"
+                            Placeholder="BorderlessEditor"
+                            AutoSize="TextChanges"
+                            BackgroundColor="Transparent"
+                            Grid.Row="11" />
+                    </Grid>
+                </ScrollView>
+            </support:ControlExperimentView.ControlPreviewView>
+        </support:ControlExperimentView>
+    </abstractions:BaseContentPage.Content>
+</abstractions:BaseContentPage>
