@@ -54,7 +54,9 @@ ____
 ## Designs
 ## Summary    
 Some app features:
-- Embedded resources (fonts, images, audios).
+- Embedded resources (fonts, images, audios)
 - Shapes
 - SkiaSharp
 - Animations
+
+[:arrow_up: Go To Contents](#contents)
