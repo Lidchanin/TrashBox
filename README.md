@@ -5,6 +5,7 @@
     - [Gradient Progress Bar](#gradient-progress-bar-original--detailed)    
     - [Gradient Radial Progress Bar](#gradient-radial-progress-bar)    
     - [Donut Chart](#donut-chart)
+    - [Borderless Controls](#borderless-controls)
 2. [**Designs**](#designs)
 ____
 ## Controls
@@ -35,6 +36,18 @@ ____
 
 ![Alt](https://github.com/Lidchanin/TrashBox/blob/master/GitFiles/android_donut_chart_preview.jpg "Android Donut Chart")
 ![Alt](https://github.com/Lidchanin/TrashBox/blob/master/GitFiles/ios_donut_chart_preview.jpg "iOS Donut Chart")
+[:arrow_up: Go To Contents](#contents)
+____
+### **Borderless Controls**    
+
+Types:
+- Picker
+- TimePicker
+- DatePicker
+- DateTimePicker
+- Entry
+- Editor    
+
 [:arrow_up: Go To Contents](#contents)
 ____
 ## Designs
