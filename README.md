@@ -4,9 +4,10 @@
 1. [**Controls**](#controls)    
     - [Gradient Progress Bar](#gradient-progress-bar-original--detailed)    
     - [Gradient Radial Progress Bar](#gradient-radial-progress-bar)    
-    - [Donut Chart](#donut-chart)
-    - [Borderless Controls](#borderless-controls)
-2. [**Designs**](#designs)
+    - [Donut Chart](#donut-chart)    
+    - [Borderless Controls](#borderless-controls)    
+2. [**Designs**](#designs)    
+3. [**Summary**](#summary)
 ____
 ## Controls
 
@@ -51,3 +52,9 @@ Types:
 [:arrow_up: Go To Contents](#contents)
 ____
 ## Designs
+## Summary    
+Some app features:
+- Embedded resources (fonts, images, audios).
+- Shapes
+- SkiaSharp
+- Animations
