@@ -4,6 +4,7 @@ using System.Windows.Input;
 using TrashBox.Abstractions;
 using TrashBox.Helpers;
 using TrashBox.Models;
+using TrashBox.Views.DesignsViews.MKDemo;
 using Xamarin.Forms;
 
 namespace TrashBox.ViewModels.DesignsViewModels
@@ -45,14 +46,44 @@ namespace TrashBox.ViewModels.DesignsViewModels
             };
         }
 
-        private static async Task GoBackAsync()
+        private async Task GoBackAsync()
         {
-            await ShellNavigationHelper.PopAsync();
+            if (IsBusy)
+            {
+                return;
+            }
+
+            IsBusy = true;
+
+            try
+            {
+                await ShellNavigationHelper.PopAsync();
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
         private async Task SelectCharacterAsync()
         {
-            var t = CurrentMKCharacter;
+            if (IsBusy || CurrentMKCharacter == null)
+            {
+                return;
+            }
+
+            IsBusy = true;
+
+            try
+            {
+                var infoPopup = new SelectionInfoPopup(CurrentMKCharacter.Name);
+
+                await infoPopup.ShowAsync();
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
     }
 }
