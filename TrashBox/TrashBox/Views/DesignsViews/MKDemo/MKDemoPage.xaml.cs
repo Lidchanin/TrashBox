@@ -30,17 +30,17 @@ namespace TrashBox.Views.DesignsViews.MKDemo
 
         protected override void OnDisappearing()
         {
-            _audioPlayerService.Dispose();
-
             App.AdditionalOnResume -= _audioPlayerService.Play;
             App.AdditionalOnSleep -= _audioPlayerService.Pause;
+
+            _audioPlayerService.Dispose();
 
             base.OnDisappearing();
         }
 
         private static void InitBackgroundAudio()
         {
-            _audioPlayerService = DependencyService.Get<IAudioPlayerService>();
+            _audioPlayerService = DependencyService.Get<IAudioPlayerService>(DependencyFetchTarget.NewInstance);
             _audioPlayerService.Init(GetStreamFromFile(Constants.EmbeddedAudios.MKBackground));
             _audioPlayerService.Volume = 0.75f;
             _audioPlayerService.IsLooped = true;
