@@ -32,6 +32,8 @@
 2. Card flipping.
 3. VisualElement.Clip with PathGeometry.
 4. Rg.Plugin.Popup.";
+            public const string CasioShop = "Casio Shop";
+            public const string CasioShopDescription = @"";
             public const string BorderlessControls = "Borderless Controls";
             public const string BorderlessControlsDescription =
                 "Borderless DatePicker, TimePicker, DateTimePicker, Picker, Entry, Editor.";

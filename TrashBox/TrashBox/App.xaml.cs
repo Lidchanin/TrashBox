@@ -19,7 +19,7 @@ namespace TrashBox
 
         public App()
         {
-            Device.SetFlags(new[] {"Shapes_Experimental"});
+            Device.SetFlags(new[] {"Shapes_Experimental", "Brush_Experimental", "Expander_Experimental" });
 
             InitializeComponent();
 

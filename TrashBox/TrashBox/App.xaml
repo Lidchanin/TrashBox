@@ -61,6 +61,8 @@
         <converters:MultiplicationByNumberConverter x:Key="MultiplicationByNumberConverter" />
         <converters:EmbeddedResourceToResourcePathConverter x:Key="EmbeddedResourceToResourcePathConverter" />
         <converters:IsStringNotEmptyConverter x:Key="IsStringNotEmptyConverter" />
+        <converters:IsMoreThanNumberConverter x:Key="IsMoreThanNumberConverter" />
+        <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
 
         <!--#endregion Converters-->
     </Application.Resources>

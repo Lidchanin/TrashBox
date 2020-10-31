@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<abstractions:BaseContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:abstractions="clr-namespace:TrashBox.Abstractions;assembly=TrashBox"
+    xmlns:enums="clr-namespace:TrashBox.Enums;assembly=TrashBox"
+    xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
+    xmlns:models="clr-namespace:TrashBox.Models;assembly=TrashBox"
+    xmlns:viewModels="clr-namespace:TrashBox.ViewModels.DesignsViewModels;assembly=TrashBox"
+    xmlns:casioShop="clr-namespace:TrashBox.Views.DesignsViews.CasioShop;assembly=TrashBox"
+    xmlns:trashBox="clr-namespace:TrashBox;assembly=TrashBox"
+    x:Class="TrashBox.Views.DesignsViews.CasioShop.CasioShopPage"
+    x:Name="Page"
+    x:FieldModifier="private"
+    x:DataType="viewModels:CasioShopViewModel"
+    Title="{x:Static helpers:Constants+Texts.ShopDemo}"
+    Shell.TabBarIsVisible="False"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="White">
+
+    <abstractions:BaseContentPage.Resources>
+
+        <x:Double x:Key="LocalTopSupportBarWidth">45</x:Double>
+        <x:Double x:Key="LocalTopSupportBarHeight">45</x:Double>
+
+        <Color x:Key="LocalSupportBarCenterColor">Blue</Color>
+        <Color x:Key="LocalSupportBarStartColor">CornflowerBlue</Color>
+
+        <Style x:Key="LocalSupportBarIconLabelStyle" TargetType="Label">
+
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="25" />
+            <Setter Property="FontFamily" Value="{x:Static helpers:Constants+EmbeddedFonts.FontAwesomeSolid}" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+        </Style>
+
+        <Style x:Key="LocalFloatingIconLabelStyle" TargetType="Label">
+
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontSize" Value="45" />
+            <Setter Property="FontFamily" Value="{x:Static helpers:Constants+EmbeddedFonts.FontAwesomeSolid}" />
+            <Setter Property="WidthRequest" Value="55" />
+            <Setter Property="HeightRequest" Value="55" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
+    </abstractions:BaseContentPage.Resources>
+
+    <abstractions:BaseContentPage.Content>
+
+        <Grid>
+
+            <!--#region Content Background-->
+
+            <Grid
+                IsVisible="True"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Start"
+                HeightRequest="{x:Static trashBox:App.ScreenHeight}"
+                Margin="{Binding Source={x:Reference Page}, Path=ContentMargin}"
+                Padding="0"
+                IsClippedToBounds="True">
+
+                <BoxView CornerRadius="50">
+                    <BoxView.Background>
+
+                        <LinearGradientBrush EndPoint="0,1">
+
+                            <GradientStop Color="CornflowerBlue" />
+
+                            <GradientStop Color="CornflowerBlue" />
+                        </LinearGradientBrush>
+                    </BoxView.Background>
+                </BoxView>
+            </Grid>
+
+            <!--#endregion Content Background-->
+
+            <!--#region Content-->
+
+            <Grid
+                Margin="0,45,0,0"
+                IsVisible="True"
+                VerticalOptions="Start"
+                HorizontalOptions="Start">
+
+                <CarouselView
+                    ItemsSource="{Binding Watches}"
+                    CurrentItem="{Binding CurrentWatch}"
+                    VerticalOptions="Start"
+                    IsScrollAnimated="False"
+                    HeightRequest="{Binding Source={x:Reference Page}, Path=CarouselHeightRequest}">
+                    <CarouselView.ItemTemplate>
+
+                        <DataTemplate x:DataType="models:WatchInfo">
+
+                            <casioShop:CasioShopCell
+                                WatchInfo="{Binding .}"
+                                Padding="55,0,10,10" />
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+            </Grid>
+
+            <!--#endregion Content-->
+
+            <!--#region Support Bar-->
+
+            <Grid
+                InputTransparent="True"
+                CascadeInputTransparent="False"
+                IsVisible="True">
+
+                <!--#region Top Support Bar-->
+
+                <Grid
+                    WidthRequest="{Binding Source={x:Static trashBox:App.ScreenWidth},
+                                           Converter={StaticResource MultiplicationByNumberConverter},
+                                           ConverterParameter=0.75}"
+                    HeightRequest="{Binding Source={StaticResource LocalTopSupportBarHeight}, 
+                                            Converter={StaticResource MultiplicationByNumberConverter},
+                                            ConverterParameter=2}"
+                    Margin="0,-45,0,0"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start">
+
+                    <BoxView CornerRadius="45">
+                        <BoxView.Background>
+
+                            <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+
+                                <GradientStop Color="{StaticResource LocalSupportBarStartColor}" />
+
+                                <GradientStop
+                                    Color="{Binding Source={x:Reference SupportBarCenterBoxView}, Path=Color}" />
+                            </LinearGradientBrush>
+                        </BoxView.Background>
+                    </BoxView>
+
+                    <Grid
+                        Padding="45,45,0,0"
+                        ColumnSpacing="0">
+                        <Grid.ColumnDefinitions>
+
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+
+                        <Label
+                            Style="{StaticResource LocalSupportBarIconLabelStyle}"
+                            Text="{x:Static helpers:Constants+FontAwesomeIcons.Percentage}"
+                            FontFamily="{x:Static helpers:Constants+EmbeddedFonts.FontAwesomeSolid}"
+                            Grid.Column="0">
+                            <Label.GestureRecognizers>
+
+                                <TapGestureRecognizer
+                                    Command="{Binding ClickSupportBarCommand}"
+                                    CommandParameter="{x:Static enums:CasioShopSupportBarButtons.Discounts}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                        <Label
+                            Style="{StaticResource LocalSupportBarIconLabelStyle}"
+                            Text="{x:Static helpers:Constants+FontAwesomeIcons.FireAlt}"
+                            FontFamily="{x:Static helpers:Constants+EmbeddedFonts.FontAwesomeSolid}"
+                            Grid.Column="1">
+                            <Label.GestureRecognizers>
+
+                                <TapGestureRecognizer
+                                    Command="{Binding ClickSupportBarCommand}"
+                                    CommandParameter="{x:Static enums:CasioShopSupportBarButtons.NewWatches}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                        <Label
+                            Style="{StaticResource LocalSupportBarIconLabelStyle}"
+                            Text="{x:Static helpers:Constants+FontAwesomeIcons.ShoppingCart}"
+                            FontFamily="{x:Static helpers:Constants+EmbeddedFonts.FontAwesomeSolid}"
+                            Grid.Column="2">
+                            <Label.GestureRecognizers>
+
+                                <TapGestureRecognizer
+                                    Command="{Binding ClickSupportBarCommand}"
+                                    CommandParameter="{x:Static enums:CasioShopSupportBarButtons.ShoppingCart}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+                </Grid>
+
+                <!--#endregion Top Support Bar-->
+
+                <!--#region Left Support Bar-->
+
+                <Grid
+                    HeightRequest="{Binding Source={x:Static trashBox:App.ScreenWidth},
+                                                Converter={StaticResource MultiplicationByNumberConverter},
+                                                ConverterParameter=0.75}"
+                    WidthRequest="{Binding Source={StaticResource LocalTopSupportBarWidth}, 
+                                            Converter={StaticResource MultiplicationByNumberConverter},
+                                            ConverterParameter=2}"
+                    HorizontalOptions="Start"
+                    Margin="-45,0,0,0"
+                    VerticalOptions="Start">
+
+                    <BoxView CornerRadius="45">
+                        <BoxView.Background>
+
+                            <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+
+                                <GradientStop Color="{StaticResource LocalSupportBarStartColor}" />
+
+                                <GradientStop
+                                    Color="{Binding Source={x:Reference SupportBarCenterBoxView}, Path=Color}" />
+                            </LinearGradientBrush>
+                        </BoxView.Background>
+                    </BoxView>
+
+                    <Grid
+                        RowSpacing="0"
+                        Padding="45,45,0,0">
+                        <Grid.RowDefinitions>
+
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+
+                        <Label
+                            Style="{StaticResource LocalSupportBarIconLabelStyle}"
+                            Text="{x:Static helpers:Constants+FontAwesomeIcons.Male}"
+                            FontFamily="{x:Static helpers:Constants+EmbeddedFonts.FontAwesomeSolid}"
+                            Grid.Row="0">
+                            <Label.GestureRecognizers>
+
+                                <TapGestureRecognizer
+                                    Command="{Binding ClickSupportBarCommand}"
+                                    CommandParameter="{x:Static enums:CasioShopSupportBarButtons.MaleWatches}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                        <Label
+                            Style="{StaticResource LocalSupportBarIconLabelStyle}"
+                            Text="{x:Static helpers:Constants+FontAwesomeIcons.Female}"
+                            FontFamily="{x:Static helpers:Constants+EmbeddedFonts.FontAwesomeSolid}"
+                            Grid.Row="1">
+                            <Label.GestureRecognizers>
+
+                                <TapGestureRecognizer
+                                    Command="{Binding ClickSupportBarCommand}"
+                                    CommandParameter="{x:Static enums:CasioShopSupportBarButtons.FemaleWatches}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                        <Label
+                            Style="{StaticResource LocalSupportBarIconLabelStyle}"
+                            Text="{x:Static helpers:Constants+FontAwesomeIcons.Child}"
+                            FontFamily="{x:Static helpers:Constants+EmbeddedFonts.FontAwesomeSolid}"
+                            Grid.Row="2">
+                            <Label.GestureRecognizers>
+
+                                <TapGestureRecognizer
+                                    Command="{Binding ClickSupportBarCommand}"
+                                    CommandParameter="{x:Static enums:CasioShopSupportBarButtons.BabyWatches}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+                </Grid>
+
+                <!--#endregion Left  Support Bar-->
+
+                <!--#region Center Support Bar-->
+
+                <Grid
+                    WidthRequest="{StaticResource LocalTopSupportBarWidth}"
+                    HeightRequest="{StaticResource LocalTopSupportBarHeight}"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start">
+
+                    <BoxView
+                        x:Name="SupportBarCenterBoxView"
+                        x:FieldModifier="private"
+                        Color="{StaticResource LocalSupportBarCenterColor}" />
+
+                    <Label
+                        Style="{StaticResource LocalSupportBarIconLabelStyle}"
+                        FontSize="25"
+                        Text="{x:Static helpers:Constants+FontAwesomeIcons.ArrowCircleLeft}"
+                        FontFamily="{x:Static helpers:Constants+EmbeddedFonts.FontAwesomeSolid}">
+                        <Label.GestureRecognizers>
+
+                            <TapGestureRecognizer
+                                Command="{Binding ClickSupportBarCommand}"
+                                CommandParameter="{x:Static enums:CasioShopSupportBarButtons.Back}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+
+                <!--#endregion Center Support Bar-->
+            </Grid>
+
+            <!--#endregion Support Bar-->
+
+            <!--#region Floating Button-->
+
+            <Grid
+                IsVisible="True"
+                HorizontalOptions="EndAndExpand"
+                VerticalOptions="EndAndExpand"
+                Margin="20"
+                Padding="0">
+
+                <Frame
+                    BackgroundColor="Black"
+                    HasShadow="True"
+                    Padding="5"
+                    CornerRadius="{Binding Source={RelativeSource Self}, Path=Width}">
+
+                    <Expander Rotation="180">
+                        <Expander.Header>
+
+                            <Label
+                                Style="{StaticResource LocalFloatingIconLabelStyle}"
+                                Rotation="180"
+                                Text="{x:Static helpers:Constants+FontAwesomeIcons.PlusCircle}">
+                                <Label.Triggers>
+
+                                    <DataTrigger
+                                        TargetType="Label"
+                                        Binding="{Binding Source={RelativeSource AncestorType={x:Type Expander}}, Path=IsExpanded}"
+                                        Value="True">
+
+                                        <Setter
+                                            Property="Label.Text"
+                                            Value="{x:Static helpers:Constants+FontAwesomeIcons.TimesCircle}" />
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                        </Expander.Header>
+                        <Expander.Content>
+
+                            <Grid
+                                Rotation="180"
+                                RowSpacing="10"
+                                Margin="0,10,0,0">
+                                <Grid.RowDefinitions>
+
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <Label
+                                    Style="{StaticResource LocalFloatingIconLabelStyle}"
+                                    Text="{x:Static helpers:Constants+FontAwesomeIcons.Bell}"
+                                    Grid.Row="0">
+                                    <Label.GestureRecognizers>
+
+                                        <TapGestureRecognizer
+                                            Command="{Binding ClickFloatingButtonCommand}"
+                                            CommandParameter="{x:Static enums:CasioShopFloatingButtons.Notifications}" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+
+                                <Label
+                                    Style="{StaticResource LocalFloatingIconLabelStyle}"
+                                    Text="{x:Static helpers:Constants+FontAwesomeIcons.Bookmark}"
+                                    Grid.Row="1">
+                                    <Label.GestureRecognizers>
+
+                                        <TapGestureRecognizer
+                                            Command="{Binding ClickFloatingButtonCommand}"
+                                            CommandParameter="{x:Static enums:CasioShopFloatingButtons.Bookmarks}" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+
+                                <Label
+                                    Style="{StaticResource LocalFloatingIconLabelStyle}"
+                                    Text="{x:Static helpers:Constants+FontAwesomeIcons.ShoppingCart}"
+                                    Grid.Row="2">
+                                    <Label.GestureRecognizers>
+
+                                        <TapGestureRecognizer
+                                            Command="{Binding ClickFloatingButtonCommand}"
+                                            CommandParameter="{x:Static enums:CasioShopFloatingButtons.ShoppingCart}" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </Grid>
+                        </Expander.Content>
+                    </Expander>
+                </Frame>
+            </Grid>
+
+            <!--#endregion Floating Button-->
+        </Grid>
+    </abstractions:BaseContentPage.Content>
+</abstractions:BaseContentPage>

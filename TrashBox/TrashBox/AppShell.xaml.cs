@@ -2,6 +2,7 @@
 using TrashBox.Views.ControlsViews.DonutChart;
 using TrashBox.Views.ControlsViews.GradientProgressBar;
 using TrashBox.Views.ControlsViews.GradientRadialProgressBar;
+using TrashBox.Views.DesignsViews.CasioShop;
 using TrashBox.Views.DesignsViews.MKDemo;
 using Xamarin.Forms;
 
@@ -50,6 +51,8 @@ namespace TrashBox
 
             Routing.RegisterRoute(nameof(MKDemoPage), typeof(MKDemoPage));
 
+            Routing.RegisterRoute(nameof(CasioShopPage), typeof(CasioShopPage));
+
             #endregion Designs Rotes
         }
 
@@ -81,6 +84,8 @@ namespace TrashBox
             #region Designs Routes
 
             Routing.UnRegisterRoute(nameof(MKDemoPage));
+
+            Routing.UnRegisterRoute(nameof(CasioShopPage));
 
             #endregion Designs Routes
         }

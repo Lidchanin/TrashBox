@@ -4,6 +4,7 @@ using System.Windows.Input;
 using TrashBox.Abstractions;
 using TrashBox.Helpers;
 using TrashBox.Models;
+using TrashBox.Views.DesignsViews.CasioShop;
 using TrashBox.Views.DesignsViews.MKDemo;
 using Xamarin.Forms;
 
@@ -27,6 +28,13 @@ namespace TrashBox.ViewModels.DesignsViewModels
                     Route = nameof(MKDemoPage),
                     TitleFontFamily = Constants.EmbeddedFonts.MKTitle,
                     DescriptionFontFamily = Constants.EmbeddedFonts.MK4
+                },
+                new PageInfo
+                {
+                    Title = Constants.Texts.CasioShop,
+                    Description = Constants.Texts.CasioShopDescription,
+                    IconResourceName = Constants.EmbeddedImages.ShoppingCart,
+                    Route = nameof(CasioShopPage)
                 }
             };
         }

@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ffImageLoading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    x:Class="TrashBox.Views.DesignsViews.CasioShop.CasioShopCell"
+    x:Name="Cell"
+    x:FieldModifier="private">
+
+    <ContentView.Content>
+
+        <Grid
+            RowSpacing="0"
+            IsClippedToBounds="True">
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="1.5*" />
+                <RowDefinition Height="1.5*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+
+            <Frame
+                CornerRadius="50"
+                BackgroundColor="Red"
+                Padding="0"
+                HasShadow="False"
+                Grid.Row="1"
+                Grid.RowSpan="2">
+
+                <Grid RowSpacing="0">
+                    <Grid.RowDefinitions>
+
+                        <RowDefinition Height="1.5*" />
+                        <RowDefinition Height="2*" />
+                    </Grid.RowDefinitions>
+
+                    <Grid
+                        RowSpacing="10"
+                        Grid.Row="1">
+                        <Grid.RowDefinitions>
+
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Label
+                            Text="{Binding Source={x:Reference Cell}, Path=WatchInfo.Name}"
+                            TextColor="Black"
+                            FontSize="30"
+                            HorizontalOptions="Center"
+                            Grid.Row="0" />
+
+                        <!--#region Cost-->
+
+                        <Label
+                            IsVisible="{Binding Source={x:Reference CostWithDiscountLabel}, 
+                                                Path=IsVisible, 
+                                                Converter={StaticResource InverseBoolConverter}}"
+                            Text="{Binding Source={x:Reference Cell}, Path=WatchInfo.Cost, StringFormat='{0:F2}$'}"
+                            TextColor="Black"
+                            FontSize="30"
+                            HorizontalOptions="Center"
+                            Grid.Row="1" />
+
+                        <Label
+                            x:Name="CostWithDiscountLabel"
+                            x:FieldModifier="private"
+                            IsVisible="{Binding Source={x:Reference Cell}, 
+                                                Path=WatchInfo.DiscountPercent, 
+                                                Converter={StaticResource IsMoreThanNumberConverter},
+                                                ConverterParameter=0}"
+                            TextColor="Black"
+                            FontSize="30"
+                            HorizontalOptions="Center"
+                            Grid.Row="1">
+                            <Label.FormattedText>
+
+                                <FormattedString>
+
+                                    <Span
+                                        Text="{Binding Source={x:Reference Cell}, 
+                                                       Path=WatchInfo.Cost, 
+                                                       StringFormat='{0:F2}$'}"
+                                        TextDecorations="Strikethrough" />
+
+                                    <Span
+                                        Text="{Binding Source={x:Reference Cell},
+                                                       Path=WatchInfo.CostWithDiscount,
+                                                       StringFormat=' {0:F2}$'}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <!--#endregion Cost-->
+
+                        <StackLayout
+                            IsVisible="True"
+                            Grid.Row="2"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            BindableLayout.ItemsSource="{Binding Source={x:Reference Cell}, Path=WatchInfo.MainAdvantages}">
+                            <BindableLayout.ItemTemplate>
+
+                                <DataTemplate x:DataType="x:String">
+
+                                    <StackLayout Orientation="Horizontal">
+
+                                        <BoxView
+                                            VerticalOptions="Center"
+                                            HorizontalOptions="Center"
+                                            HeightRequest="6"
+                                            WidthRequest="6"
+                                            CornerRadius="3"
+                                            Color="Black" />
+
+                                        <Label
+                                            Text="{Binding .}"
+                                            TextColor="Black"
+                                            FontSize="15" />
+                                    </StackLayout>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+
+                        <!--#region Cart Operations Button-->
+
+                        <Button
+                            Text="Add to Cart"
+                            TextTransform="Uppercase"
+                            VerticalOptions="End"
+                            Margin="50,0,50,-50"
+                            HeightRequest="100"
+                            CornerRadius="50"
+                            Padding="0,0,0,50"
+Clicked="CartOperationsButtonOnClicked"
+                            Grid.Row="3">
+                            <Button.Triggers>
+
+                                <DataTrigger
+                                    TargetType="Button"
+                                    Binding="{Binding Source={x:Reference Cell}, Path=WatchInfo.IsInCart}"
+                                    Value="True">
+
+                                    <Setter Property="Button.Text" Value="Remove from Cart" />
+                                </DataTrigger>
+                            </Button.Triggers>
+                        </Button>
+
+                        <!--#endregion Cart Operations Button-->
+                    </Grid>
+                </Grid>
+            </Frame>
+
+            <ffImageLoading:CachedImage
+                Source="{Binding Source={x:Reference Cell}, 
+                                 Path=WatchInfo.ImagePath, 
+                                 Converter={StaticResource EmbeddedResourceToResourcePathConverter}}"
+                Margin="20"
+                Grid.Row="0"
+                Grid.RowSpan="2" />
+
+            <!--#region Support Labels-->
+
+            <Grid
+                RowSpacing="0"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                Grid.Row="1">
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!--#region New Label-->
+
+                <Frame
+                    x:Name="NewFrame"
+                    x:FieldModifier="private"
+                    IsVisible="{Binding Source={x:Reference Cell}, Path=WatchInfo.IsNew}"
+                    BackgroundColor="OrangeRed"
+                    CornerRadius="{Binding Source={RelativeSource Self}, Path=Height}"
+                    Padding="20,10,40,10"
+                    Margin="0,0,-20,0"
+                    HasShadow="True"
+                    Grid.Row="0">
+
+                    <Label
+                        Text="NEW"
+                        HorizontalTextAlignment="Center"
+                        TextColor="OldLace"
+                        FontSize="20" />
+                </Frame>
+
+                <!--#endregion New Label-->
+
+                <!--#region Discount Label-->
+
+                <Frame
+                    IsVisible="{Binding Source={x:Reference Cell}, 
+                                                Path=WatchInfo.DiscountPercent,
+                                                Converter={StaticResource IsMoreThanNumberConverter},
+                                                ConverterParameter=0}"
+                    BackgroundColor="OrangeRed"
+                    CornerRadius="{Binding Source={RelativeSource Self}, Path=Height}"
+                    Padding="20,10,40,10"
+                    Margin="0,0,-20,0"
+                    HasShadow="True"
+                    Grid.Row="1">
+                    <Frame.Triggers>
+
+                        <DataTrigger
+                            TargetType="Frame"
+                            Binding="{Binding Source={x:Reference NewFrame}, Path=IsVisible}"
+                            Value="True">
+
+                            <Setter Property="Frame.Margin" Value="0,10,-20,0" />
+                        </DataTrigger>
+                    </Frame.Triggers>
+
+                    <Label
+                        Text="{Binding Source={x:Reference Cell}, 
+                                               Path=WatchInfo.DiscountPercent,
+                                               StringFormat='- {0}%'}"
+                        HorizontalTextAlignment="Center"
+                        TextColor="OldLace"
+                        FontSize="20" />
+                </Frame>
+
+                <!--#endregion Discount Label-->
+            </Grid>
+
+            <!--#endregion Support Labels-->
+        </Grid>
+    </ContentView.Content>
+</ContentView>

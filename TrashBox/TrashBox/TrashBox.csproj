@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -8,11 +8,34 @@
 
   <ItemGroup>
     <None Remove="EmbeddedResources\Fonts\coolvetica.ttf" />
+    <None Remove="EmbeddedResources\Fonts\font_awesome_5_brands_regular_400.otf" />
+    <None Remove="EmbeddedResources\Fonts\font_awesome_5_free_regular_400.otf" />
     <None Remove="EmbeddedResources\Fonts\font_awesome_5_free_solid_900.otf" />
     <None Remove="EmbeddedResources\Fonts\mk_4.ttf" />
     <None Remove="EmbeddedResources\Fonts\mk_title.ttf" />
     <None Remove="EmbeddedResources\Fonts\september_22.otf" />
     <None Remove="EmbeddedResources\Images\backboard_background.jpg" />
+    <None Remove="EmbeddedResources\Images\CASIO_BABY-G_BA110-1A.png" />
+    <None Remove="EmbeddedResources\Images\CASIO_BABY-G_BA111-1A.png" />
+    <None Remove="EmbeddedResources\Images\CASIO_BABY-G_BA130-1A3.png" />
+    <None Remove="EmbeddedResources\Images\CASIO_BABY-G_BG169R-7E.png" />
+    <None Remove="EmbeddedResources\Images\CASIO_BABY-G_BGA110-1B2.png" />
+    <None Remove="EmbeddedResources\Images\CASIO_BABY-G_BGD560S-6.png" />
+    <None Remove="EmbeddedResources\Images\CASIO_BABY-G_BGD560TG-9.png" />
+    <None Remove="EmbeddedResources\Images\CASIO_G_SHOCK_GA700-7A.png" />
+    <None Remove="EmbeddedResources\Images\CASIO_G_SHOCK_GA700DC-1A.png" />
+    <None Remove="EmbeddedResources\Images\CASIO_G_SHOCK_GBD100-1A7.png" />
+    <None Remove="EmbeddedResources\Images\CASIO_G_SHOCK_GBDH1000-7A9.png" />
+    <None Remove="EmbeddedResources\Images\CASIO_G_SHOCK_GM110-1A.png" />
+    <None Remove="EmbeddedResources\Images\CASIO_G_SHOCK_GMWB5000TCF-2.png" />
+    <None Remove="EmbeddedResources\Images\CASIO_G_SHOCK_GSTB300S-1A.png" />
+    <None Remove="EmbeddedResources\Images\CASIO_WOMAN_GMAB800-9A.png" />
+    <None Remove="EmbeddedResources\Images\CASIO_WOMAN_GMAS120MF-7A2.png" />
+    <None Remove="EmbeddedResources\Images\CASIO_WOMAN_GMAS120SR-7A.png" />
+    <None Remove="EmbeddedResources\Images\CASIO_WOMAN_GMDB800SC-1B.png" />
+    <None Remove="EmbeddedResources\Images\CASIO_WOMAN_GMDB800SU-4.png" />
+    <None Remove="EmbeddedResources\Images\CASIO_WOMAN_GMS5600PG-4.png" />
+    <None Remove="EmbeddedResources\Images\CASIO_WOMAN_MSGS500G-5A.png" />
     <None Remove="EmbeddedResources\Images\dish_icon.png" />
     <None Remove="EmbeddedResources\Images\donut_chart_icon.png" />
     <None Remove="EmbeddedResources\Images\entertainment_icon.png" />
@@ -58,11 +81,34 @@
 
   <ItemGroup>
     <EmbeddedResource Include="EmbeddedResources\Fonts\coolvetica.ttf" />
+    <EmbeddedResource Include="EmbeddedResources\Fonts\font_awesome_5_brands_regular_400.otf" />
+    <EmbeddedResource Include="EmbeddedResources\Fonts\font_awesome_5_free_regular_400.otf" />
     <EmbeddedResource Include="EmbeddedResources\Fonts\font_awesome_5_free_solid_900.otf" />
     <EmbeddedResource Include="EmbeddedResources\Fonts\mk_4.ttf" />
     <EmbeddedResource Include="EmbeddedResources\Fonts\mk_title.ttf" />
     <EmbeddedResource Include="EmbeddedResources\Fonts\september_22.otf" />
     <EmbeddedResource Include="EmbeddedResources\Images\backboard_background.jpg" />
+    <EmbeddedResource Include="EmbeddedResources\Images\CASIO_BABY-G_BA110-1A.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\CASIO_BABY-G_BA111-1A.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\CASIO_BABY-G_BA130-1A3.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\CASIO_BABY-G_BG169R-7E.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\CASIO_BABY-G_BGA110-1B2.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\CASIO_BABY-G_BGD560S-6.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\CASIO_BABY-G_BGD560TG-9.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\CASIO_G_SHOCK_GA700-7A.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\CASIO_G_SHOCK_GA700DC-1A.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\CASIO_G_SHOCK_GBD100-1A7.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\CASIO_G_SHOCK_GBDH1000-7A9.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\CASIO_G_SHOCK_GM110-1A.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\CASIO_G_SHOCK_GMWB5000TCF-2.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\CASIO_G_SHOCK_GSTB300S-1A.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\CASIO_WOMAN_GMAB800-9A.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\CASIO_WOMAN_GMAS120MF-7A2.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\CASIO_WOMAN_GMAS120SR-7A.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\CASIO_WOMAN_GMDB800SC-1B.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\CASIO_WOMAN_GMDB800SU-4.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\CASIO_WOMAN_GMS5600PG-4.png" />
+    <EmbeddedResource Include="EmbeddedResources\Images\CASIO_WOMAN_MSGS500G-5A.png" />
     <EmbeddedResource Include="EmbeddedResources\Images\dish_icon.png" />
     <EmbeddedResource Include="EmbeddedResources\Images\donut_chart_icon.png" />
     <EmbeddedResource Include="EmbeddedResources\Images\entertainment_icon.png" />
@@ -102,7 +148,7 @@
     <PackageReference Include="SkiaSharp.Views.Forms" Version="2.80.2" />
     <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
-    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1534" />  
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1560" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
 
@@ -148,6 +194,9 @@
     </Compile>
     <Compile Update="Views\DesignsViews\MKDemo\MKDemoPage.xaml.cs">
       <DependentUpon>MKDemoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\DesignsViews\CasioShop\CasioShopPage.xaml.cs">
+      <DependentUpon>CasioShopPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -236,6 +285,9 @@
     <EmbeddedResource Update="Views\ControlsViews\Support\TwoButtonsControlPropertyView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\DesignsViews\CasioShop\CasioShopCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\DesignsViews\DesignsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -246,6 +298,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\DesignsViews\MKDemo\SelectionInfoPopup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DesignsViews\CasioShop\CasioShopPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Support\PagePreviewerCell.xaml">
