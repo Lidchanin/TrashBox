@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TrashBox.Controls.SegmentedView.SegmentView"
+    x:Name="View"
+    x:FieldModifier="private"
+    BackgroundColor="Transparent">
+
+    <ContentView.GestureRecognizers>
+
+        <TapGestureRecognizer Tapped="OnItemTapped" />
+    </ContentView.GestureRecognizers>
+
+    <VisualStateManager.VisualStateGroups>
+
+        <VisualStateGroup x:Name="CommonStates">
+
+            <VisualState x:Name="Normal" />
+
+            <VisualState x:Name="Selected">
+
+                <VisualState.Setters>
+
+                    <Setter
+                        TargetName="LocalFrame"
+                        Property="Frame.BackgroundColor"
+                        Value="{Binding Source={x:Reference View}, Path=SelectedBackgroundColor}" />
+
+                    <Setter
+                        TargetName="LocalLabel"
+                        Property="Label.TextColor" Value="{Binding Source={x:Reference View}, Path=SelectedTextColor}" />
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+
+    <ContentView.Content>
+
+        <Frame
+            x:Name="LocalFrame"
+            BackgroundColor="Transparent"
+            CornerRadius="{Binding Source={x:Reference View}, Path=CornerRadius}"
+            HasShadow="False"
+            IsClippedToBounds="True"
+            Padding="0">
+
+            <Label
+                x:Name="LocalLabel"
+                Text="{Binding Source={x:Reference View}, Path=Item.SegmentedViewItem.Text}"
+                TextColor="{Binding Source={x:Reference View}, Path=TextColor}"
+                FontFamily="{Binding Source={x:Reference View}, Path=FontFamily}"
+                FontSize="{Binding Source={x:Reference View}, Path=FontSize}"
+                FontAttributes="{Binding Source={x:Reference View}, Path=FontAttributes}"
+                LineBreakMode="TailTruncation"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand" />
+        </Frame>
+    </ContentView.Content>
+</ContentView>

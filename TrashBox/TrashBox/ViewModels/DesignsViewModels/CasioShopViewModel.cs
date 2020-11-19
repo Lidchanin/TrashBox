@@ -41,20 +41,20 @@ namespace TrashBox.ViewModels.DesignsViewModels
 
         private async Task ClickSupportBarAsync(object parameter)
         {
-            if (!(parameter is CasioShopSupportBarButtons button))
+            if (!(parameter is CasioShopSupportBarOptions button))
             {
                 return;
             }
 
             switch (button)
             {
-                case CasioShopSupportBarButtons.Back:
+                case CasioShopSupportBarOptions.Back:
                 {
                     await ShellNavigationHelper.PopAsync();
 
                     return;
                 }
-                case CasioShopSupportBarButtons.MaleWatches:
+                case CasioShopSupportBarOptions.MaleWatches:
                 {
                     Watches.Clear();
 
@@ -67,7 +67,7 @@ namespace TrashBox.ViewModels.DesignsViewModels
 
                     return;
                 }
-                case CasioShopSupportBarButtons.FemaleWatches:
+                case CasioShopSupportBarOptions.FemaleWatches:
                 {
                     Watches.Clear();
 
@@ -80,7 +80,7 @@ namespace TrashBox.ViewModels.DesignsViewModels
 
                     return;
                 }
-                case CasioShopSupportBarButtons.BabyWatches:
+                case CasioShopSupportBarOptions.BabyWatches:
                 {
                     Watches.Clear();
 
@@ -93,7 +93,7 @@ namespace TrashBox.ViewModels.DesignsViewModels
 
                     return;
                 }
-                case CasioShopSupportBarButtons.Discounts:
+                case CasioShopSupportBarOptions.Discounts:
                 {
                     Watches.Clear();
 
@@ -105,7 +105,7 @@ namespace TrashBox.ViewModels.DesignsViewModels
 
                     break;
                 }
-                case CasioShopSupportBarButtons.NewWatches:
+                case CasioShopSupportBarOptions.NewWatches:
                 {
                     Watches.Clear();
 
@@ -116,7 +116,7 @@ namespace TrashBox.ViewModels.DesignsViewModels
 
                     break;
                 }
-                case CasioShopSupportBarButtons.ShoppingCart:
+                case CasioShopSupportBarOptions.ShoppingCart:
                 {
                     Watches.Clear();
 

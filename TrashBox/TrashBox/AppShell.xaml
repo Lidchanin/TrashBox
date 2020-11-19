@@ -6,13 +6,25 @@
     xmlns:abstractions="clr-namespace:TrashBox.Abstractions;assembly=TrashBox"
     xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
     xmlns:controlsPages="clr-namespace:TrashBox.Views.ControlsViews;assembly=TrashBox"
-    xmlns:views="clr-namespace:TrashBox.Views;assembly=TrashBox"
     xmlns:designsPages="clr-namespace:TrashBox.Views.DesignsViews;assembly=TrashBox"
+    xmlns:views="clr-namespace:TrashBox.Views;assembly=TrashBox"
     x:Class="TrashBox.AppShell"
     Title="{x:Static helpers:Constants+Texts.TrashBox}"
     Style="{StaticResource BaseShellStyle}">
 
     <TabBar>
+
+        <ShellContent
+            Route="TempPage"
+            Title="Temp Page"
+            ContentTemplate="{DataTemplate TypeName=views:TempPage}">
+            <ShellContent.Icon>
+
+                <FontImageSource
+                    FontFamily="{x:Static helpers:Constants+EmbeddedFonts.FontAwesomeSolid}"
+                    Glyph="{x:Static helpers:Constants+FontAwesomeIcons.Gamepad}" />
+            </ShellContent.Icon>
+        </ShellContent>
 
         <ShellContent
             Route="ControlsPage"

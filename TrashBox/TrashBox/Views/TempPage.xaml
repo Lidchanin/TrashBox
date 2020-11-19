@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:segmentedView="clr-namespace:TrashBox.Controls.SegmentedView;assembly=TrashBox"
+    xmlns:helpers="clr-namespace:TrashBox.Helpers;assembly=TrashBox"
+    x:Class="TrashBox.Views.TempPage"
+    x:Name="Page"
+    x:FieldModifier="private">
+
+    <ContentPage.Content>
+
+        <StackLayout
+            Spacing="20"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+
+            <Grid>
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="300" />
+                </Grid.RowDefinitions>
+
+                <segmentedView:SegmentedView
+                    ItemsSource="{Binding Source={x:Reference Page}, Path=HorizontalShopSupportBarItems}"
+                    SelectedItem="{Binding Source={x:Reference Page}, Path=SelectedItem}" 
+                    Orientation="Horizontal"
+                    HeightRequest="60"
+                    IsNullableSelectionSupported="False"
+                    FontFamily="{x:Static helpers:Constants+EmbeddedFonts.FontAwesomeSolid}"
+                    FontSize="80"
+                    TextColor="Blue"
+                    SelectedTextColor="Yellow"
+                    BackgroundColor="DarkSlateGray"
+                    SelectedBackgroundColor="Red"
+                    CornerRadius="10"
+                    ItemCornerRadius="50"
+                    />
+            </Grid>
+
+            <Button
+                Text="Set the first selected"
+                Clicked="Button2_OnClicked" />
+
+            <Button
+                Text="Debug"
+                Clicked="Button_OnClicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

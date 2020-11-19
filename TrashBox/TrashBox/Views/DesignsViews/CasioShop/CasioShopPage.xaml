@@ -154,7 +154,7 @@
 
                             <TapGestureRecognizer
                                 Command="{Binding ClickSupportBarCommand}"
-                                CommandParameter="{x:Static enums:CasioShopSupportBarButtons.Discounts}" />
+                                CommandParameter="{x:Static enums:CasioShopSupportBarOptions.Discounts}" />
                         </Label.GestureRecognizers>
                     </Label>
 
@@ -166,7 +166,7 @@
 
                             <TapGestureRecognizer
                                 Command="{Binding ClickSupportBarCommand}"
-                                CommandParameter="{x:Static enums:CasioShopSupportBarButtons.NewWatches}" />
+                                CommandParameter="{x:Static enums:CasioShopSupportBarOptions.NewWatches}" />
                         </Label.GestureRecognizers>
                     </Label>
 
@@ -178,7 +178,7 @@
 
                             <TapGestureRecognizer
                                 Command="{Binding ClickSupportBarCommand}"
-                                CommandParameter="{x:Static enums:CasioShopSupportBarButtons.ShoppingCart}" />
+                                CommandParameter="{x:Static enums:CasioShopSupportBarOptions.ShoppingCart}" />
                         </Label.GestureRecognizers>
                     </Label>
                 </Grid>
@@ -230,7 +230,7 @@
 
                             <TapGestureRecognizer
                                 Command="{Binding ClickSupportBarCommand}"
-                                CommandParameter="{x:Static enums:CasioShopSupportBarButtons.MaleWatches}" />
+                                CommandParameter="{x:Static enums:CasioShopSupportBarOptions.MaleWatches}" />
                         </Label.GestureRecognizers>
                     </Label>
 
@@ -242,7 +242,7 @@
 
                             <TapGestureRecognizer
                                 Command="{Binding ClickSupportBarCommand}"
-                                CommandParameter="{x:Static enums:CasioShopSupportBarButtons.FemaleWatches}" />
+                                CommandParameter="{x:Static enums:CasioShopSupportBarOptions.FemaleWatches}" />
                         </Label.GestureRecognizers>
                     </Label>
 
@@ -254,7 +254,7 @@
 
                             <TapGestureRecognizer
                                 Command="{Binding ClickSupportBarCommand}"
-                                CommandParameter="{x:Static enums:CasioShopSupportBarButtons.BabyWatches}" />
+                                CommandParameter="{x:Static enums:CasioShopSupportBarOptions.BabyWatches}" />
                         </Label.GestureRecognizers>
                     </Label>
                 </Grid>
@@ -283,7 +283,7 @@
 
                         <TapGestureRecognizer
                             Command="{Binding ClickSupportBarCommand}"
-                            CommandParameter="{x:Static enums:CasioShopSupportBarButtons.Back}" />
+                            CommandParameter="{x:Static enums:CasioShopSupportBarOptions.Back}" />
                     </Label.GestureRecognizers>
                 </Label>
             </Frame>

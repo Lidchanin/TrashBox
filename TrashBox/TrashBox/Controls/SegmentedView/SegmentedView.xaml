@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TrashBox.Controls.SegmentedView.SegmentedView"
+    x:Name="Control"
+    x:FieldModifier="private"
+    BackgroundColor="Transparent">
+
+    <ContentView.Content>
+
+        <Frame
+            BackgroundColor="{Binding Source={x:Reference Control}, Path=BackgroundColor}"
+            CornerRadius="{Binding Source={x:Reference Control}, Path=CornerRadius}"
+            IsClippedToBounds="True"
+            HasShadow="False"
+            Padding="0">
+
+            <Grid
+                x:Name="ContentGrid"
+                x:FieldModifier="private"
+                RowSpacing="0"
+                ColumnSpacing="0" />
+        </Frame>
+    </ContentView.Content>
+</ContentView>

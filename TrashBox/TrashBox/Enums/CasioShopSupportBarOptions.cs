@@ -1,6 +1,6 @@
 ﻿namespace TrashBox.Enums
 {
-    public enum CasioShopSupportBarButtons
+    public enum CasioShopSupportBarOptions
     {
         Back,
         MaleWatches,
